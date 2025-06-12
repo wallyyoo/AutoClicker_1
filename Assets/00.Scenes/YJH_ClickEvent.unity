@@ -359,8 +359,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a4dd3ae9bb089d3438b9d5d56272c60f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  normalHitEffect: {fileID: 750675079613564824, guid: 198ec116419471843a52e7a31a6305b6, type: 3}
-  criticalHitEffect: {fileID: 7996185634662274452, guid: 673d5b4f7769518419610f51e85af7be, type: 3}
+  normalHitEffect: {fileID: 5324065079763490897, guid: fc4011ada4f90eb468bfe5cbdbfbd78a, type: 3}
+  criticalHitEffect: {fileID: 2467081199657402224, guid: 6325974dd9f41b548854ef30d9b59376, type: 3}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
