@@ -4,8 +4,7 @@ public class AttackEffect : MonoBehaviour
 {
     public ParticleSystem normalHitEffect;
     public ParticleSystem criticalHitEffect;
-    public float criticalRate = 0.2f;
-
+    //public float criticalRate = 0.2f;
     void OnEnable()
     {
         ClickManager.OnClick += HandleClick;
@@ -16,14 +15,23 @@ public class AttackEffect : MonoBehaviour
         ClickManager.OnClick -= HandleClick;
     }
 
-    void HandleClick(Vector3 position)
+    public void HandleClick(Vector3 position)
     {
-        bool isCritical = Random.value < criticalRate;
+        bool isCritical = IsCriticalHit();
 
+        PlayHitEffect(position, isCritical);
+
+        Debug.Log(isCritical ? $"치명타!{UpgradeUI.criticalRateTest}" : "일반 공격");
+    }
+    bool IsCriticalHit()//크리티컬 확인
+    { 
+    return Random.value < UpgradeUI.criticalRateTest;
+    }
+    void PlayHitEffect(Vector3 position, bool isCritical)//파티클 재생
+    {
         ParticleSystem effectPrefab = isCritical ? criticalHitEffect : normalHitEffect;
         ParticleSystem instance = Instantiate(effectPrefab, position, Quaternion.identity);
-        instance.Play(); // 명시적으로 재생 (필요 시)
-        Destroy(instance.gameObject, instance.main.duration); // 자동으로 꺼지도록 설정
-        Debug.Log(isCritical ? "치명타!" : "일반 공격");
+        instance.Play();
+        Destroy(instance.gameObject, instance.main.duration);
     }
 }
