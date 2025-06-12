@@ -25,7 +25,7 @@ public class InventoryController : MonoBehaviour
     public TMP_Text Item_UpgradeCost;
 
 
-    private int money;
+    //private int money;
 
     private void Awake()
     {
@@ -37,12 +37,12 @@ public class InventoryController : MonoBehaviour
 
     private void Start()
     {
-#if UNITY_SW
+/* #if UNITY_SW
         money = 10000;
 #else
         money = GameManager.Instance.GetMoney();
 #endif
-        Debug.Log(money);
+        Debug.Log(money);*/
     }
 
     public void OpenInventory()
