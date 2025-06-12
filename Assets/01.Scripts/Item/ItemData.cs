@@ -13,12 +13,12 @@ public class ItemData : ScriptableObject
    public int attackPower;
    public int criticalDamage;
    public float criticalChance;
-   public int resourceGain;
+   public int  goldGain;
    
    [HideInInspector] public int FinalAttackPower;
    [HideInInspector] public int FinalCriticalDamage;
    [HideInInspector] public float FinalCriticalChance;
-   [HideInInspector] public int FinalResourceGain;
+   [HideInInspector] public int FinalgoldGain;
 
    [HideInInspector] public bool isUnlocked;
    [HideInInspector] public bool isEquipped;
@@ -29,6 +29,6 @@ public class ItemData : ScriptableObject
       FinalAttackPower = attackPower;
       FinalCriticalDamage = criticalDamage;
       FinalCriticalChance = criticalChance;
-      FinalResourceGain = resourceGain;
+      FinalgoldGain = goldGain;
    }
 }
