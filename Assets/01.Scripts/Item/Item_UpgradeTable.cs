@@ -3,7 +3,7 @@ using UnityEngine;
 
 public static class Item_UpgradeTable
 { 
-   
+        //최대 템 레벨
         public static int MaxLevel = 10;
 
         public static int CalculateUpgradeCost(int baseCost, int level)
@@ -12,6 +12,7 @@ public static class Item_UpgradeTable
             return baseCost * level;
         }
 
+        // 계산식
         public static int CalculateAttackPower(int baseAttack, int level)
         {
             return Mathf.RoundToInt(baseAttack * (1 + 0.1f * (level - 1)));
