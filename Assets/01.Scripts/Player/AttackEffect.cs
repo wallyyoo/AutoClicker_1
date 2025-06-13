@@ -21,11 +21,11 @@ public class AttackEffect : MonoBehaviour
 
         PlayHitEffect(position, isCritical);
 
-        Debug.Log(isCritical ? $"치명타!{UpgradeUI.criticalRateTest}" : "일반 공격");
+        Debug.Log(isCritical ? $"치명타!{UpgradeUI.criticalRate}" : "일반 공격");
     }
     bool IsCriticalHit()//크리티컬 확인
     { 
-    return Random.value < UpgradeUI.criticalRateTest;
+    return Random.value < UpgradeUI.criticalRate;
     }
     void PlayHitEffect(Vector3 position, bool isCritical)//파티클 재생
     {
