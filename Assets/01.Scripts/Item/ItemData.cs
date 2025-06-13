@@ -5,30 +5,16 @@ using UnityEngine;
 public class ItemData : ScriptableObject
 {
    public string itemName;
-   public string itemDescription;
-   
    public int itemCost;
    public int upgradeCost;
-
    public int attackPower;
    public int criticalDamage;
    public float criticalChance;
-   public int resourceGain;
-   
-   [HideInInspector] public int FinalAttackPower;
-   [HideInInspector] public int FinalCriticalDamage;
-   [HideInInspector] public float FinalCriticalChance;
-   [HideInInspector] public int FinalResourceGain;
+   public int goldGain;
 
    [HideInInspector] public bool isUnlocked;
    [HideInInspector] public bool isEquipped;
+   [HideInInspector] public int upgradeLevel = 1;
    
-   
-   public void ResetFinalStats()
-   {
-      FinalAttackPower = attackPower;
-      FinalCriticalDamage = criticalDamage;
-      FinalCriticalChance = criticalChance;
-      FinalResourceGain = resourceGain;
-   }
+
 }
