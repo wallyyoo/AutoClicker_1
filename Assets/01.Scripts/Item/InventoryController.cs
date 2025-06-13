@@ -1,82 +1,110 @@
 
-using System;
+
 using UnityEngine;
 using TMPro;
 
 public class InventoryController : MonoBehaviour
 {
     
-    private static InventoryController instance;
-    
+    private static InventoryController Instance;
+    [Header("인벤토리 창 관련")]
     public GameObject Inventory_OpenButton;
     public GameObject Inventory_CloseButton;
     public GameObject Inventory_Window;
+    
+    [Header("아이템 상태 버튼")]
     public GameObject Item_BuyButton;
     public GameObject Item_EquipButton;
     public GameObject Item_UpgradeButton;
 
+    [Header("아이템 이미지")]
     public GameObject Item_Image_Enable;
     public GameObject Item_Image_Disable;
     public GameObject Item_Image_Equiped;
     
+    [Header("아이템 정보")]
     public TMP_Text Item_Name;
     public TMP_Text Item_Info;
     public TMP_Text Item_BuyCost;
     public TMP_Text Item_UpgradeCost;
 
+    public ItemData currentItem;
 
-    //private int money;
 
     private void Awake()
     {
-       if(instance==null)
-                    
-         instance=this; 
+        if (Instance == null)
+        {
+         Instance=this; 
        DontDestroyOnLoad(this.gameObject);
+        }
+        else
+        {
+            Destroy(this.gameObject);
+        }
     }
-
-    private void Start()
-    {
-/* #if UNITY_SW
-        money = 10000;
-#else
-        money = GameManager.Instance.GetMoney();
-#endif
-        Debug.Log(money);*/
-    }
-
+    
     public void OpenInventory()
     {
-        Inventory_OpenButton.SetActive(false);
         Inventory_Window.SetActive(true);
-        Item_Image_Enable.SetActive(false);
-        Item_Image_Disable.SetActive(true);
+        RefreshUI();
     }
 
     public void CloseInventory()
     {
         Inventory_Window.SetActive(false);
-        Inventory_OpenButton.SetActive(true);
     }
 
-    public void BuyItem()
+    public void SelectItem(ItemData item)
     {
-        Item_BuyButton.SetActive(false);
-        Item_EquipButton.SetActive(true);
-        Item_Image_Disable.SetActive(false);
-        Item_Image_Enable.SetActive(true);
+        currentItem = item;
+        RefreshUI();
+    }
+    public void OnBuyButton()
+    {
+        ItemManager.Instance.BuyItem(currentItem);
+        RefreshUI();
     }
 
-    public void EquipItem()
+    public void OnEquipButton()
     {
-        Item_EquipButton.SetActive(false);
-        Item_UpgradeButton.SetActive(true);
-        Item_Image_Enable.SetActive(false);
-        Item_Image_Equiped.SetActive(true);
-        
+        ItemManager.Instance.EquipItem(currentItem);
+        RefreshUI();
     }
- 
-    
-    
-  
+
+    public void OnUpgradeButton()
+    {
+        ItemManager.Instance.UpgradeItem(currentItem);
+        RefreshUI();
+    }
+
+    private void RefreshUI()
+    {
+        Item_Name.text = currentItem.itemName;
+        Item_Info.text =
+            $"공격력 : {currentItem.attackPower} / 치명타 : {currentItem.criticalChance} %";
+
+        // 버튼 상태 갱신
+        bool isUnlocked = ItemManager.Instance.IsUnlocked(currentItem);
+        bool isEquipped = ItemManager.Instance.IsEquipped(currentItem);
+        bool canUpgrade = ItemManager.Instance.CanUpgrade(currentItem);
+
+        Item_BuyButton.SetActive(!isUnlocked);
+        Item_EquipButton.SetActive(isUnlocked && !isEquipped);
+        Item_UpgradeButton.SetActive(isEquipped && canUpgrade);
+
+        // 이미지 상태 갱신
+        Item_Image_Disable.SetActive(!isUnlocked);
+        Item_Image_Enable.SetActive(isUnlocked && !isEquipped);
+        Item_Image_Equiped.SetActive(isEquipped);
+
+        // 비용 표시
+        Item_BuyCost.text = $"{currentItem.itemCost}G";
+
+        if (isEquipped && canUpgrade)
+            Item_UpgradeCost.text = $"{ItemManager.Instance.GetNextUpgradeCost(currentItem)}G";
+        else
+            Item_UpgradeCost.text = "-";
+
+    }
 }
