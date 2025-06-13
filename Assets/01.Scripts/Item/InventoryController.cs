@@ -47,7 +47,6 @@ public class InventoryController : MonoBehaviour
 
     public void OpenInventory()
     {
-        Inventory_OpenButton.SetActive(false);
         Inventory_Window.SetActive(true);
         Item_Image_Enable.SetActive(false);
         Item_Image_Disable.SetActive(true);
@@ -56,7 +55,6 @@ public class InventoryController : MonoBehaviour
     public void CloseInventory()
     {
         Inventory_Window.SetActive(false);
-        Inventory_OpenButton.SetActive(true);
     }
 
     public void BuyItem()
