@@ -36,14 +36,18 @@ public class BackGroundManager : MonoBehaviour
         }
     }
 
-    public void ChanceMoveSpeed(float dashMoveSpeed)
+    public void BoostAllSpeeds(float multiplier)
     {
-        Debug.Log("테스트");
         foreach (var bg in backGroundLooper)
         {
-            Debug.Log("체인스피드 메서드");
-            bg.moveSpeed *= dashMoveSpeed;
-            
+            bg.SetMoveSpeed(bg.moveSpeed * multiplier);
+        }
+    }
+    public void ResetAllSpeeds()
+    {
+        foreach (var bg in backGroundLooper)
+        {
+            bg.ResetSpeed();
         }
     }
     

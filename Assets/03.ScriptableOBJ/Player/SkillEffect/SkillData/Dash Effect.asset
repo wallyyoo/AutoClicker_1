@@ -9,7 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3e31063cb401e4143ad69c17b1b7bbcf, type: 3}
+  m_Script: {fileID: 11500000, guid: 15941bf56535d6b418fc2e40bb04cc27, type: 3}
   m_Name: Dash Effect
   m_EditorClassIdentifier: 
   dashSpeed: 5
+  dashEffectPrefab: {fileID: 5956032020332457979, guid: 7bfa5b5d29d488f4fb7aa87b54869516, type: 3}

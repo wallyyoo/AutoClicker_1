@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: SkillDash
   m_EditorClassIdentifier: 
   skillName: 
-  skillIcon: {fileID: 0}
-  coolDown: 0
+  skillIcon: {fileID: 21300000, guid: 52357a8e38c87e54ab4f182e04e480e1, type: 3}
+  coolDown: 5
   description: 
-  effect: {fileID: 0}
+  effect: {fileID: 11400000, guid: f6780da7eaa41ff498b25f8f7c5f9a09, type: 2}

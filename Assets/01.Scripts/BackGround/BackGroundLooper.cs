@@ -5,18 +5,20 @@ using UnityEngine;
 public class BackGroundLooper : MonoBehaviour
 {
     // 배경이 왼쪽으로 움직이는 속도 (단위: 초당 거리)
-    public float moveSpeed = 2f;
+    public float moveSpeed;
 
     // 현재 스프라이트의 가로 길이 (바깥으로 나갔는지 판단용)
     private float spriteWidth;
+    
+    
+    private float originalSpeed;
 
     void Start()
     {
+        originalSpeed = moveSpeed;
+        
         // 이 오브젝트에 붙은 SpriteRenderer 컴포넌트를 가져옴
         Renderer _spriteWidth = GetComponent<Renderer>();
-        
-        
-
         // 해당 스프라이트의 실제 가로 크기 (픽셀 → 월드 단위 변환된 값)
         spriteWidth = _spriteWidth.bounds.size.x;
     }
@@ -34,5 +36,23 @@ public class BackGroundLooper : MonoBehaviour
             // → 다음 배경 뒤로 자연스럽게 연결됨
             transform.position += new Vector3(spriteWidth * 1.99f, 0f, 0f);
         }
+    }
+    
+    public void SetMoveSpeed(float newSpeed)
+    {
+        moveSpeed = newSpeed;
+    }
+
+    // 💡 원래 속도로 복구
+    public void ResetSpeed()
+    {
+        moveSpeed = originalSpeed;
+    }
+
+    // 💡 외부에서 기본 속도 다시 지정하고 싶을 때
+    public void SetOriginalSpeed(float speed)
+    {
+        originalSpeed = speed;
+        moveSpeed = speed;
     }
 }
