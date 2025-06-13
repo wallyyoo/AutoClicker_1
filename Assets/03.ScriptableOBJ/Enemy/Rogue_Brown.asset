@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyType: 0
   reward: 0
-  health: 0
-  damage: 0
-  attackfrequency: 0
+  health: 100
+  damage: 2
+  attackfrequency: 1
