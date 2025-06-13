@@ -1,4 +1,4 @@
-using System;
+ï»¿using System;
 using UnityEngine;
 
 public class StageManager : MonoBehaviour
@@ -35,7 +35,7 @@ public class StageManager : MonoBehaviour
 
     public void StartWave(int waveIndex)
     {
-        var wave = stageData.stages[currentStageIndex].waves[waveIndex];// ÇöÀç ½ºÅ×ÀÌÁöÀÇ ÇØ´ç ¿şÀÌºê Á¤º¸ °¡Á®¿À±â
+        var wave = stageData.stages[currentStageIndex].waves[waveIndex];// í˜„ì¬ ìŠ¤í…Œì´ì§€ì˜ í•´ë‹¹ ì›¨ì´ë¸Œ ì •ë³´ ê°€ì ¸ì˜¤ê¸°
         EnemyManager.Instance.SpawnWave(wave.enemys);
         OnWaveStarted?.Invoke(waveIndex);
     }
@@ -50,13 +50,13 @@ public class StageManager : MonoBehaviour
         else
         {
             GiveReward();
-            OnStageCleared?.Invoke();// ½ºÅ×ÀÌÁö Å¬¸®¾î ÀÌº¥Æ® ¹ß»ı
-            // ´ÙÀ½ ½ºÅ×ÀÌÁö·Î ÀÌµ¿ µî
+            OnStageCleared?.Invoke();// ìŠ¤í…Œì´ì§€ í´ë¦¬ì–´ ì´ë²¤íŠ¸ ë°œìƒ
+            // ë‹¤ìŒ ìŠ¤í…Œì´ì§€ë¡œ ì´ë™ ë“±
         }
     }
 
     private void GiveReward()
     {
-        // ¸®¿öµå Áö±Ş ·ÎÁ÷
+        // ë¦¬ì›Œë“œ ì§€ê¸‰ ë¡œì§
     }
 }
