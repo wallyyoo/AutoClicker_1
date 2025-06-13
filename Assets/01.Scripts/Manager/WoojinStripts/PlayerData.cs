@@ -11,24 +11,33 @@ public class PlayerDataList
 public class PlayerData
 {
     [Header("기본 스텟")]
-    [HideInInspector] public int attackPower = 1;         //(공격력)
-    [HideInInspector] public float criticalDamage = 1f;   //(크리티컬 데미지)
-    [HideInInspector] public float criticalChance = 1f;   //(크리티컬 확률)
-    [HideInInspector] public float goldGain = 1f;         //(골드 획득량)
-    [HideInInspector] public float autoSpeed = 1f;        // 공격속도
-    [HideInInspector] public int curHp = 100;             //(현재 체력량)
-    [HideInInspector] public int curMp = 100;             //(현재 마나량)
+    [SerializeField] private int attackPower = 1;         //(공격력)
+    [SerializeField] private float criticalDamage = 0.1f; //(크리티컬 데미지)
+    [SerializeField] private float criticalChance = 0f;   //(크리티컬 확률)
+    [SerializeField] private float goldGain = 0f;         //(골드 획득량)
+    [SerializeField] private float autoSpeed = 1f;        // 공격속도
+    [SerializeField] private int curHp = 100;             //(현재 체력량)
+    [SerializeField] private int curMp = 100;             //(현재 마나량)
 
     [Header("재화 및 상태")]
     [HideInInspector] public int curGold = 0;     //(현재 가지고 있는 재화)
     [HideInInspector] public int curStage = 1;    //(현재 스테이지)
 
     [Header("업그레이드")]
-    [HideInInspector] public int attackPowerUpgrade = 0;    //(공격력 업그레이드 수치)
-    [HideInInspector] public float critiDamageUpgrade = 0f; //(크리티컬 데미지 업그레이드 수치)
-    [HideInInspector] public float critiChanceUpgrade = 0f; //(크리티컬 확률 업그레이드 수치)
-    [HideInInspector] public float goldGainUpgrade = 0f;    //(골드 획득량 업그레이드 수치)
-    [HideInInspector] public float autoSpeedUpgrade = 0f;   //(공격속도 업그레이드 수치)
-    [HideInInspector] public int hpUpgrade = 0;             //(체력량 업그레이드 수치)
-    [HideInInspector] public int mpUpgrade = 0;             //(마나량 업그레이드 수치)
+    [HideInInspector] public int attackPowerUpLevel = 0;    //(공격력 업그레이드 수치)
+    [HideInInspector] public float critiDamageUpLevel = 0f; //(크리티컬 데미지 업그레이드 수치)
+    [HideInInspector] public float critiChanceUpLevel = 0f; //(크리티컬 확률 업그레이드 수치)
+    [HideInInspector] public float goldGainUpLevel = 0f;    //(골드 획득량 업그레이드 수치)
+    [HideInInspector] public float autoSpeedUpLevel = 0f;   //(공격속도 업그레이드 수치)
+    [HideInInspector] public int hpUpLevel = 0;             //(체력량 업그레이드 수치)
+    [HideInInspector] public int mpUpLevel = 0;             //(마나량 업그레이드 수치)
+
+    public int UpStatusAttackPower { get { return attackPower + (attackPowerUpLevel * 5); } }
+    public float UpStatusCriticalDamage { get { return criticalDamage + (critiDamageUpLevel * 0.5f); } }
+    public float UpStatuscriticalChance { get { return criticalChance + (critiChanceUpLevel * 0.2f); } }
+    public float UpStatusGold { get { return goldGain + (goldGainUpLevel * 0.5f); } }
+    public float UpstatusAutoSpeed { get { return autoSpeed + (autoSpeedUpLevel * 0.5f); } }
+    public float UpstatusHp { get { return curHp + (hpUpLevel * 100); } }
+    public float UpstatusMp { get { return curMp + (mpUpLevel * 100); } }
+
 }
