@@ -6,7 +6,7 @@ using TMPro;
 public class InventoryController : MonoBehaviour
 {
     
-    private static InventoryController Instance;
+    private static InventoryController ItemContrlInstance;
     [Header("인벤토리 창 관련")]
     public GameObject Inventory_OpenButton;
     public GameObject Inventory_CloseButton;
@@ -33,9 +33,9 @@ public class InventoryController : MonoBehaviour
 
     private void Awake()
     {
-        if (Instance == null)
+        if (ItemContrlInstance == null)
         {
-         Instance=this; 
+            ItemContrlInstance=this; 
        DontDestroyOnLoad(this.gameObject);
         }
         else
@@ -62,19 +62,19 @@ public class InventoryController : MonoBehaviour
     }
     public void OnBuyButton()
     {
-        ItemManager.Instance.BuyItem(currentItem);
+        ItemManager.ItemManagerInstance.BuyItem(currentItem);
         RefreshUI();
     }
 
     public void OnEquipButton()
     {
-        ItemManager.Instance.EquipItem(currentItem);
+        ItemManager.ItemManagerInstance.EquipItem(currentItem);
         RefreshUI();
     }
 
     public void OnUpgradeButton()
     {
-        ItemManager.Instance.UpgradeItem(currentItem);
+        ItemManager.ItemManagerInstance.UpgradeItem(currentItem);
         RefreshUI();
     }
 
@@ -85,9 +85,9 @@ public class InventoryController : MonoBehaviour
             $"공격력 : {currentItem.attackPower} / 치명타 : {currentItem.criticalChance} %";
 
         // 버튼 상태 갱신
-        bool isUnlocked = ItemManager.Instance.IsUnlocked(currentItem);
-        bool isEquipped = ItemManager.Instance.IsEquipped(currentItem);
-        bool canUpgrade = ItemManager.Instance.CanUpgrade(currentItem);
+        bool isUnlocked = ItemManager.ItemManagerInstance.IsUnlocked(currentItem);
+        bool isEquipped = ItemManager.ItemManagerInstance.IsEquipped(currentItem);
+        bool canUpgrade = ItemManager.ItemManagerInstance.CanUpgrade(currentItem);
 
         Item_BuyButton.SetActive(!isUnlocked);
         Item_EquipButton.SetActive(isUnlocked && !isEquipped);
@@ -102,7 +102,7 @@ public class InventoryController : MonoBehaviour
         Item_BuyCost.text = $"{currentItem.itemCost}G";
 
         if (isEquipped && canUpgrade)
-            Item_UpgradeCost.text = $"{ItemManager.Instance.GetNextUpgradeCost(currentItem)}G";
+            Item_UpgradeCost.text = $"{ItemManager.ItemManagerInstance.GetNextUpgradeCost(currentItem)}G";
         else
             Item_UpgradeCost.text = "-";
 
