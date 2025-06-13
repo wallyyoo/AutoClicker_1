@@ -49,13 +49,26 @@ public class GameManager : MonoBehaviour
             // 파일이 존재한다면 읽어서 JSON 문자열로 가져옴
             string dataLoad =  File.ReadAllText(path);
 
+            if (string.IsNullOrEmpty(dataLoad) || dataLoad == "{}")
+            {
+                Debug.Log("Json파일이 비어있거가 유요하지 않습니다.");
+                File.Delete(path);
+
+                return;
+            }
+
             // JSON 문자열을 클래스 객체로 변환
             playerDataList = JsonUtility.FromJson<PlayerDataList>(dataLoad);
+            Debug.Log($"Load File : {dataLoad}");
         }
         else
         {
+            PlayerData playerData = new PlayerData();
+
             // 폴더가 없다면 새로운 객체를 만들어서 초기화 후 Save
             playerDataList = new PlayerDataList();
+            playerDataList.playerAllData.Add(playerData);
+
             JsonSave();
         }
     }
