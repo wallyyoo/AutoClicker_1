@@ -7,7 +7,7 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
 
-    [HideInInspector] public PlayerDataList playerDataList;
+    [HideInInspector] public PlayerData playerData;
 
     private string path;
 
@@ -34,7 +34,7 @@ public class GameManager : MonoBehaviour
     public void JsonSave()
     {
         // 클래스 데이터를 JSON 문자열로 변환
-        string dataSave = JsonUtility.ToJson(playerDataList, true);
+        string dataSave = JsonUtility.ToJson(playerData, true);
 
         // 해당 경로에 파일 생성 또는 덮어쓰기
         File.WriteAllText(path, dataSave);
@@ -58,16 +58,14 @@ public class GameManager : MonoBehaviour
             }
 
             // JSON 문자열을 클래스 객체로 변환
-            playerDataList = JsonUtility.FromJson<PlayerDataList>(dataLoad);
+            playerData = JsonUtility.FromJson<PlayerData>(dataLoad);
             Debug.Log($"Load File : {dataLoad}");
         }
         else
         {
-            PlayerData playerData = new PlayerData();
 
             // 폴더가 없다면 새로운 객체를 만들어서 초기화 후 Save
-            playerDataList = new PlayerDataList();
-            playerDataList.playerAllData.Add(playerData);
+            PlayerData playerData = new PlayerData();
 
             JsonSave();
         }

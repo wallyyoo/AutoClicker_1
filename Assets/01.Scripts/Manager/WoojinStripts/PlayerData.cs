@@ -3,11 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [System.Serializable]
-public class PlayerDataList
-{
-    public List<PlayerData> playerAllData = new List<PlayerData>();
-}
-[System.Serializable]
 public class PlayerData
 {
     [Header("기본 스텟")]
@@ -39,5 +34,4 @@ public class PlayerData
     public float UpstatusAutoSpeed { get { return autoSpeed + (autoSpeedUpLevel * 0.5f); } }
     public float UpstatusHp { get { return curHp + (hpUpLevel * 100); } }
     public float UpstatusMp { get { return curMp + (mpUpLevel * 100); } }
-
 }
