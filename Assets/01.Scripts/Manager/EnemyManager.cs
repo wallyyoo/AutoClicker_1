@@ -1,4 +1,4 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -10,16 +10,16 @@ public class EnemyManager : MonoBehaviour
 
     public void SpawnWave(List<MonsterSpawnData> enemys)
     {
-        // enemys ¸®½ºÆ®¸¦ ¼øÈ¸ÇÏ¸ç ¿¡³Ê¹Ì ½ºÆù
-        // ½ºÆùµÈ ¿¡³Ê¹Ì¸¦ aliveEnemies¿¡ Ãß°¡
+        // enemys ë¦¬ìŠ¤íŠ¸ë¥¼ ìˆœíšŒí•˜ë©° ì—ë„ˆë¯¸ ìŠ¤í°
+        // ìŠ¤í°ëœ ì—ë„ˆë¯¸ë¥¼ aliveEnemiesì— ì¶”ê°€
     }
 
     public void OnEnemyDied(Enemy enemy)
     {
-        aliveEnemies.Remove(enemy);// ¿¡³Ê¹Ì Á¦°Å
+        aliveEnemies.Remove(enemy);// ì—ë„ˆë¯¸ ì œê±°
         if (aliveEnemies.Count == 0)
         {
-            // ¸ğµç ¿¡³Ê¹Ì°¡ Á¦°ÅµÊ
+            // ëª¨ë“  ì—ë„ˆë¯¸ê°€ ì œê±°ë¨
             StageManager.Instance.OnWaveCleared();
         }
     }
