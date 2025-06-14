@@ -27,11 +27,11 @@ public class PlayerData
     [HideInInspector] public int hpUpLevel = 0;             //(체력량 업그레이드 수치)
     [HideInInspector] public int mpUpLevel = 0;             //(마나량 업그레이드 수치)
 
-    public int UpStatusAttackPower { get { return attackPower + (attackPowerUpLevel * 5); } }
-    public float UpStatusCriticalDamage { get { return criticalDamage + (critiDamageUpLevel * 0.5f); } }
-    public float UpStatuscriticalChance { get { return criticalChance + (critiChanceUpLevel * 0.2f); } }
-    public float UpStatusGold { get { return goldGain + (goldGainUpLevel * 0.5f); } }
-    public float UpstatusAutoSpeed { get { return autoSpeed + (autoSpeedUpLevel * 0.5f); } }
-    public float UpstatusHp { get { return curHp + (hpUpLevel * 100); } }
-    public float UpstatusMp { get { return curMp + (mpUpLevel * 100); } }
+    public int UpStatusAttackPower => attackPower + (attackPowerUpLevel * 5);
+    public float UpStatusCriticalDamage => criticalDamage + (critiDamageUpLevel * 0.5f);
+    public float UpStatuscriticalChance => criticalChance + (critiChanceUpLevel * 0.2f);
+    public float UpStatusGold => goldGain + (goldGainUpLevel * 0.5f);
+    public float UpstatusAutoSpeed => autoSpeed + (autoSpeedUpLevel * 0.5f);
+    public float UpstatusHp => curHp + (hpUpLevel * 100);
+    public float UpstatusMp => curMp + (mpUpLevel * 100);
 }

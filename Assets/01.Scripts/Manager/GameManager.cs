@@ -65,9 +65,14 @@ public class GameManager : MonoBehaviour
         {
 
             // 폴더가 없다면 새로운 객체를 만들어서 초기화 후 Save
-            PlayerData playerData = new PlayerData();
+            playerData = new PlayerData();
 
             JsonSave();
         }
+    }
+
+    public void DebugLog(string msg)
+    {
+        Debug.Log(msg);
     }
 }
