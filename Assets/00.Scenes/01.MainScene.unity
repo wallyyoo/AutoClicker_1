@@ -84013,7 +84013,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 123456789000
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 4632cacce9bb1134d855f77d74920064, type: 2}
   m_sharedMaterial: {fileID: -2892053937758035300, guid: 4632cacce9bb1134d855f77d74920064, type: 2}

@@ -16,7 +16,6 @@ public class PlayerData
 
     [Header("재화 및 상태")]
     [HideInInspector] public int curGold = 0;     //(현재 가지고 있는 재화)
-    [HideInInspector] public int curStage = 1;    //(현재 스테이지)
 
     [Header("업그레이드")]
     [HideInInspector] public int attackPowerUpLevel = 0;    //(공격력 업그레이드 수치)
