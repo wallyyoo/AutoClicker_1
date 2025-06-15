@@ -28,6 +28,7 @@ public class EnemyManager : MonoBehaviour
             Enemy enemy = go.GetComponent<Enemy>();
             if (enemy != null)
             {
+                enemy.stageData = StageManager.Instance.stageData;
                 enemy.Init(spawnData.enemyPrefab.GetComponent<Enemy>().data, StageManager.Instance.currentStageIndex);
                 enemy.SetArrivalPosition(spawnData.arrivalPosition);
                 aliveEnemies.Add(enemy);

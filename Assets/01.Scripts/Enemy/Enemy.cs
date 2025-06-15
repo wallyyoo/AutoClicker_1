@@ -1,18 +1,26 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
+using UnityEngine.UI;
 using UnityEngine;
+using TMPro;
 
 public class Enemy : MonoBehaviour
 {
     public EnemyData data;
+    public StageData stageData;
 
-    [SerializeField] private int currentHealth;
+    [SerializeField] private TextMeshProUGUI enemyNameText;
+    [SerializeField] private int currentHealth; 
+    [SerializeField] private RectTransform currentHealthBarRect;
+    [SerializeField] private float maxHealthBarWidth = 100f;
+
     private int currentDamage;
     private Animator animator;
 
     private Vector2 arrivalPosition;
     private bool isArrived = false;
     private float moveSpeed = 2f; // 필요에 따라 조정
+    private Image healthBarImage;
+    public int stageIndex;
 
     private float attackTimer = 0f;
 
@@ -38,6 +46,7 @@ public class Enemy : MonoBehaviour
     public void Init(EnemyData enemyData, int stageIndex)
     {
         data = enemyData;
+        this.stageIndex = stageIndex;
         float healthMultiplier = 1f + stageIndex * 0.1f;
         float damageMultiplier = 1f + stageIndex * 0.1f;
 
@@ -45,6 +54,8 @@ public class Enemy : MonoBehaviour
         currentDamage = Mathf.RoundToInt(data.damage * damageMultiplier);
 
         SetState(EnemyState.Walk);
+        UpdateHealthBar();
+        UpdateEnemyName();
     }
 
     public void SetArrivalPosition(Vector2 pos)
@@ -115,6 +126,7 @@ public class Enemy : MonoBehaviour
     {
         if (!isArrived) return; // 도착 상태일 때만 데미지 적용
         currentHealth -= amount;
+        UpdateHealthBar(); // 체력바 갱신
         if (currentHealth <= 0)
         {
             SetState(EnemyState.Die);
@@ -152,7 +164,6 @@ public class Enemy : MonoBehaviour
         Destroy(gameObject, 1.0f);
         EnemyManager.Instance.OnEnemyDied(this);
     }
-
     private void SetState(EnemyState state)
     {
         switch (state)
@@ -172,6 +183,42 @@ public class Enemy : MonoBehaviour
             case EnemyState.Die:
                 animator.SetTrigger("Die");
                 break;
+        }
+    }
+
+    private void UpdateHealthBar()
+    {
+        if (currentHealthBarRect == null) return;
+        float percent = Mathf.Clamp01((float)currentHealth / data.health);
+        currentHealthBarRect.sizeDelta = new Vector2(maxHealthBarWidth * percent, currentHealthBarRect.sizeDelta.y);
+    }
+
+    private void UpdateEnemyName()
+    {
+        if (stageData != null && stageData.stages.Count > stageIndex)
+        {
+            string koreanName = "";
+            switch (data.enemyType)
+            {
+                case EnemyData.EnemyType.Rogue_Brown:
+                case EnemyData.EnemyType.Rogue_Green:
+                case EnemyData.EnemyType.Rogue_Blue:
+                    koreanName = "하급도적";
+                    break;
+                case EnemyData.EnemyType.Rogue_Grey:
+                    koreanName = "중급도적";
+                    break;
+                case EnemyData.EnemyType.Rogue_Samurai:
+                    koreanName = "사무라이";
+                    break;
+                case EnemyData.EnemyType.Rogue_Assassin:
+                    koreanName = "어쌔신";
+                    break;
+                default:
+                    koreanName = "알 수 없음";
+                    break;
+            }
+            enemyNameText.text = $"{koreanName} LV.{stageData.stages[stageIndex].stageKey}";
         }
     }
 }

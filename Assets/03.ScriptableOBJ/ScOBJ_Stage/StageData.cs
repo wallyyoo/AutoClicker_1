@@ -11,7 +11,7 @@ public class StageData : ScriptableObject
 [System.Serializable]
 public class StageInfo
 {
-    public int stageKey;// 스테이지 키 값 (예: 1, 2, 3 등)
+    public int stageKey;// 스테이지 키 값
     public List<WaveData> waves; // 각 스테이지에 여러 웨이브 정보를 리스트로 관리
 }
 
