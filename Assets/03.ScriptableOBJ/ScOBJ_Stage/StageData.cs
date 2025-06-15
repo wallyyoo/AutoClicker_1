@@ -1,29 +1,30 @@
-using System.Collections.Generic;
+ï»¿using System.Collections.Generic;
 using UnityEngine;
 
-// ½ºÅ×ÀÌÁö Á¤º¸¸¦ ScriptableObject·Î °ü¸®
+// ìŠ¤í…Œì´ì§€ ì •ë³´ë¥¼ ScriptableObjectë¡œ ê´€ë¦¬
 [CreateAssetMenu(fileName = "StageData", menuName = "ScriptableObjects/StageData", order = 1)]
 public class StageData : ScriptableObject
 {
-    public List<StageInfo> stages; // ¿©·¯ ½ºÅ×ÀÌÁö Á¤º¸¸¦ ¸®½ºÆ®·Î °ü¸®
+    public List<StageInfo> stages; // ì—¬ëŸ¬ ìŠ¤í…Œì´ì§€ ì •ë³´ë¥¼ ë¦¬ìŠ¤íŠ¸ë¡œ ê´€ë¦¬
 }
 
 [System.Serializable]
 public class StageInfo
 {
-    public int stageKey;// ½ºÅ×ÀÌÁö Å° °ª (¿¹: 1, 2, 3 µî)
-    public List<WaveData> waves; // °¢ ½ºÅ×ÀÌÁö¿¡ ¿©·¯ ¿şÀÌºê Á¤º¸¸¦ ¸®½ºÆ®·Î °ü¸®
+    public int stageKey;// ìŠ¤í…Œì´ì§€ í‚¤ ê°’ (ì˜ˆ: 1, 2, 3 ë“±)
+    public List<WaveData> waves; // ê° ìŠ¤í…Œì´ì§€ì— ì—¬ëŸ¬ ì›¨ì´ë¸Œ ì •ë³´ë¥¼ ë¦¬ìŠ¤íŠ¸ë¡œ ê´€ë¦¬
 }
 
 [System.Serializable]
 public class WaveData
 {
-    public List<MonsterSpawnData> enemys; // °¢ ¿şÀÌºê¿¡ µîÀåÇÏ´Â ¸ó½ºÅÍ Á¤º¸ ¸®½ºÆ®
+    public List<MonsterSpawnData> enemys; // ê° ì›¨ì´ë¸Œì— ë“±ì¥í•˜ëŠ” ëª¬ìŠ¤í„° ì •ë³´ ë¦¬ìŠ¤íŠ¸
 }
 
 [System.Serializable]
 public class MonsterSpawnData
 {
-    public GameObject enemyPrefab; // ÀÎ½ºÆåÅÍ¿¡¼­ Á÷Á¢ ÇÁ¸®ÆÕ ÇÒ´ç
-    public Vector3 arrivalPosition; // ½ºÆùµÈ ÈÄ ¸ó½ºÅÍ°¡ µµÂøÇÒ À§Ä¡
+    public GameObject enemyPrefab; // ì¸ìŠ¤í™í„°ì—ì„œ ì§ì ‘ í”„ë¦¬íŒ¹ í• ë‹¹
+    public Vector2 spawnPosition;       // ì‹¤ì œ ì†Œí™˜ ìœ„ì¹˜(ìŠ¤í° í¬ì¸íŠ¸)
+    public Vector2 arrivalPosition; // ìŠ¤í°ëœ í›„ ëª¬ìŠ¤í„°ê°€ ë„ì°©í•  ìœ„ì¹˜
 }
