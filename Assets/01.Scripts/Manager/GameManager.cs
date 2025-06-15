@@ -7,7 +7,10 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
 
-    [HideInInspector] public PlayerData playerData;
+    public PlayerData playerData;
+    public PlayerStatData playerStatData;
+    public PlayerUpgradeTable playerUpgradeTable;
+    //[HideInInspector] public PlayerData_1 playerData;
 
     private string path;
 

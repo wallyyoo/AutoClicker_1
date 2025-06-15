@@ -1,4 +1,4 @@
-
+﻿
 using UnityEngine;
 
 public class ItemManager : MonoBehaviour
@@ -8,7 +8,7 @@ public class ItemManager : MonoBehaviour
     
     public ItemData[] allItems;
     public ItemData equippedItem;
-    public PlayerData playerData;
+    public PlayerData_1 playerData;
 
     private void Awake()
     {

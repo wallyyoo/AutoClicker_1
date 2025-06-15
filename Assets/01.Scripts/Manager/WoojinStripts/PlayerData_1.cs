@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [System.Serializable]
-public class PlayerData
+public class PlayerData_1
 {
     [Header("기본 스텟")]
     [SerializeField] private int attackPower = 1;         //(공격력)
