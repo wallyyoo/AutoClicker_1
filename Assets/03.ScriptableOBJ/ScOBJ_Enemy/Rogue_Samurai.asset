@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Rogue_Samurai
   m_EditorClassIdentifier: 
   enemyType: 4
-  reward: 0
+  reward: 12
   health: 100
   damage: 3
   attackfrequency: 1
