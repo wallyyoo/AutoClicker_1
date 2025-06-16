@@ -122,6 +122,13 @@ public class Enemy : MonoBehaviour
         SetState(EnemyState.Idle);
     }
 
+    public void SteelGold()
+    {
+        GameManager.Instance.playerData.curGold -= data.damage + stageIndex / 2; // 데이지와 스테이지 인덱스에 따라 골드 감소
+
+        Json.JsonSave(); // 골드 변경 사항 저장
+    }
+
     public void TakeDamage(int amount)
     {
         if (!isArrived) return; // 도착 상태일 때만 데미지 적용

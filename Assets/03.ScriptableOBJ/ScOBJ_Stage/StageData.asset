@@ -22,10 +22,10 @@ MonoBehaviour:
     - enemys:
       - enemyPrefab: {fileID: 455114782886424482, guid: b9ea9a627e5eb7748abab6f66622022c, type: 3}
         spawnPosition: {x: 10, y: -3}
-        arrivalPosition: {x: 0, y: -3}
+        arrivalPosition: {x: -3, y: -3}
       - enemyPrefab: {fileID: 83815278432901025, guid: 586297abf8595e94d867d19e55e4cba5, type: 3}
         spawnPosition: {x: 12, y: -3}
-        arrivalPosition: {x: 0.5, y: -3}
+        arrivalPosition: {x: -3, y: -3}
   - stageKey: 0
     waves:
     - enemys:
@@ -34,14 +34,14 @@ MonoBehaviour:
         arrivalPosition: {x: 0, y: -3}
       - enemyPrefab: {fileID: 248640432488069553, guid: 409b284866893274796d17ddf043ad5c, type: 3}
         spawnPosition: {x: 12, y: -3}
-        arrivalPosition: {x: 0.5, y: -3}
+        arrivalPosition: {x: -3, y: -3}
     - enemys:
       - enemyPrefab: {fileID: 455114782886424482, guid: b9ea9a627e5eb7748abab6f66622022c, type: 3}
         spawnPosition: {x: 10, y: -3}
-        arrivalPosition: {x: 0, y: -3}
+        arrivalPosition: {x: -3, y: -3}
       - enemyPrefab: {fileID: 83815278432901025, guid: 586297abf8595e94d867d19e55e4cba5, type: 3}
         spawnPosition: {x: 12, y: -3}
-        arrivalPosition: {x: 0.5, y: -3}
+        arrivalPosition: {x: -3, y: -3}
       - enemyPrefab: {fileID: 83815278432901025, guid: 586297abf8595e94d867d19e55e4cba5, type: 3}
         spawnPosition: {x: 14, y: -3}
-        arrivalPosition: {x: 1, y: -3}
+        arrivalPosition: {x: -3, y: -3}
