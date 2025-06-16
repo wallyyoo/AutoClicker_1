@@ -28,6 +28,7 @@ public class StageManager : MonoBehaviour
     private void Start()
     {
         // 게임 시작 시 0스테이지 자동 시작
+        GameManager.Instance.soundManager.Bgm(currentStageIndex);
         StartStage(0);
     }
 
@@ -65,6 +66,8 @@ public class StageManager : MonoBehaviour
 
             // 다음 스테이지 자동 진행
             StartStage(currentStageIndex + 1);
+            GameManager.Instance.soundManager.Bgm(currentStageIndex + 1);
+
         }
     }
 

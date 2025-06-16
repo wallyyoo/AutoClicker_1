@@ -13,7 +13,7 @@ public class AutoAttack : MonoBehaviour
     {
 
         // 여기서 초기 간격 설정: PlayerStatData + UpgradeRule 반영
-        var baseVal = GameManager.Instance.playerStatData.baseAutoSpeed; // ex: 5초
+        var baseVal = GameManager.Instance.playerData.autoSpeed; // ex: 5초
         var perLevel = GameManager.Instance.playerUpgradeTable.autoSpeedPerLevel;
         var level = GameManager.Instance.playerData.autoSpeedUpLevel;
         attackInterval = Mathf.Max(0.1f, baseVal - level * perLevel); // 최소 0.1초로 제한
@@ -44,7 +44,7 @@ public class AutoAttack : MonoBehaviour
     {
         Vector3 attackPos = transform.position + Vector3.right * 3f;
         bool isCritical = Random.value < GetCurrentCriticalRate();
-        int baseAttack = GameManager.Instance.playerStatData.baseAttackPower;
+        int baseAttack = GameManager.Instance.playerData.attackPower;
         int perLevel = GameManager.Instance.playerUpgradeTable.attackPowerPerLevel;
         int level = GameManager.Instance.playerData.attackPowerUpLevel;
 
@@ -78,7 +78,7 @@ public class AutoAttack : MonoBehaviour
     }
     float GetCurrentCriticalRate()
     {
-        var baseCrit = GameManager.Instance.playerStatData.baseCriticalChance;
+        var baseCrit = GameManager.Instance.playerData.criticalChance;
         var perLevel = GameManager.Instance.playerUpgradeTable.critChancePerLevel;
         var level = GameManager.Instance.playerData.critiChanceUpLevel;
 

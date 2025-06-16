@@ -7,11 +7,8 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
 
-
-    public PlayerData playerData;
-    public PlayerStatData playerStatData;
+    [HideInInspector] public PlayerData playerData;
     public PlayerUpgradeTable playerUpgradeTable;
-    //[HideInInspector] public PlayerData_1 playerData;
 
     public SoundManager soundManager;
 
@@ -44,19 +41,6 @@ public class GameManager : MonoBehaviour
             Destroy(gameObject);
         }
         StartCoroutine(JsonLoadCoroutine());
-
-       // soundManager.startBgm();
-
-    }
-    public void JsonSave()
-    {
-        // 클래스 데이터를 JSON 문자열로 변환
-        string dataSave = JsonUtility.ToJson(playerData, true);
-
-        // 해당 경로에 파일 생성 또는 덮어쓰기
-        File.WriteAllText(path, dataSave);
-
-        Debug.Log($"Save File : {dataSave}");
     }
     private IEnumerator JsonLoadCoroutine()
     {
@@ -65,18 +49,11 @@ public class GameManager : MonoBehaviour
         if (StageManager.Instance == null)
         {
             Debug.Log("StageManager가 초기화되지 않았습니다.");
-
-
-            // JSON 문자열을 클래스 객체로 변환
-            // playerData = JsonUtility.FromJson<PlayerData>(dataLoad);
-            //Debug.Log($"Load File : {dataLoad}");
-
         }
         else
         {
             Debug.Log("초기화 완료");
             Json.JsonLoad(); // 안전하게 실행
         }
-
     }
 }

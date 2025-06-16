@@ -100,13 +100,13 @@ public class UpgradeUI : MonoBehaviour
         }
 
         data.critiChanceUpLevel++;
-        GameManager.Instance.JsonSave();
+        Json.JsonSave();
         UpdateCriticalRateText();
     }
   
     void UpdateCriticalRateText()
     {
-        var baseVal = GameManager.Instance.playerStatData.baseCriticalChance;
+        var baseVal = GameManager.Instance.playerData.criticalChance;
         var upVal = GameManager.Instance.playerUpgradeTable.critChancePerLevel;
         var level = GameManager.Instance.playerData.critiChanceUpLevel;
 
@@ -120,7 +120,7 @@ public class UpgradeUI : MonoBehaviour
         var data = GameManager.Instance.playerData;
         var rule = GameManager.Instance.playerUpgradeTable;
 
-        float current = GameManager.Instance.playerStatData.baseAutoSpeed - data.autoSpeedUpLevel * rule.autoSpeedPerLevel;
+        float current = GameManager.Instance.playerData.autoSpeed - data.autoSpeedUpLevel * rule.autoSpeedPerLevel;
 
         if (current <= 0.1f)
         {
@@ -130,13 +130,13 @@ public class UpgradeUI : MonoBehaviour
         }
 
         data.autoSpeedUpLevel++;
-        GameManager.Instance.JsonSave();
+        Json.JsonSave();
         UpdateAttackIntervalText();
     }
  
     void UpdateAttackIntervalText()
     {
-        var baseVal = GameManager.Instance.playerStatData.baseAutoSpeed;
+        var baseVal = GameManager.Instance.playerData.autoSpeed;
         var upVal = GameManager.Instance.playerUpgradeTable.autoSpeedPerLevel;
         var level = GameManager.Instance.playerData.autoSpeedUpLevel;
 
@@ -156,17 +156,17 @@ public class UpgradeUI : MonoBehaviour
         }
 
         data.goldGainUpLevel++;
-        GameManager.Instance.JsonSave();
+        Json.JsonSave();
         UpdateGoldGainText();
     }
 
     void UpdateGoldGainText()
     {
-        var baseVal = GameManager.Instance.playerStatData.baseGoldGain;
+        var baseVal = GameManager.Instance.playerData.goldGain;
         var upVal = GameManager.Instance.playerUpgradeTable.goldGainPerLevel;
         var level = GameManager.Instance.playerData.goldGainUpLevel;
 
-        int total = baseVal + level * upVal;
-        goldGainText.text = $"골드획득 {total}원";
+        // int total = baseVal + level * upVal;
+        // goldGainText.text = $"골드획득 {total}원";
     }
 }

@@ -25,7 +25,7 @@ public class AttackEffect : MonoBehaviour
 
     float GetCurrentCriticalRate()
     {
-        var baseCrit = GameManager.Instance.playerStatData.baseCriticalChance;
+        var baseCrit = GameManager.Instance.playerData.criticalChance;
         var perLevel = GameManager.Instance.playerUpgradeTable.critChancePerLevel;
         var level = GameManager.Instance.playerData.critiChanceUpLevel;
 
