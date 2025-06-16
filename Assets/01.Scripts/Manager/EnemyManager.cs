@@ -1,4 +1,4 @@
-using System.Collections.Generic;
+ï»¿using System.Collections.Generic;
 using UnityEngine;
 
 public class EnemyManager : MonoBehaviour
@@ -23,7 +23,7 @@ public class EnemyManager : MonoBehaviour
         for (int i = 0; i < enemys.Count; i++)
         {
             var spawnData = enemys[i];
-            // °¢ ¿¡³Ê¹ÌÀÇ spawnPosition¿¡¼­ ¼ÒÈ¯
+            // ê° ì—ë„ˆë¯¸ì˜ spawnPositionì—ì„œ ì†Œí™˜
             GameObject go = Instantiate(spawnData.enemyPrefab, spawnData.spawnPosition, Quaternion.identity);
             Enemy enemy = go.GetComponent<Enemy>();
             if (enemy != null)
@@ -38,10 +38,10 @@ public class EnemyManager : MonoBehaviour
 
     public void OnEnemyDied(Enemy enemy)
     {
-        aliveEnemies.Remove(enemy);// ¿¡³Ê¹Ì Á¦°Å
+        aliveEnemies.Remove(enemy);// ì—ë„ˆë¯¸ ì œê±°
         if (aliveEnemies.Count == 0)
         {
-            // ¸ğµç ¿¡³Ê¹Ì°¡ Á¦°ÅµÊ
+            // ëª¨ë“  ì—ë„ˆë¯¸ê°€ ì œê±°ë¨
             StageManager.Instance.OnWaveCleared();
         }
     }
