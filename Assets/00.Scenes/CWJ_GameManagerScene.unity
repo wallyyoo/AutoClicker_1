@@ -75749,6 +75749,7 @@ GameObject:
   - component: {fileID: 111891345}
   - component: {fileID: 111891344}
   - component: {fileID: 111891346}
+  - component: {fileID: 111891347}
   m_Layer: 0
   m_Name: GameObject
   m_TagString: Untagged
@@ -75784,6 +75785,7 @@ MonoBehaviour:
     autoSpeedUpLevel: 0
     hpUpLevel: 0
     mpUpLevel: 0
+  soundManager: {fileID: 111891347}
 --- !u!4 &111891345
 Transform:
   m_ObjectHideFlags: 0
@@ -75895,6 +75897,21 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &111891347
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 111891343}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c88f28fe97920640aa3aaec4ed56108, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioSource: {fileID: 111891346}
+  audioClips:
+  - {fileID: 8300000, guid: 429de843503152b40a4f495e1095f2a7, type: 3}
 --- !u!1 &121863404
 GameObject:
   m_ObjectHideFlags: 0
@@ -77259,6 +77276,7 @@ GameObject:
   - component: {fileID: 474557848}
   - component: {fileID: 474557850}
   - component: {fileID: 474557849}
+  - component: {fileID: 474557851}
   m_Layer: 5
   m_Name: Pause_Button
   m_TagString: Untagged
@@ -77323,6 +77341,50 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 474557847}
   m_CullTransparentMesh: 1
+--- !u!114 &474557851
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 474557847}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 3
+    m_WrapAround: 0
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_SelectedTrigger: Selected
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 474557849}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &501499765
 GameObject:
   m_ObjectHideFlags: 0

@@ -35,10 +35,14 @@ public class GameManager : MonoBehaviour
     {
         if (Instance != this)
         {
-
+            Debug.Log("중복된 씬을 삭제");
             Destroy(gameObject);
         }
         StartCoroutine(JsonLoadCoroutine());
+
+        soundManager.audioSource.loop = true;
+        soundManager.audioSource.playOnAwake = false;
+        soundManager.audioSource.panStereo = 0;
     }
     private IEnumerator JsonLoadCoroutine()
     {

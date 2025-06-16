@@ -4,15 +4,13 @@ using UnityEngine;
 
 public class SoundManager : MonoBehaviour
 {
-    private AudioSource audioSource;
+    [HideInInspector] public AudioSource audioSource;
 
     public AudioClip[] audioClips;
 
     private void Start()
     {
-        audioSource.loop = true;
-        audioSource.playOnAwake = false;
-        audioSource.panStereo = 0;
+        audioSource = GetComponent<AudioSource>();
     }
 
     public void PlayBgm(AudioClip clips)

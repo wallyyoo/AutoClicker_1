@@ -53,7 +53,7 @@ public static class Json
 
             // json파일의 데이터를 savedata에 할당w
             SaveData saveData = JsonUtility.FromJson<SaveData>(json);
-            while 
+
             // savedata에 있는 값을 덮어 씌우기
             GameManager.Instance.playerData = saveData.PlayerData;
             StageManager.Instance.currentStageIndex = saveData.curStage;
