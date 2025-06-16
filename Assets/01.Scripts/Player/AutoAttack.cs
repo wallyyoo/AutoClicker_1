@@ -62,7 +62,7 @@ public class AutoAttack : MonoBehaviour
             {
                 Debug.Log("적에게 데미지 전달됨!");
                 Debug.Log($"데미지 : {damage}");
-                enemy.TakeDamage(damage);
+                //enemy.TakeDamage(damage);
             }
             else
             {

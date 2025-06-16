@@ -100,7 +100,7 @@ public class UpgradeUI : MonoBehaviour
         }
 
         data.critiChanceUpLevel++;
-        GameManager.Instance.JsonSave();
+        Json.JsonSave();
         UpdateCriticalRateText();
     }
   
@@ -130,7 +130,7 @@ public class UpgradeUI : MonoBehaviour
         }
 
         data.autoSpeedUpLevel++;
-        GameManager.Instance.JsonSave();
+        Json.JsonSave();
         UpdateAttackIntervalText();
     }
  
@@ -156,7 +156,7 @@ public class UpgradeUI : MonoBehaviour
         }
 
         data.goldGainUpLevel++;
-        GameManager.Instance.JsonSave();
+        Json.JsonSave();
         UpdateGoldGainText();
     }
 
