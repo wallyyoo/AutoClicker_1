@@ -21,18 +21,14 @@ public class GameManager : MonoBehaviour
         {
             Instance = this;
             DontDestroyOnLoad(gameObject);
-
-            // ScriptableObject 연결
             if (playerData.playerUpgradeTable == null)
             {
-                playerData.playerUpgradeTable = playerUpgradeTable; // ← 이거 반드시 먼저!
+                playerData.playerUpgradeTable = playerUpgradeTable;  
             }
-
             if (soundManager == null)
             {
                 soundManager = FindObjectOfType<SoundManager>();
             }
-           
 
         }
         else

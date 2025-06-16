@@ -5,7 +5,7 @@ using UnityEngine;
 [System.Serializable]
 public class PlayerData_1
 {
-    public PlayerUpgradeTable playerUpgradeTable;
+    [HideInInspector] public PlayerUpgradeTable playerUpgradeTable;
     [Header("기본 스텟")]
     [SerializeField] private int baseAttackPower = 1;         //(공격력)
     [SerializeField] private float baseCriticalDamage = 2f; //(크리티컬 데미지)
