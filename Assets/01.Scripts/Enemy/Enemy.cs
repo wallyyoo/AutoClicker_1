@@ -1,4 +1,4 @@
-ï»¿using System.Collections;
+using System.Collections;
 using UnityEngine.UI;
 using UnityEngine;
 using TMPro;
@@ -18,16 +18,16 @@ public class Enemy : MonoBehaviour
 
     private Vector2 arrivalPosition;
     private bool isArrived = false;
-    private float moveSpeed = 2f; // í•„ìš”ì— ë”°ë¼ ì¡°ì •
+    private float moveSpeed = 2f; // ÇÊ¿ä¿¡ µû¶ó Á¶Á¤
     private Image healthBarImage;
     public int stageIndex;
 
     private float attackTimer = 0f;
 
-    // ë””ë²„ê·¸ìš© ë°ë¯¸ì§€ íƒ€ì´ë¨¸ì…ë‹ˆë‹¤ ì½”ë“œ ì™„ì„±ì‹œ ì œê±°í•´ì£¼ì„¸ìš”.
+    // µğ¹ö±×¿ë µ¥¹ÌÁö Å¸ÀÌ¸ÓÀÔ´Ï´Ù ÄÚµå ¿Ï¼º½Ã Á¦°ÅÇØÁÖ¼¼¿ä.
     private float debugDamageTimer = 0f;
     private int prevDebugSecond = 0;
-    // ë””ë²„ê·¸ìš© ë°ë¯¸ì§€ íƒ€ì´ë¨¸ì…ë‹ˆë‹¤ ì½”ë“œ ì™„ì„±ì‹œ ì œê±°í•´ì£¼ì„¸ìš”.
+    // µğ¹ö±×¿ë µ¥¹ÌÁö Å¸ÀÌ¸ÓÀÔ´Ï´Ù ÄÚµå ¿Ï¼º½Ã Á¦°ÅÇØÁÖ¼¼¿ä.
 
     private void Awake()
     {
@@ -75,27 +75,27 @@ public class Enemy : MonoBehaviour
             HandleAttackLoop();
         }
 
-        /// ë””ë²„ê·¸ìš© ë°ë¯¸ì§€ íƒ€ì´ë¨¸ì…ë‹ˆë‹¤ ì½”ë“œ ì™„ì„±ì‹œ ì œê±°í•´ì£¼ì„¸ìš”.
+        /// µğ¹ö±×¿ë µ¥¹ÌÁö Å¸ÀÌ¸ÓÀÔ´Ï´Ù ÄÚµå ¿Ï¼º½Ã Á¦°ÅÇØÁÖ¼¼¿ä.
         debugDamageTimer += Time.deltaTime;
-        // 1ì´ˆë§ˆë‹¤ ë¡œê·¸
+        // 1ÃÊ¸¶´Ù ·Î±×
         int currentSecond = Mathf.FloorToInt(debugDamageTimer);
         if (currentSecond != prevDebugSecond)
         {
-            Debug.Log($"{gameObject.name}ì´(ê°€) ë””ë²„ê·¸ ë°ë¯¸ì§€ íƒ€ì´ë¨¸ë¥¼ ì—…ë°ì´íŠ¸í–ˆìŠµë‹ˆë‹¤: {debugDamageTimer:F2}ì´ˆ");
+            Debug.Log($"{gameObject.name}ÀÌ(°¡) µğ¹ö±× µ¥¹ÌÁö Å¸ÀÌ¸Ó¸¦ ¾÷µ¥ÀÌÆ®Çß½À´Ï´Ù: {debugDamageTimer:F2}ÃÊ");
             prevDebugSecond = currentSecond;
         }
         if (debugDamageTimer >= 3f)
         {
-            Debug.Log($"{gameObject.name}ì´(ê°€) 1 ë°ë¯¸ì§€ë¥¼ ë°›ì•˜ìŠµë‹ˆë‹¤.");
+            Debug.Log($"{gameObject.name}ÀÌ(°¡) 1 µ¥¹ÌÁö¸¦ ¹Ş¾Ò½À´Ï´Ù.");
             TakeDamage(50);
             debugDamageTimer = 0f;
         }
-        /// ë””ë²„ê·¸ìš© ë°ë¯¸ì§€ íƒ€ì´ë¨¸ì…ë‹ˆë‹¤ ì½”ë“œ ì™„ì„±ì‹œ ì œê±°í•´ì£¼ì„¸ìš”.
+        /// µğ¹ö±×¿ë µ¥¹ÌÁö Å¸ÀÌ¸ÓÀÔ´Ï´Ù ÄÚµå ¿Ï¼º½Ã Á¦°ÅÇØÁÖ¼¼¿ä.
     }
 
     private void MoveToArrivalPosition()
     {
-        transform.position = Vector2.MoveTowards(transform.position, arrivalPosition, moveSpeed * Time.deltaTime);// ì´ë™ ì†ë„ì— ë”°ë¼ ìœ„ì¹˜ ì—…ë°ì´íŠ¸
+        transform.position = Vector2.MoveTowards(transform.position, arrivalPosition, moveSpeed * Time.deltaTime);// ÀÌµ¿ ¼Óµµ¿¡ µû¶ó À§Ä¡ ¾÷µ¥ÀÌÆ®
         if (Vector2.Distance(transform.position, arrivalPosition) < 0.05f)
         {
             isArrived = true;
@@ -117,16 +117,16 @@ public class Enemy : MonoBehaviour
     private IEnumerator AttackRoutine()
     {
         SetState(EnemyState.Attack);
-        Debug.Log($"{gameObject.name} ê³µê²©!");
-        yield return new WaitForSeconds(data.attackfrequency); // ê³µê²© ì• ë‹ˆë©”ì´ì…˜ ì‹œê°„
+        Debug.Log($"{gameObject.name} °ø°İ!");
+        yield return new WaitForSeconds(data.attackfrequency); // °ø°İ ¾Ö´Ï¸ŞÀÌ¼Ç ½Ã°£
         SetState(EnemyState.Idle);
     }
 
     public void TakeDamage(int amount)
     {
-        if (!isArrived) return; // ë„ì°© ìƒíƒœì¼ ë•Œë§Œ ë°ë¯¸ì§€ ì ìš©
+        if (!isArrived) return; // µµÂø »óÅÂÀÏ ¶§¸¸ µ¥¹ÌÁö Àû¿ë
         currentHealth -= amount;
-        UpdateHealthBar(); // ì²´ë ¥ë°” ê°±ì‹ 
+        UpdateHealthBar(); // Ã¼·Â¹Ù °»½Å
         if (currentHealth <= 0)
         {
             SetState(EnemyState.Die);
@@ -144,7 +144,7 @@ public class Enemy : MonoBehaviour
         float knockbackDistance = 1f;
         float elapsed = 0f;
         Vector2 start = transform.position;
-        // xì¶• ë°©í–¥(ì˜¤ë¥¸ìª½)ìœ¼ë¡œ 1ì¹¸ ë„‰ë°±, í•„ìš”ì‹œ -1fë¡œ ë°”ê¿”ì„œ ì™¼ìª½ë„ ê°€ëŠ¥
+        // xÃà ¹æÇâ(¿À¸¥ÂÊ)À¸·Î 1Ä­ ³Ë¹é, ÇÊ¿ä½Ã -1f·Î ¹Ù²ã¼­ ¿ŞÂÊµµ °¡´É
         Vector2 target = start + Vector2.right * knockbackDistance;
 
         while (elapsed < knockbackDuration)
@@ -156,7 +156,7 @@ public class Enemy : MonoBehaviour
         transform.position = target;
 
         SetState(EnemyState.Walk);
-        isArrived = false; // ë‹¤ì‹œ ê±·ê¸° ì‹œì‘
+        isArrived = false; // ´Ù½Ã °È±â ½ÃÀÛ
     }
 
     private void Die()
@@ -203,19 +203,19 @@ public class Enemy : MonoBehaviour
                 case EnemyData.EnemyType.Rogue_Brown:
                 case EnemyData.EnemyType.Rogue_Green:
                 case EnemyData.EnemyType.Rogue_Blue:
-                    koreanName = "í•˜ê¸‰ë„ì ";
+                    koreanName = "ÇÏ±ŞµµÀû";
                     break;
                 case EnemyData.EnemyType.Rogue_Grey:
-                    koreanName = "ì¤‘ê¸‰ë„ì ";
+                    koreanName = "Áß±ŞµµÀû";
                     break;
                 case EnemyData.EnemyType.Rogue_Samurai:
-                    koreanName = "ì‚¬ë¬´ë¼ì´";
+                    koreanName = "»ç¹«¶óÀÌ";
                     break;
                 case EnemyData.EnemyType.Rogue_Assassin:
-                    koreanName = "ì–´ìŒ”ì‹ ";
+                    koreanName = "¾î½Ø½Å";
                     break;
                 default:
-                    koreanName = "ì•Œ ìˆ˜ ì—†ìŒ";
+                    koreanName = "¾Ë ¼ö ¾øÀ½";
                     break;
             }
             enemyNameText.text = $"{koreanName} LV.{stageData.stages[stageIndex].stageKey}";

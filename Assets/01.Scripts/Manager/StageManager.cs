@@ -46,7 +46,8 @@ public class StageManager : MonoBehaviour
 
     public void StartWave(int waveIndex)
     {
-        var wave = stageData.stages[currentStageIndex].waves[waveIndex];
+        var wave = stageData.stages[currentStageIndex].waves[waveIndex];// 현재 스테이지의 해당 웨이브 정보 가져오기
+        Json.JsonSave();
         EnemyManager.Instance.SpawnWave(wave.enemys);
         OnWaveStarted?.Invoke(waveIndex);
     }

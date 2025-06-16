@@ -108,7 +108,7 @@ public class UpgradeUI : MonoBehaviour
     void UpdateCriticalRateText()
     {
         int percent = Mathf.RoundToInt(criticalRate * 100f);
-        criticalRateText.text = $"치명타 {percent}%";
+        criticalRateText.text = $"치명타 : {percent}%";
     }
 
 
@@ -134,7 +134,7 @@ public class UpgradeUI : MonoBehaviour
     void UpdateAttackIntervalText()
     {
         float interval = autoAttack.attackInterval;
-        attackIntervalText.text = $"자동공격 {interval:0.0}초";
+        attackIntervalText.text = $"자동공격: {interval:0.0}초";
     }
     void OnClickGoldGainUpgrade()
     {
@@ -155,6 +155,6 @@ public class UpgradeUI : MonoBehaviour
     }
     void UpdateGoldGainText()
     {
-        goldGainText.text = $"골드획득 {goldGain}원";
+        goldGainText.text = $"골드 획득: {goldGain}원";
     }
 }
