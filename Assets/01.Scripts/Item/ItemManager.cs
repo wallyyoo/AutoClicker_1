@@ -1,20 +1,21 @@
-﻿
+
 using UnityEngine;
 
+// 아이템 구매/장착/업그레이드 상태를 관리하며, 장착 중인 무기의 능력치를 외부에 제공하는 매니저 스크립트
 public class ItemManager : MonoBehaviour
 {
     
-    public static ItemManager Instance;
+    public static ItemManager ItemManagerInstance;
     
     public ItemData[] allItems;
     public ItemData equippedItem;
-    public PlayerData_1 playerData;
+    public PlayerData playerData;
 
     private void Awake()
     {
-        if (Instance == null)
+        if (ItemManagerInstance == null)
         {
-            Instance = this;
+            ItemManagerInstance = this;
         }
         else
         {
@@ -45,7 +46,6 @@ public class ItemManager : MonoBehaviour
         equippedItem = item;
         equippedItem.isEquipped = true;
 
-        // ApplyItemStats();
     }
 
     public void UpgradeItem(ItemData item)
@@ -59,21 +59,8 @@ public class ItemManager : MonoBehaviour
 
         playerData.curGold -= cost;
         item.upgradeLevel++;
-        // ApplyItemStats();
+   
     }
-    
-    // private void ApplyItemStats()
-    // {
-    //     if (equippedItem == null)
-    //         return;
-    //
-    //     int level = equippedItem.upgradeLevel;
-    //
-    //     playerData.FinalAattackPower = Item_UpgradeTable.CalculateAttackPower(equippedItem.attackPower, level);
-    //     playerData.FinalCriticalDamage = Item_UpgradeTable.CalculateCriticalDamage(equippedItem.criticalDamage, level);
-    //     playerData.FinalCriticalChance = Item_UpgradeTable.CalculateCriticalChance(equippedItem.criticalChance, level);
-    //     playerData.FinalGoldGain = Item_UpgradeTable.CalculateGoldGain(equippedItem.goldGain, level);
-    // }
     
     // 아이템의 구매, 착용 여부의 상태를 체크
     public bool IsUnlocked(ItemData item)
@@ -95,5 +82,42 @@ public class ItemManager : MonoBehaviour
     {
         return Item_UpgradeTable.CalculateUpgradeCost(item.upgradeCost, item.upgradeLevel + 1);
     }
+    
+    
+    public int GetItemAttackPower()
+    {
+        if (equippedItem == null)
+            return 0;
 
+        int level = equippedItem.upgradeLevel;
+        return Item_UpgradeTable.CalculateAttackPower(equippedItem.attackPower, level);
+    }
+
+    public int GetItemCriticalDamage()
+    {
+        if (equippedItem == null)
+            return 0;
+
+        int level = equippedItem.upgradeLevel;
+        return Item_UpgradeTable.CalculateCriticalDamage(equippedItem.criticalDamage, level);
+    }
+
+    public float GetItemCriticalChance()
+    {
+        if (equippedItem == null)
+            return 0f;
+
+        int level = equippedItem.upgradeLevel;
+        return Item_UpgradeTable.CalculateCriticalChance(equippedItem.criticalChance, level);
+    }
+
+    public int GetItemGoldGain()
+    {
+        if (equippedItem == null)
+            return 0;
+
+        int level = equippedItem.upgradeLevel;
+        return Item_UpgradeTable.CalculateGoldGain(equippedItem.goldGain, level);
+    }
+    
 }

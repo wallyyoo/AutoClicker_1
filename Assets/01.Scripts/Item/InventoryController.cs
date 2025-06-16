@@ -1,53 +1,51 @@
 
-
 using UnityEngine;
 using TMPro;
 
+// 아이템 데이터를 기반으로 동적으로 인벤토리 슬롯을 생성하는 UI 제어 스크립트
 public class InventoryController : MonoBehaviour
 {
     
-    private static InventoryController Instance;
+    private static InventoryController ItemContrlInstance;
+    
     [Header("인벤토리 창 관련")]
-    public GameObject Inventory_OpenButton;
-    public GameObject Inventory_CloseButton;
     public GameObject Inventory_Window;
     
-    [Header("아이템 상태 버튼")]
-    public GameObject Item_BuyButton;
-    public GameObject Item_EquipButton;
-    public GameObject Item_UpgradeButton;
-
-    [Header("아이템 이미지")]
-    public GameObject Item_Image_Enable;
-    public GameObject Item_Image_Disable;
-    public GameObject Item_Image_Equiped;
-    
-    [Header("아이템 정보")]
-    public TMP_Text Item_Name;
-    public TMP_Text Item_Info;
-    public TMP_Text Item_BuyCost;
-    public TMP_Text Item_UpgradeCost;
-
-    public ItemData currentItem;
+    [Header("슬롯 생성 관련")]
+    public Transform Inventory_content; // 인벤토리 슬롯 
+    public GameObject Inventory_Item_preset; // 인벤토리에 있는 아이템 프리셋
 
 
     private void Awake()
     {
-        if (Instance == null)
+        if (ItemContrlInstance == null)
         {
-         Instance=this; 
-       DontDestroyOnLoad(this.gameObject);
+            ItemContrlInstance=this; 
+             DontDestroyOnLoad(this.gameObject);
         }
         else
         {
             Destroy(this.gameObject);
         }
     }
+
+    private void Start()
+    {
+        GenerateInventory();
+    }
     
+    void GenerateInventory()  // SO 데이터를 순회하며 슬롯 프리팹을 생성 및 초기화
+    {
+        foreach (ItemData data in ItemManager.ItemManagerInstance.allItems)
+        {
+            GameObject slotObj = Instantiate(Inventory_Item_preset, Inventory_content);
+            InventorySlot slot = slotObj.GetComponent<InventorySlot>();
+            slot.Setup(data);
+        }
+    }
     public void OpenInventory()
     {
         Inventory_Window.SetActive(true);
-        RefreshUI();
     }
 
     public void CloseInventory()
@@ -55,56 +53,4 @@ public class InventoryController : MonoBehaviour
         Inventory_Window.SetActive(false);
     }
 
-    public void SelectItem(ItemData item)
-    {
-        currentItem = item;
-        RefreshUI();
-    }
-    public void OnBuyButton()
-    {
-        ItemManager.Instance.BuyItem(currentItem);
-        RefreshUI();
-    }
-
-    public void OnEquipButton()
-    {
-        ItemManager.Instance.EquipItem(currentItem);
-        RefreshUI();
-    }
-
-    public void OnUpgradeButton()
-    {
-        ItemManager.Instance.UpgradeItem(currentItem);
-        RefreshUI();
-    }
-
-    private void RefreshUI()
-    {
-        Item_Name.text = currentItem.itemName;
-        Item_Info.text =
-            $"공격력 : {currentItem.attackPower} / 치명타 : {currentItem.criticalChance} %";
-
-        // 버튼 상태 갱신
-        bool isUnlocked = ItemManager.Instance.IsUnlocked(currentItem);
-        bool isEquipped = ItemManager.Instance.IsEquipped(currentItem);
-        bool canUpgrade = ItemManager.Instance.CanUpgrade(currentItem);
-
-        Item_BuyButton.SetActive(!isUnlocked);
-        Item_EquipButton.SetActive(isUnlocked && !isEquipped);
-        Item_UpgradeButton.SetActive(isEquipped && canUpgrade);
-
-        // 이미지 상태 갱신
-        Item_Image_Disable.SetActive(!isUnlocked);
-        Item_Image_Enable.SetActive(isUnlocked && !isEquipped);
-        Item_Image_Equiped.SetActive(isEquipped);
-
-        // 비용 표시
-        Item_BuyCost.text = $"{currentItem.itemCost}G";
-
-        if (isEquipped && canUpgrade)
-            Item_UpgradeCost.text = $"{ItemManager.Instance.GetNextUpgradeCost(currentItem)}G";
-        else
-            Item_UpgradeCost.text = "-";
-
-    }
 }

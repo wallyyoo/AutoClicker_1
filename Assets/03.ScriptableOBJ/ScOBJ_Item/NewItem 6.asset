@@ -10,15 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6845d6875eb55164fa62e7cc9b09c041, type: 3}
-  m_Name: NewItem 3
+  m_Name: NewItem 6
   m_EditorClassIdentifier: 
-  itemName: "\uCCA0 \uACE1\uAD2D\uC774"
-  itemCost: 5000
-  upgradeCost: 300
-  attackPower: 50
-  criticalDamage: 70
-  criticalChance: 0.08
-  goldGain: 8
+  itemName: "\uD669\uAE08 \uACE1\uAD2D\uC774"
+  itemCost: 50000
+  upgradeCost: 1000
+  attackPower: 160
+  criticalDamage: 180
+  criticalChance: 0.16
+  goldGain: 60
   isUnlocked: 0
   isEquipped: 0
   upgradeLevel: 1
