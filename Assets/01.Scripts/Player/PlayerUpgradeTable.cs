@@ -5,7 +5,7 @@ public class PlayerUpgradeTable : ScriptableObject
 {
     [Header("레벨당 고정 증가량")]
     public int attackPowerPerLevel = 10;
-    //public float critDamagePerLevel = 0.5f;
+    public float critDamagePerLevel = 0.5f;
     public float critChancePerLevel = 0.05f;  // 5%
     public int goldGainPerLevel = 1;
     public float autoSpeedPerLevel = 0.1f;
