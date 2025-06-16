@@ -19,8 +19,6 @@ public class UpgradeUI : MonoBehaviour
     public Button goldGainUpgradeButton;
     public TextMeshProUGUI goldGainText;
 
-    public static float criticalRate = 0.3f;
-    public static int goldGain = 0;
     public float holdInterval = 0.2f;//버튼 꾹 누르고있으면 0.2초마다 업그레이드
 
     private Coroutine critHoldRoutine;
@@ -30,9 +28,9 @@ public class UpgradeUI : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        criticalRateUpgradeButton.onClick.AddListener(OnClickCriticalRateUpgrade);
-        attackSpeedUpgradeButton.onClick.AddListener(OnClickAttackSpeedUpgrade);
-        goldGainUpgradeButton.onClick.AddListener(OnClickGoldGainUpgrade);
+        //criticalRateUpgradeButton.onClick.AddListener(OnClickCriticalRateUpgrade);
+        //attackSpeedUpgradeButton.onClick.AddListener(OnClickAttackSpeedUpgrade);
+        //goldGainUpgradeButton.onClick.AddListener(OnClickGoldGainUpgrade);
 
         // 꾹 누름 감지용 EventTrigger 추가
         AddHoldEvent(criticalRateUpgradeButton,
@@ -87,64 +85,52 @@ public class UpgradeUI : MonoBehaviour
         }
     }
 
-  
+
     void OnClickCriticalRateUpgrade()
     {
         var data = GameManager.Instance.playerData;
-        var rule = GameManager.Instance.playerUpgradeTable;
 
-        if (data.critiChanceUpLevel >= 18)
+        if (data.UpStatuscriticalChance >= 1)
         {
-            Debug.Log("최대 치명타 업그레이드 레벨!");
+            Debug.Log("최대 치명타확률 업그레이드!");
             return;
         }
 
+
         data.critiChanceUpLevel++;
-        Json.JsonSave();
+        GameManager.Instance.JsonSave();
         UpdateCriticalRateText();
     }
-  
+
     void UpdateCriticalRateText()
     {
-        var baseVal = GameManager.Instance.playerData.criticalChance;
-        var upVal = GameManager.Instance.playerUpgradeTable.critChancePerLevel;
-        var level = GameManager.Instance.playerData.critiChanceUpLevel;
 
-        float final = Mathf.Min(baseVal + level * upVal, 1f);
+        float final = Mathf.Min(GameManager.Instance.playerData.UpStatuscriticalChance, 1f);
+
         criticalRateText.text = $"치명타 {Mathf.RoundToInt(final * 100)}%";
     }
- 
+
 
     void OnClickAttackSpeedUpgrade()
     {
         var data = GameManager.Instance.playerData;
-        var rule = GameManager.Instance.playerUpgradeTable;
 
-        float current = GameManager.Instance.playerData.autoSpeed - data.autoSpeedUpLevel * rule.autoSpeedPerLevel;
-
-        if (current <= 0.1f)
+        if (data.UpstatusAutoSpeed <= 0.1f)
         {
-            Debug.Log("최소 쿨타임 도달!");
-            attackSpeedUpgradeButton.interactable = false;
             return;
         }
-
         data.autoSpeedUpLevel++;
-        Json.JsonSave();
+        GameManager.Instance.JsonSave();
         UpdateAttackIntervalText();
     }
- 
+
     void UpdateAttackIntervalText()
     {
-        var baseVal = GameManager.Instance.playerData.autoSpeed;
-        var upVal = GameManager.Instance.playerUpgradeTable.autoSpeedPerLevel;
-        var level = GameManager.Instance.playerData.autoSpeedUpLevel;
-
-        float interval = Mathf.Max(0.1f, baseVal - level * upVal);
+        float interval = GameManager.Instance.playerData.UpstatusAutoSpeed;
         autoAttack.attackInterval = interval;
         attackIntervalText.text = $"자동공격 {interval:0.0}초";
     }
-  
+
     void OnClickGoldGainUpgrade()
     {
         var data = GameManager.Instance.playerData;
@@ -156,17 +142,13 @@ public class UpgradeUI : MonoBehaviour
         }
 
         data.goldGainUpLevel++;
-        Json.JsonSave();
+        GameManager.Instance.JsonSave();
         UpdateGoldGainText();
     }
 
     void UpdateGoldGainText()
     {
-        var baseVal = GameManager.Instance.playerData.goldGain;
-        var upVal = GameManager.Instance.playerUpgradeTable.goldGainPerLevel;
-        var level = GameManager.Instance.playerData.goldGainUpLevel;
-
-        // int total = baseVal + level * upVal;
-        // goldGainText.text = $"골드획득 {total}원";
+        float total = GameManager.Instance.playerData.UpStatusGold;
+        goldGainText.text = $"골드획득 + {total:0.0}원";
     }
 }

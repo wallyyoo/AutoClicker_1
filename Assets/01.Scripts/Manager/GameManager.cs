@@ -21,10 +21,16 @@ public class GameManager : MonoBehaviour
             Instance = this;
             DontDestroyOnLoad(gameObject);
 
+            if (playerData.playerUpgradeTable == null)
+            {
+                playerData.playerUpgradeTable = playerUpgradeTable;  
+            }
+
             if (soundManager == null)
             {
                 soundManager = FindObjectOfType<SoundManager>();
             }
+
         }
         else
         {
