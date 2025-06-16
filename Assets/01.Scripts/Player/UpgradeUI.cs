@@ -85,51 +85,52 @@ public class UpgradeUI : MonoBehaviour
         }
     }
 
-  
+
     void OnClickCriticalRateUpgrade()
     {
         var data = GameManager.Instance.playerData;
 
-        if (data.critiChanceUpLevel >= 18)
+        if (data.UpStatuscriticalChance >= 1)
         {
-            Debug.Log("최대 치명타 업그레이드 레벨!");
+            Debug.Log("최대 치명타확률 업그레이드!");
             return;
         }
 
+
         data.critiChanceUpLevel++;
-        GameManager.Instance.JsonSave();
+        Json.JsonSave();
         UpdateCriticalRateText();
     }
-  
+
     void UpdateCriticalRateText()
     {
 
-        float final = Mathf.Min( GameManager.Instance.playerData.UpStatuscriticalChance,1f);
+        float final = Mathf.Min(GameManager.Instance.playerData.UpStatuscriticalChance, 1f);
 
         criticalRateText.text = $"치명타 {Mathf.RoundToInt(final * 100)}%";
     }
- 
+
 
     void OnClickAttackSpeedUpgrade()
     {
         var data = GameManager.Instance.playerData;
 
-        if (data.autoSpeedUpLevel >= 20f)
+        if (data.UpstatusAutoSpeed <= 0.1f)
         {
             return;
         }
         data.autoSpeedUpLevel++;
-        GameManager.Instance.JsonSave();
+        Json.JsonSave();
         UpdateAttackIntervalText();
     }
- 
+
     void UpdateAttackIntervalText()
     {
         float interval = GameManager.Instance.playerData.UpstatusAutoSpeed;
         autoAttack.attackInterval = interval;
         attackIntervalText.text = $"자동공격 {interval:0.0}초";
     }
-  
+
     void OnClickGoldGainUpgrade()
     {
         var data = GameManager.Instance.playerData;
@@ -141,7 +142,7 @@ public class UpgradeUI : MonoBehaviour
         }
 
         data.goldGainUpLevel++;
-        GameManager.Instance.JsonSave();
+        Json.JsonSave();
         UpdateGoldGainText();
     }
 

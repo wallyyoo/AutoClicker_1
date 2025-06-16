@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Rogue_Grey
   m_EditorClassIdentifier: 
   enemyType: 3
-  reward: 0
+  reward: 12
   health: 150
   damage: 2
   attackfrequency: 1
