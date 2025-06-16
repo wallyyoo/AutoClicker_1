@@ -11,10 +11,12 @@ public class AutoAttack : MonoBehaviour
 
     void Start()
     {
-        // 업그레이드 수치 기반으로 공격 간격 계산
-        float interval = GameManager.Instance.playerData.UpstatusAutoSpeed;
-        attackInterval = interval;
 
+        // 여기서 초기 간격 설정: PlayerStatData + UpgradeRule 반영
+        var baseVal = GameManager.Instance.playerData.autoSpeed; // ex: 5초
+        var perLevel = GameManager.Instance.playerUpgradeTable.autoSpeedPerLevel;
+        var level = GameManager.Instance.playerData.autoSpeedUpLevel;
+        attackInterval = Mathf.Max(0.1f, baseVal - level * perLevel); // 최소 0.1초로 제한
         StartAutoAttack();
 
     }
@@ -41,23 +43,18 @@ public class AutoAttack : MonoBehaviour
     void Attack()
     {
         Vector3 attackPos = transform.position + Vector3.right * 3f;
-
-        //치명타 확률 및 데미지 계산
         bool isCritical = Random.value < GetCurrentCriticalRate();
+        int baseAttack = GameManager.Instance.playerData.attackPower;
+        int perLevel = GameManager.Instance.playerUpgradeTable.attackPowerPerLevel;
+        int level = GameManager.Instance.playerData.attackPowerUpLevel;
 
-        int damage = GameManager.Instance.playerData.UpStatusAttackPower;
-
+        int damage = baseAttack + level * perLevel;
         if (isCritical)
-        {
-            float critMultiplier = GameManager.Instance.playerData.UpStatusCriticalDamage;
-            damage = Mathf.RoundToInt(damage * (critMultiplier));
-        }
+            damage *= 2; // 치명타 시 데미지 2배
 
         Vector2 boxSize = new Vector2(1.0f, 1.0f);
         Collider2D[] hits = Physics2D.OverlapBoxAll(attackPos, boxSize, 0f, LayerMask.GetMask("Enemy"));
-
         Debug.Log($"적 {hits.Length}명 감지됨");
-
         foreach (var hit in hits)
         {
             var enemy = hit.GetComponent<Enemy>();
@@ -73,17 +70,18 @@ public class AutoAttack : MonoBehaviour
             }
         }
 
+        if (attackEffect != null)
+            attackEffect.HandleClick(attackPos);
 
-        if (attackEffect != null) { 
-        attackEffect.PlayHitEffect(attackPos, isCritical);
-        }
-        else
-            Debug.LogWarning("AttackEffect가 연결 안됨!");
         //Debug.Log($"[AutoAttack] 공격 간격: {attackInterval:0.00}초");
         //Debug.Log(isCritical ? $"치명타! 데미지 {damage}" : $"일반 공격 데미지 {damage}");
     }
     float GetCurrentCriticalRate()
     {
-        return Mathf.Min(GameManager.Instance.playerData.UpStatuscriticalChance, 1f); // 최대 100%
+        var baseCrit = GameManager.Instance.playerData.criticalChance;
+        var perLevel = GameManager.Instance.playerUpgradeTable.critChancePerLevel;
+        var level = GameManager.Instance.playerData.critiChanceUpLevel;
+
+        return Mathf.Min(baseCrit + level * perLevel, 1f);
     }
 }

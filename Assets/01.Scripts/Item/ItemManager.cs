@@ -8,7 +8,7 @@ public class ItemManager : MonoBehaviour
     
     public ItemData[] allItems;
     public ItemData equippedItem;
-    public PlayerData_1 playerData;
+    public PlayerData playerData;
 
     private void Awake()
     {
