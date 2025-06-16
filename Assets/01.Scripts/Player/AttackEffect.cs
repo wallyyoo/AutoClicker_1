@@ -7,7 +7,6 @@ public class AttackEffect : MonoBehaviour
 
     private void OnEnable()
     {
-        Debug.Log("AttackEffect 스크립트가 활성화되었습니다.");
         ClickManager.OnClick += OnClick;
     }
 
@@ -27,12 +26,20 @@ public class AttackEffect : MonoBehaviour
             Debug.LogWarning("플레이어를 찾을 수 없습니다!");
             return;
         }
-
-        Vector2 playerPos = player.transform.position;
-
-        Vector2 boxSize = new Vector2(5.0f, 5.0f);
-
-        Collider2D[] hits = Physics2D.OverlapBoxAll(playerPos, boxSize, 0f, LayerMask.GetMask("Enemy"));
+        //  플레이어 자식 오브젝트 중 BoxCollider2D 가져오기
+        BoxCollider2D boxCollider = player.GetComponentInChildren<BoxCollider2D>();
+        if (boxCollider == null)
+        {
+            Debug.LogWarning("플레이어에 BoxCollider2D가 없습니다.");
+            return;
+        }
+        //  콜라이더 중심 위치 및 스케일 반영한 크기 계산
+        Vector2 boxCenter = (Vector2)boxCollider.transform.position + boxCollider.offset;
+        Vector2 boxSize = new Vector2(
+            boxCollider.size.x * boxCollider.transform.lossyScale.x,
+            boxCollider.size.y * boxCollider.transform.lossyScale.y
+        );
+        Collider2D[] hits = Physics2D.OverlapBoxAll(boxCenter, boxSize, 0f, LayerMask.GetMask("Enemy"));
 
         int damage = GameManager.Instance.playerData.UpStatusAttackPower;
         if (isCritical)
@@ -53,6 +60,7 @@ public class AttackEffect : MonoBehaviour
                     PlayHitEffect(enemy.transform.position, isCritical);
                     Debug.Log($"→ 적 '{enemy.name}' 에게 {damage} 데미지 적용됨");
                     hitCount++;
+                    return;
                 }
                 else
                 {
@@ -67,7 +75,7 @@ public class AttackEffect : MonoBehaviour
 
         if (hitCount == 0)
         {
-            Debug.Log("📌 데미지를 받은 적이 없습니다.");
+            Debug.Log(" 데미지를 받은 적이 없습니다.");
         }
     }
     public void PlayEffectAt(Vector3 worldPos, bool isCritical)

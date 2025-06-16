@@ -7,8 +7,7 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
 
-
-    public PlayerData_1 playerData;
+    [HideInInspector] public PlayerData playerData;
     public PlayerUpgradeTable playerUpgradeTable;
 
     public SoundManager soundManager;
@@ -22,17 +21,15 @@ public class GameManager : MonoBehaviour
             Instance = this;
             DontDestroyOnLoad(gameObject);
 
-            // ScriptableObject 연결
             if (playerData.playerUpgradeTable == null)
             {
-                playerData.playerUpgradeTable = playerUpgradeTable; // ← 이거 반드시 먼저!
+                playerData.playerUpgradeTable = playerUpgradeTable;  
             }
 
             if (soundManager == null)
             {
                 soundManager = FindObjectOfType<SoundManager>();
             }
-           
 
         }
         else
@@ -43,8 +40,6 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
-        Json.JsonLoad(); // 무조건 로드
-        //Debug.Log("저장 경로: " + Application.persistentDataPath);
 
         if (Instance != this)
         {
@@ -52,21 +47,6 @@ public class GameManager : MonoBehaviour
             Destroy(gameObject);
         }
         StartCoroutine(JsonLoadCoroutine());
-
-        // soundManager.startBgm();
-
-    }
-    public void JsonSave()
-    {
-        //// 클래스 데이터를 JSON 문자열로 변환
-        //string dataSave = JsonUtility.ToJson(playerData, true);
-
-        //// 해당 경로에 파일 생성 또는 덮어쓰기
-        //File.WriteAllText(path, dataSave);
-
-        //Debug.Log($"Save File : {dataSave}");
-
-        Json.JsonSave(); // 경로와 파일 저장은 Json.cs에 위임
     }
     private IEnumerator JsonLoadCoroutine()
     {
@@ -75,17 +55,11 @@ public class GameManager : MonoBehaviour
         if (StageManager.Instance == null)
         {
             Debug.Log("StageManager가 초기화되지 않았습니다.");
-
-            // JSON 문자열을 클래스 객체로 변환
-            // playerData = JsonUtility.FromJson<PlayerData>(dataLoad);
-            //Debug.Log($"Load File : {dataLoad}");
-
         }
         else
         {
             Debug.Log("초기화 완료");
             Json.JsonLoad(); // 안전하게 실행
         }
-
     }
 }
