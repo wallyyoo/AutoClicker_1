@@ -87,17 +87,7 @@ public class UpgradeUI : MonoBehaviour
         }
     }
 
-    //void OnClickCriticalRateUpgrade()
-    //{
-    //    if (criticalRate >= 1f)
-    //    {
-    //        Debug.Log("이미 최대 치명타 확률입니다!");
-    //        return;
-    //    }
-
-    //    UpgradeCriticalRate(0.1f);
-    //    UpdateCriticalRateText();
-    //}
+  
     void OnClickCriticalRateUpgrade()
     {
         var data = GameManager.Instance.playerData;
@@ -113,12 +103,7 @@ public class UpgradeUI : MonoBehaviour
         GameManager.Instance.JsonSave();
         UpdateCriticalRateText();
     }
-    //void UpgradeCriticalRate(float amount)
-    //{
-    //    criticalRate += amount;
-    //    criticalRate = Mathf.Min(criticalRate, 1f); // 100% 제한
-    //    Debug.Log("치명타 확률 증가!");
-    //}
+  
     void UpdateCriticalRateText()
     {
         var baseVal = GameManager.Instance.playerStatData.baseCriticalChance;
@@ -128,28 +113,8 @@ public class UpgradeUI : MonoBehaviour
         float final = Mathf.Min(baseVal + level * upVal, 1f);
         criticalRateText.text = $"치명타 {Mathf.RoundToInt(final * 100)}%";
     }
+ 
 
-    //void UpdateCriticalRateText()
-    //{
-    //    int percent = Mathf.RoundToInt(criticalRate * 100f);
-    //    criticalRateText.text = $"치명타 {percent}%";
-    //}
-
-
-
-
-    //void OnClickAttackSpeedUpgrade()
-    //{
-    //    if (autoAttack.attackInterval <= 0.1f)
-    //    {
-    //        Debug.Log("최소 쿨타임 도달!");
-    //        attackSpeedUpgradeButton.interactable = false;
-    //        return;
-    //    }
-
-    //    UpgradeAttackInterval(0.1f);
-    //    UpdateAttackIntervalText();
-    //}
     void OnClickAttackSpeedUpgrade()
     {
         var data = GameManager.Instance.playerData;
@@ -168,16 +133,7 @@ public class UpgradeUI : MonoBehaviour
         GameManager.Instance.JsonSave();
         UpdateAttackIntervalText();
     }
-    //void UpgradeAttackInterval(float amount)
-    //{
-    //    autoAttack.attackInterval = Mathf.Max(0.1f, autoAttack.attackInterval - amount);
-    //    Debug.Log("자동 공격 속도 상승!");
-    //}
-    //void UpdateAttackIntervalText()
-    //{
-    //    float interval = autoAttack.attackInterval;
-    //    attackIntervalText.text = $"자동공격 {interval:0.0}초";
-    //}
+ 
     void UpdateAttackIntervalText()
     {
         var baseVal = GameManager.Instance.playerStatData.baseAutoSpeed;
@@ -188,17 +144,7 @@ public class UpgradeUI : MonoBehaviour
         autoAttack.attackInterval = interval;
         attackIntervalText.text = $"자동공격 {interval:0.0}초";
     }
-    //void OnClickGoldGainUpgrade()
-    //{
-
-    //    if (goldGain >= 100)
-    //    {
-    //        Debug.Log("이미 최대 골드 획득량입니다!");
-    //        return;
-    //    }
-    //    UpgradeGoldGain(1);// 골드 획득량 증가수치
-    //    UpdateGoldGainText();
-    //}
+  
     void OnClickGoldGainUpgrade()
     {
         var data = GameManager.Instance.playerData;
@@ -213,16 +159,7 @@ public class UpgradeUI : MonoBehaviour
         GameManager.Instance.JsonSave();
         UpdateGoldGainText();
     }
-    //void UpgradeGoldGain(int amount)
-    //{
-    //    goldGain += amount;
-    //    goldGain = Mathf.Min(goldGain, 100); // 100원까지 제한 (원하면 제거 가능)
-    //    Debug.Log("골드 획득량 증가!");
-    //}
-    //void UpdateGoldGainText()
-    //{
-    //    goldGainText.text = $"골드획득 {goldGain}원";
-    //}
+
     void UpdateGoldGainText()
     {
         var baseVal = GameManager.Instance.playerStatData.baseGoldGain;

@@ -62,7 +62,7 @@ public class GameManager : MonoBehaviour
 
             // JSON 문자열을 클래스 객체로 변환
             playerData = JsonUtility.FromJson<PlayerData>(dataLoad);
-            Debug.Log($"Load File : {dataLoad}");
+            //Debug.Log($"Load File : {dataLoad}");
         }
         else
         {
