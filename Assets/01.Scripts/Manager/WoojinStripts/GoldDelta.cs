@@ -4,11 +4,10 @@ using UnityEngine;
 public class GoldDelta : MonoBehaviour
 {
     // 몬스터 잡을 때 획득하는 골드(골드 획득량 래밸에 따른 골드 획득량 증가)
-    public void AddGold()
+    public void AddGold(int amount)
     {
-        int gold = (int)GameManager.Instance.playerStatData.baseGoldGain ;// 여기에 몬스터 잡은 후 얻게되는 골드를 곱한다.
 
-        GameManager.Instance.playerData.curGold += gold;
+        GameManager.Instance.playerData.curGold += amount * GameManager.Instance.playerStatData.baseGoldGain;
 
         Json.JsonSave();
     }
