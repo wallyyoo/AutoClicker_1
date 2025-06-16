@@ -40,9 +40,7 @@ public class GameManager : MonoBehaviour
         }
         StartCoroutine(JsonLoadCoroutine());
 
-        soundManager.audioSource.loop = true;
-        soundManager.audioSource.playOnAwake = false;
-        soundManager.audioSource.panStereo = 0;
+        soundManager.startBgm();
     }
     private IEnumerator JsonLoadCoroutine()
     {

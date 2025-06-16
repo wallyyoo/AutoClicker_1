@@ -23,4 +23,10 @@ public class SoundManager : MonoBehaviour
         audioSource.clip = clips;
         audioSource.Play();
     }
+    public void startBgm()
+    {
+        audioSource.loop = true;
+        audioSource.playOnAwake = false;
+        audioSource.panStereo = 0;
+    }
 }
