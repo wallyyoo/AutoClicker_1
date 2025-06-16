@@ -1,4 +1,4 @@
-﻿using System.Collections;
+﻿/*using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -35,4 +35,4 @@ public class PlayerData_1
     public float UpstatusAutoSpeed { get { return Mathf.Max(0.1f, baseAutoSpeed - (autoSpeedUpLevel * playerUpgradeTable.autoSpeedPerLevel)); } }
     public float UpstatusHp { get { return baseHp + (hpUpLevel * playerUpgradeTable.hpPerLevel); } }
     public float UpstatusMp { get { return baseMp + (mpUpLevel * playerUpgradeTable.mpPerLevel); } }
-}
+} */

@@ -9,7 +9,7 @@ public class SoundManager : MonoBehaviour
 
     public AudioClip[] audioClips;
 
-    private void Start()
+    private void Awake()
     {
         audioSource = GetComponent<AudioSource>();
     }

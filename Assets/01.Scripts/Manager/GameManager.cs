@@ -7,7 +7,7 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
 
-    [HideInInspector] public PlayerData playerData;
+     public PlayerData playerData;
     public PlayerUpgradeTable playerUpgradeTable;
 
     public SoundManager soundManager;
