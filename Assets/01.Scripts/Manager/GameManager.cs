@@ -26,9 +26,16 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
-        // 안전한 경로 + 파일 이름 (확장자까지 포함) 지정
-        path = Path.Combine(Application.persistentDataPath, "PlayerData.Json");
-        JsonLoad();
+
+        if (Instance != this)
+        {
+            Debug.Log("중복된 씬을 삭제");
+            Destroy(gameObject);
+        }
+        StartCoroutine(JsonLoadCoroutine());
+
+        soundManager.startBgm();
+
     }
 
     public void JsonSave()
