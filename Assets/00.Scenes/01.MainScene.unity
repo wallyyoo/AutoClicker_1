@@ -5285,6 +5285,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 953017344044875212, guid: 2a2c04356b3ba444b9d5a0da5ede9088, type: 3}
+      propertyPath: stageData
+      value: 
+      objectReference: {fileID: 11400000, guid: 07741a20fff69e946bcac50720fd609d, type: 2}
     - target: {fileID: 2093795783806906546, guid: 2a2c04356b3ba444b9d5a0da5ede9088, type: 3}
       propertyPath: m_Name
       value: StageManager

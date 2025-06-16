@@ -5,7 +5,7 @@ public class StageManager : MonoBehaviour
 {
     public int currentStageIndex;
     public int currentWaveIndex;
-    public StageData stageData;
+    [SerializeField] public StageData stageData;
 
     public event Action OnStageCleared;
     public event Action<int> OnWaveStarted;
