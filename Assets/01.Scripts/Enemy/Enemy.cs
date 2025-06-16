@@ -137,6 +137,8 @@ public class Enemy : MonoBehaviour
         if (currentHealth <= 0)
         {
             SetState(EnemyState.Die);
+            int totalReward = Mathf.RoundToInt(data.reward * (1f + stageIndex * 0.1f)); // 스테이지 인덱스에 따라 보상 증가
+            GoldDelta.AddGold(totalReward); // 골드 획득
             Die();
             return;
         }
