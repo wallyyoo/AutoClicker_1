@@ -1,19 +1,15 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
 public class SoundManager : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    [HideInInspector] public AudioSource audioSource;
 
-    // Update is called once per frame
-    void Update()
+    public AudioClip[] audioClips;
+
+    private void Start()
     {
-        
+        audioSource = GetComponent<AudioSource>();
     }
     public void startBgm()
     {
@@ -21,4 +17,15 @@ public class SoundManager : MonoBehaviour
         audioSource.playOnAwake = false;
         audioSource.panStereo = 0;
     }
+
+    public void PlayBgm(AudioClip clips)
+    {
+        if (audioSource.clip == clips)
+        {
+            return;
+        }
+        audioSource.clip = clips;
+        audioSource.Play();
+    }
 }
+
