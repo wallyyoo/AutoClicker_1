@@ -15,4 +15,10 @@ public class SoundManager : MonoBehaviour
     {
         
     }
+    public void startBgm()
+    {
+        audioSource.loop = true;
+        audioSource.playOnAwake = false;
+        audioSource.panStereo = 0;
+    }
 }
