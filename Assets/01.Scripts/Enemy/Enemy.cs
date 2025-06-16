@@ -25,8 +25,8 @@ public class Enemy : MonoBehaviour
     private float attackTimer = 0f;
 
     // 디버그용 데미지 타이머입니다 코드 완성시 제거해주세요.
-    private float debugDamageTimer = 0f;
-    private int prevDebugSecond = 0;
+   // private float debugDamageTimer = 0f;
+   // private int prevDebugSecond = 0;
     // 디버그용 데미지 타이머입니다 코드 완성시 제거해주세요.
 
     private void Awake()
@@ -75,7 +75,7 @@ public class Enemy : MonoBehaviour
             HandleAttackLoop();
         }
 
-        /// 디버그용 데미지 타이머입니다 코드 완성시 제거해주세요.
+     /*   /// 디버그용 데미지 타이머입니다 코드 완성시 제거해주세요.
         debugDamageTimer += Time.deltaTime;
         // 1초마다 로그
         int currentSecond = Mathf.FloorToInt(debugDamageTimer);
@@ -90,7 +90,7 @@ public class Enemy : MonoBehaviour
             TakeDamage(50);
             debugDamageTimer = 0f;
         }
-        /// 디버그용 데미지 타이머입니다 코드 완성시 제거해주세요.
+      */  /// 디버그용 데미지 타이머입니다 코드 완성시 제거해주세요.
     }
 
     private void MoveToArrivalPosition()
@@ -117,7 +117,7 @@ public class Enemy : MonoBehaviour
     private IEnumerator AttackRoutine()
     {
         SetState(EnemyState.Attack);
-        Debug.Log($"{gameObject.name} 공격!");
+       // Debug.Log($"{gameObject.name} 공격!");
         yield return new WaitForSeconds(data.attackfrequency); // 공격 애니메이션 시간
         SetState(EnemyState.Idle);
     }

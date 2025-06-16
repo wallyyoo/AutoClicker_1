@@ -45,7 +45,7 @@ public class GameManager : MonoBehaviour
         }
         StartCoroutine(JsonLoadCoroutine());
 
-        soundManager.startBgm();
+       // soundManager.startBgm();
 
     }
     public void JsonSave()
@@ -68,7 +68,7 @@ public class GameManager : MonoBehaviour
 
 
             // JSON 문자열을 클래스 객체로 변환
-            playerData = JsonUtility.FromJson<PlayerData>(dataLoad);
+            // playerData = JsonUtility.FromJson<PlayerData>(dataLoad);
             //Debug.Log($"Load File : {dataLoad}");
 
         }
