@@ -1401,17 +1401,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 286650226}
   m_CullTransparentMesh: 1
---- !u!114 &314790428 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 9024517524866002892, guid: c0ed58ed4c64a834faf3c17c673dc4b1, type: 3}
-  m_PrefabInstance: {fileID: 2047668428}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9331f520e374ba142a6b57000a783247, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &344446862
 GameObject:
   m_ObjectHideFlags: 0
@@ -2306,17 +2295,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 461142138}
   m_CullTransparentMesh: 1
---- !u!114 &476825033 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1402547678101160589, guid: c0ed58ed4c64a834faf3c17c673dc4b1, type: 3}
-  m_PrefabInstance: {fileID: 2047668428}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9331f520e374ba142a6b57000a783247, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &482575379
 GameObject:
   m_ObjectHideFlags: 0
@@ -3191,17 +3169,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 680380098}
   m_CullTransparentMesh: 1
---- !u!114 &680710530 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 8291942602719451099, guid: c0ed58ed4c64a834faf3c17c673dc4b1, type: 3}
-  m_PrefabInstance: {fileID: 2047668428}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9331f520e374ba142a6b57000a783247, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &707467525
 GameObject:
   m_ObjectHideFlags: 0
@@ -4223,17 +4190,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 881597084}
   m_CullTransparentMesh: 1
---- !u!114 &931644699 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 8690306485446199995, guid: c0ed58ed4c64a834faf3c17c673dc4b1, type: 3}
-  m_PrefabInstance: {fileID: 2047668428}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9331f520e374ba142a6b57000a783247, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &963000926
 GameObject:
   m_ObjectHideFlags: 0
@@ -4614,17 +4570,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1026208023}
   m_CullTransparentMesh: 1
---- !u!114 &1063000947 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 4508264823135295312, guid: c0ed58ed4c64a834faf3c17c673dc4b1, type: 3}
-  m_PrefabInstance: {fileID: 2047668428}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9331f520e374ba142a6b57000a783247, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1086899421
 GameObject:
   m_ObjectHideFlags: 0
@@ -5360,27 +5305,27 @@ PrefabInstance:
     - target: {fileID: 2391561233291613140, guid: 7b8bd72c7f8872643b5080e85439b22e, type: 3}
       propertyPath: backGroundLooper.Array.data[1]
       value: 
-      objectReference: {fileID: 931644699}
+      objectReference: {fileID: 0}
     - target: {fileID: 2391561233291613140, guid: 7b8bd72c7f8872643b5080e85439b22e, type: 3}
       propertyPath: backGroundLooper.Array.data[2]
       value: 
-      objectReference: {fileID: 1063000947}
+      objectReference: {fileID: 0}
     - target: {fileID: 2391561233291613140, guid: 7b8bd72c7f8872643b5080e85439b22e, type: 3}
       propertyPath: backGroundLooper.Array.data[3]
       value: 
-      objectReference: {fileID: 476825033}
+      objectReference: {fileID: 0}
     - target: {fileID: 2391561233291613140, guid: 7b8bd72c7f8872643b5080e85439b22e, type: 3}
       propertyPath: backGroundLooper.Array.data[4]
       value: 
-      objectReference: {fileID: 314790428}
+      objectReference: {fileID: 0}
     - target: {fileID: 2391561233291613140, guid: 7b8bd72c7f8872643b5080e85439b22e, type: 3}
       propertyPath: backGroundLooper.Array.data[5]
       value: 
-      objectReference: {fileID: 1302531007}
+      objectReference: {fileID: 0}
     - target: {fileID: 2391561233291613140, guid: 7b8bd72c7f8872643b5080e85439b22e, type: 3}
       propertyPath: backGroundLooper.Array.data[6]
       value: 
-      objectReference: {fileID: 680710530}
+      objectReference: {fileID: 0}
     - target: {fileID: 4021737757911299968, guid: 7b8bd72c7f8872643b5080e85439b22e, type: 3}
       propertyPath: m_Name
       value: BackGroundManager
@@ -5524,17 +5469,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1299964538}
   m_CullTransparentMesh: 1
---- !u!114 &1302531007 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 5406718529206799620, guid: c0ed58ed4c64a834faf3c17c673dc4b1, type: 3}
-  m_PrefabInstance: {fileID: 2047668428}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9331f520e374ba142a6b57000a783247, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1311682179
 GameObject:
   m_ObjectHideFlags: 0
@@ -8771,8 +8705,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 000/000
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 116992b69240cde48957f0d16e711592, type: 2}
-  m_sharedMaterial: {fileID: -1462760499269002105, guid: 116992b69240cde48957f0d16e711592, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -8992,6 +8926,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   data: {fileID: 11400000, guid: f3120ee4641fefc42b8c48b6be3b2dd8, type: 2}
+  stageData: {fileID: 0}
+  enemyNameText: {fileID: 0}
+  currentHealth: 0
+  currentHealthBarRect: {fileID: 0}
+  maxHealthBarWidth: 100
+  stageIndex: 0
 --- !u!212 &1781007577
 SpriteRenderer:
   m_ObjectHideFlags: 0
