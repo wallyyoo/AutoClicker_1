@@ -7,8 +7,14 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
 
-    [HideInInspector] public PlayerData playerData;
+
+    public PlayerData playerData;
+    public PlayerStatData playerStatData;
+    public PlayerUpgradeTable playerUpgradeTable;
+    //[HideInInspector] public PlayerData_1 playerData;
+
     public SoundManager soundManager;
+
     private string path;
 
     private void Awake()
@@ -59,6 +65,11 @@ public class GameManager : MonoBehaviour
         if (StageManager.Instance == null)
         {
             Debug.Log("StageManager가 초기화되지 않았습니다.");
+
+
+            // JSON 문자열을 클래스 객체로 변환
+            playerData = JsonUtility.FromJson<PlayerData>(dataLoad);
+            //Debug.Log($"Load File : {dataLoad}");
 
         }
         else
