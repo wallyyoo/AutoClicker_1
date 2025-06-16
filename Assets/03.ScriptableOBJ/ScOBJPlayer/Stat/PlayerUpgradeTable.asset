@@ -13,8 +13,9 @@ MonoBehaviour:
   m_Name: PlayerUpgradeTable
   m_EditorClassIdentifier: 
   attackPowerPerLevel: 10
+  critDamagePerLevel: 0.5
   critChancePerLevel: 0.05
   goldGainPerLevel: 1
-  autoSpeedPerLevel: 0.1
+  autoSpeedPerLevel: 0.5
   hpPerLevel: 100
   mpPerLevel: 100

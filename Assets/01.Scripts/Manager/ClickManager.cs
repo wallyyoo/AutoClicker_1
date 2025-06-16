@@ -27,6 +27,7 @@ public class ClickManager : MonoBehaviour
         //마우스 왼쪽 버튼 클릭했고, UI 위가 아닌 경우에만 클릭으로 인정
         if (Input.GetMouseButtonDown(0) && !IsPointerOverUI())
         {
+            Debug.Log("좌클릭 ");
             //마우스 클릭 위치를 월드 좌표로 변환
             //z = 0으로 평면상의 위치로 보정
             Vector3 clickPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);

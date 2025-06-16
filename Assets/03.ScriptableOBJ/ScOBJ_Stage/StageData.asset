@@ -18,7 +18,7 @@ MonoBehaviour:
     - enemys:
       - enemyPrefab: {fileID: 248640432488069553, guid: 409b284866893274796d17ddf043ad5c, type: 3}
         spawnPosition: {x: 10, y: -3}
-        arrivalPosition: {x: -10, y: -3}
+        arrivalPosition: {x: -3, y: -3}
     - enemys:
       - enemyPrefab: {fileID: 455114782886424482, guid: b9ea9a627e5eb7748abab6f66622022c, type: 3}
         spawnPosition: {x: 10, y: -3}
