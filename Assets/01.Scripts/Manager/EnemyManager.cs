@@ -1,5 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 
 public class EnemyManager : MonoBehaviour
@@ -8,10 +7,33 @@ public class EnemyManager : MonoBehaviour
 
     private List<Enemy> aliveEnemies = new List<Enemy>();
 
+    private void Awake()
+    {
+        if (Instance == null)
+            Instance = this;
+        else
+        {
+            Destroy(gameObject);
+            return;
+        }
+    }
+
     public void SpawnWave(List<MonsterSpawnData> enemys)
     {
-        // enemys 리스트를 순회하며 에너미 스폰
-        // 스폰된 에너미를 aliveEnemies에 추가
+        for (int i = 0; i < enemys.Count; i++)
+        {
+            var spawnData = enemys[i];
+            // 각 에너미의 spawnPosition에서 소환
+            GameObject go = Instantiate(spawnData.enemyPrefab, spawnData.spawnPosition, Quaternion.identity);
+            Enemy enemy = go.GetComponent<Enemy>();
+            if (enemy != null)
+            {
+                enemy.stageData = StageManager.Instance.stageData;
+                enemy.Init(spawnData.enemyPrefab.GetComponent<Enemy>().data, StageManager.Instance.currentStageIndex);
+                enemy.SetArrivalPosition(spawnData.arrivalPosition);
+                aliveEnemies.Add(enemy);
+            }
+        }
     }
 
     public void OnEnemyDied(Enemy enemy)

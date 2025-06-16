@@ -7,10 +7,13 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
 
+
     public PlayerData playerData;
     public PlayerStatData playerStatData;
     public PlayerUpgradeTable playerUpgradeTable;
     //[HideInInspector] public PlayerData_1 playerData;
+
+    public SoundManager soundManager;
 
     private string path;
 
@@ -20,6 +23,11 @@ public class GameManager : MonoBehaviour
         {
             Instance = this;
             DontDestroyOnLoad(gameObject);
+
+            if (soundManager == null)
+            {
+                soundManager = FindObjectOfType<SoundManager>();
+            }
         }
         else
         {
@@ -29,11 +37,17 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
-        // 안전한 경로 + 파일 이름 (확장자까지 포함) 지정
-        path = Path.Combine(Application.persistentDataPath, "PlayerData.Json");
-        JsonLoad();
-    }
 
+        if (Instance != this)
+        {
+            Debug.Log("중복된 씬을 삭제");
+            Destroy(gameObject);
+        }
+        StartCoroutine(JsonLoadCoroutine());
+
+        soundManager.startBgm();
+
+    }
     public void JsonSave()
     {
         // 클래스 데이터를 JSON 문자열로 변환
@@ -44,33 +58,25 @@ public class GameManager : MonoBehaviour
 
         Debug.Log($"Save File : {dataSave}");
     }
-
-    public void JsonLoad()
+    private IEnumerator JsonLoadCoroutine()
     {
-        if (File.Exists(path))
+        yield return null; // 모든 Awake() 완료 대기
+
+        if (StageManager.Instance == null)
         {
-            // 파일이 존재한다면 읽어서 JSON 문자열로 가져옴
-            string dataLoad =  File.ReadAllText(path);
+            Debug.Log("StageManager가 초기화되지 않았습니다.");
 
-            if (string.IsNullOrEmpty(dataLoad) || dataLoad == "{}")
-            {
-                Debug.Log("Json파일이 비어있거가 유요하지 않습니다.");
-                File.Delete(path);
-
-                return;
-            }
 
             // JSON 문자열을 클래스 객체로 변환
             playerData = JsonUtility.FromJson<PlayerData>(dataLoad);
             //Debug.Log($"Load File : {dataLoad}");
+
         }
         else
         {
-
-            // 폴더가 없다면 새로운 객체를 만들어서 초기화 후 Save
-            PlayerData playerData = new PlayerData();
-
-            JsonSave();
+            Debug.Log("초기화 완료");
+            Json.JsonLoad(); // 안전하게 실행
         }
+
     }
 }
