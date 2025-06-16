@@ -17,7 +17,7 @@ public class Enemy : MonoBehaviour
     private Animator animator;
 
     private Vector2 arrivalPosition;
-    private bool isArrived = false;
+    public bool isArrived = false;
     private float moveSpeed = 2f; // 필요에 따라 조정
     private Image healthBarImage;
     public int stageIndex;
