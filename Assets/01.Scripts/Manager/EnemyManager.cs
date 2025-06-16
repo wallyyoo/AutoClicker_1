@@ -1,5 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
+ï»¿using System.Collections.Generic;
 using UnityEngine;
 
 public class EnemyManager : MonoBehaviour
@@ -8,18 +7,41 @@ public class EnemyManager : MonoBehaviour
 
     private List<Enemy> aliveEnemies = new List<Enemy>();
 
+    private void Awake()
+    {
+        if (Instance == null)
+            Instance = this;
+        else
+        {
+            Destroy(gameObject);
+            return;
+        }
+    }
+
     public void SpawnWave(List<MonsterSpawnData> enemys)
     {
-        // enemys ¸®½ºÆ®¸¦ ¼øÈ¸ÇÏ¸ç ¿¡³Ê¹Ì ½ºÆù
-        // ½ºÆùµÈ ¿¡³Ê¹Ì¸¦ aliveEnemies¿¡ Ãß°¡
+        for (int i = 0; i < enemys.Count; i++)
+        {
+            var spawnData = enemys[i];
+            // ê° ì—ë„ˆë¯¸ì˜ spawnPositionì—ì„œ ì†Œí™˜
+            GameObject go = Instantiate(spawnData.enemyPrefab, spawnData.spawnPosition, Quaternion.identity);
+            Enemy enemy = go.GetComponent<Enemy>();
+            if (enemy != null)
+            {
+                enemy.stageData = StageManager.Instance.stageData;
+                enemy.Init(spawnData.enemyPrefab.GetComponent<Enemy>().data, StageManager.Instance.currentStageIndex);
+                enemy.SetArrivalPosition(spawnData.arrivalPosition);
+                aliveEnemies.Add(enemy);
+            }
+        }
     }
 
     public void OnEnemyDied(Enemy enemy)
     {
-        aliveEnemies.Remove(enemy);// ¿¡³Ê¹Ì Á¦°Å
+        aliveEnemies.Remove(enemy);// ì—ë„ˆë¯¸ ì œê±°
         if (aliveEnemies.Count == 0)
         {
-            // ¸ğµç ¿¡³Ê¹Ì°¡ Á¦°ÅµÊ
+            // ëª¨ë“  ì—ë„ˆë¯¸ê°€ ì œê±°ë¨
             StageManager.Instance.OnWaveCleared();
         }
     }

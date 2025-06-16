@@ -25,9 +25,20 @@ public class StageManager : MonoBehaviour
         }
     }
 
+    private void Start()
+    {
+        // 게임 시작 시 0스테이지 자동 시작
+        StartStage(0);
+    }
 
     public void StartStage(int stageIndex)
     {
+        if (stageIndex >= stageData.stages.Count)
+        {
+            Debug.Log("모든 스테이지를 클리어했습니다!");
+            return;
+        }
+
         currentStageIndex = stageIndex;
         currentWaveIndex = 0;
         StartWave(currentWaveIndex);
@@ -35,8 +46,7 @@ public class StageManager : MonoBehaviour
 
     public void StartWave(int waveIndex)
     {
-        var wave = stageData.stages[currentStageIndex].waves[waveIndex];// 현재 스테이지의 해당 웨이브 정보 가져오기
-        Json.JsonSave();
+        var wave = stageData.stages[currentStageIndex].waves[waveIndex];
         EnemyManager.Instance.SpawnWave(wave.enemys);
         OnWaveStarted?.Invoke(waveIndex);
     }
@@ -51,8 +61,10 @@ public class StageManager : MonoBehaviour
         else
         {
             GiveReward();
-            OnStageCleared?.Invoke();// 스테이지 클리어 이벤트 발생
-            // 다음 스테이지로 이동 등
+            OnStageCleared?.Invoke();
+
+            // 다음 스테이지 자동 진행
+            StartStage(currentStageIndex + 1);
         }
     }
 

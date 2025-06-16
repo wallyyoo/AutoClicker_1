@@ -1,27 +1,19 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class SoundManager : MonoBehaviour
 {
-    [HideInInspector] public AudioSource audioSource;
-
-    public AudioClip[] audioClips;
-
-    private void Start()
+    // Start is called before the first frame update
+    void Start()
     {
-        audioSource = GetComponent<AudioSource>();
+        
     }
 
-    public void PlayBgm(AudioClip clips)
+    // Update is called once per frame
+    void Update()
     {
-        if (audioSource.clip == clips)
-        {
-            return;
-        }
-
-        audioSource.clip = clips;
-        audioSource.Play();
+        
     }
     public void startBgm()
     {
