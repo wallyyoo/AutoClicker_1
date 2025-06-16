@@ -4,10 +4,25 @@ using UnityEngine;
 
 public class SoundManager : MonoBehaviour
 {
-    enum Stage
-    {
+    private AudioSource audioSource;
 
+    public AudioClip[] audioClips;
+
+    private void Start()
+    {
+        audioSource.loop = true;
+        audioSource.playOnAwake = false;
+        audioSource.panStereo = 0;
     }
 
+    public void PlayBgm(AudioClip clips)
+    {
+        if (audioSource.clip == clips)
+        {
+            return;
+        }
 
+        audioSource.clip = clips;
+        audioSource.Play();
+    }
 }

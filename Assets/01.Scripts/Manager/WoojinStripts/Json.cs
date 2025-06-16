@@ -9,6 +9,7 @@ public class SaveData
     [HideInInspector] public int curStage;    //(현재 스테이지)
     [HideInInspector] public int curWave;     //(현재 웨이브)
 
+
 }
 
 public static class Json
@@ -17,10 +18,11 @@ public static class Json
     private static string path = Path.Combine(Application.persistentDataPath, "PlayerData.Json");
 
     public static void JsonSave()
-    {
+    {            
         // saveData 초기화
         SaveData saveData = new SaveData()
         {
+            // 값을 덮어 쓰기
             PlayerData = GameManager.Instance.playerData,
             curStage = StageManager.Instance.currentStageIndex,
             curWave = StageManager.Instance.currentWaveIndex
@@ -39,6 +41,7 @@ public static class Json
     {
         if (File.Exists(path))
         {
+            // 파일을 읽기
             string json = File.ReadAllText(path);
 
             if (string.IsNullOrEmpty(json) || json == "{}")
@@ -48,13 +51,15 @@ public static class Json
                 return;
             }
 
+            // json파일의 데이터를 savedata에 할당w
             SaveData saveData = JsonUtility.FromJson<SaveData>(json);
-
+            while 
+            // savedata에 있는 값을 덮어 씌우기
             GameManager.Instance.playerData = saveData.PlayerData;
             StageManager.Instance.currentStageIndex = saveData.curStage;
             StageManager.Instance.currentWaveIndex = saveData.curWave;
 
-            Debug.Log(saveData);
+            Debug.Log(JsonUtility.ToJson(saveData, true));
         }
         else
         {

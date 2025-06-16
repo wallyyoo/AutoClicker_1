@@ -1,4 +1,4 @@
-
+﻿
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "NewItem", menuName = "Inventory/ItemData")]

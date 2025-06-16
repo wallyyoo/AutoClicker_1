@@ -9,6 +9,8 @@ public class GameManager : MonoBehaviour
 
     [HideInInspector] public PlayerData playerData;
 
+    public SoundManager soundManager;
+
     private string path;
 
     private void Awake()
@@ -17,6 +19,12 @@ public class GameManager : MonoBehaviour
         {
             Instance = this;
             DontDestroyOnLoad(gameObject);
+            playerData = new PlayerData();
+
+            if (soundManager == null)
+            {
+                soundManager = FindObjectOfType<SoundManager>();
+            }
         }
         else
         {
@@ -25,9 +33,29 @@ public class GameManager : MonoBehaviour
     }
     private void Start()
     {
-        Json.JsonLoad();
-    }
+        if (Instance != this)
+        {
 
+            Destroy(gameObject);
+        }
+        StartCoroutine(JsonLoadCoroutine());
+    }
+    private IEnumerator JsonLoadCoroutine()
+    {
+        yield return null; // 모든 Awake() 완료 대기
+
+        if (StageManager.Instance == null)
+        {
+            Debug.Log("StageManager가 초기화되지 않았습니다.");
+
+        }
+        else
+        {
+            Debug.Log("초기화 완료");
+            Json.JsonLoad(); // 안전하게 실행
+        }
+
+    }
     public void DebugLog(string msg)
     {
         Debug.Log(msg);
