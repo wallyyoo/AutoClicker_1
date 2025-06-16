@@ -1,4 +1,4 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -11,11 +11,24 @@ public class Enemy : MonoBehaviour
     public void Init(EnemyData enemyData, int stageIndex)
     {
         data = enemyData;
-        // ¼±Çü Áõ°¡: 10%¾¿ Áõ°¡
+        // ì„ í˜• ì¦ê°€: 10%ì”© ì¦ê°€
         float healthMultiplier = 1f + stageIndex * 0.1f;
         float damageMultiplier = 1f + stageIndex * 0.1f;
 
         currentHealth = Mathf.RoundToInt(data.health * healthMultiplier);
         currentDamage = Mathf.RoundToInt(data.damage * damageMultiplier);
+    }
+    public void TakeDamage(int amount)
+    {
+        currentHealth -= amount;
+        //í”¼ê²© ì• ë‹ˆë©”ì´ì…˜ êµ¬í˜„ ì˜ˆì •ì…ë‹ˆë‹¤.
+        if (currentHealth <= 0)
+        {
+            Die();
+        }
+    }
+    public void Die()
+    {
+        
     }
 }
