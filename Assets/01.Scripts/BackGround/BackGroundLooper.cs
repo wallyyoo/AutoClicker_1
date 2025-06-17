@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using UnityEngine;
 
 public class BackGroundLooper : MonoBehaviour
@@ -12,7 +13,7 @@ public class BackGroundLooper : MonoBehaviour
     
     
     private float originalSpeed;
-
+    
     void Start()
     {
         originalSpeed = moveSpeed;
@@ -27,7 +28,6 @@ public class BackGroundLooper : MonoBehaviour
     {
         // 매 프레임마다 왼쪽으로 이동
         transform.Translate(Vector2.left * moveSpeed * Time.deltaTime);
-
         // 만약 배경이 화면 왼쪽 바깥까지 나갔다면
         // (X 위치가 -spriteWidth보다 작다면 = 완전히 안 보이게 됐다면)
         if (transform.position.x < -spriteWidth)
@@ -55,4 +55,10 @@ public class BackGroundLooper : MonoBehaviour
         originalSpeed = speed;
         moveSpeed = speed;
     }
+
+    public void MoveStop()
+    {
+        moveSpeed = 0f;
+    }
+    
 }

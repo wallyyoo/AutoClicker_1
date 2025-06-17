@@ -65,6 +65,7 @@ public static class Json
 
             GameManager.Instance.playerData = new PlayerData();
 
+
             JsonSave(); // 초기화 저장
         }
     }

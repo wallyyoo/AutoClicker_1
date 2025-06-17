@@ -35,6 +35,7 @@ public class ClickManager : MonoBehaviour
             //클릭 위치를 구독 중인 다른 스크립트들에게 전달
             //?.는 null 체크(구독자가 있을 때만 호출)
             OnClick?.Invoke(clickPosition);//Invoke()는 “등록된 함수들을 실행해줘!” 
+            
         }
     }
 
