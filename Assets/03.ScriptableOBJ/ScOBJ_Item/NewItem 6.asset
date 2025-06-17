@@ -12,13 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6845d6875eb55164fa62e7cc9b09c041, type: 3}
   m_Name: NewItem 6
   m_EditorClassIdentifier: 
-  itemName: "\uD669\uAE08 \uACE1\uAD2D\uC774"
+  itemName: "\uD669\uAE08 \uAC80"
   itemCost: 50000
   upgradeCost: 1000
   attackPower: 160
-  criticalDamage: 180
   criticalChance: 0.16
-  goldGain: 60
-  isUnlocked: 0
+  isPurchased: 0
   isEquipped: 0
   upgradeLevel: 1

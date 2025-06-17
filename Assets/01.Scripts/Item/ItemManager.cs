@@ -25,47 +25,77 @@ public class ItemManager : MonoBehaviour
 
     public void BuyItem(ItemData item)
     {
-        if (!item.isUnlocked && playerData.curGold >= item.itemCost)
+        if (item.isPurchased)
+        {
+            Debug.Log($"{item.itemName} 이미 구매된 아이템입니다.");
+            return;
+        }
+
+        if (playerData.curGold >= item.itemCost)
         {
             playerData.curGold -= item.itemCost;
-            item.isUnlocked = true;
+            item.isPurchased = true;
+            Debug.Log($"{item.itemName} 구매 성공. 남은 골드: {playerData.curGold}");
+        }
+        else
+        {
+            Debug.Log($"Gold 부족, 구매 불가. 현재 보유 골드: {playerData.curGold}");
         }
     }
 
     public void EquipItem(ItemData item)
     {
-        if (!item.isUnlocked)
+        if (!item.isPurchased)
         {
+            Debug.Log("장착 실패: 잠금 해제되지 않은 아이템입니다.");
             return;
         }
 
         if (equippedItem != null)
         {
             equippedItem.isEquipped = false;
+            Debug.Log($"기존 장착 해제: {equippedItem.itemName}");
         }
+
         equippedItem = item;
         equippedItem.isEquipped = true;
+
+        Debug.Log($"{item.itemName} 장착 완료.");
 
     }
 
     public void UpgradeItem(ItemData item)
     {
-        if (!item.isEquipped || item.upgradeLevel >= Item_UpgradeTable.MaxLevel)
+        if (!item.isEquipped)
+        {
+            Debug.Log("업그레이드 실패: 장착된 아이템이 아닙니다.");
             return;
+        }
+
+        if (item.upgradeLevel >= Item_UpgradeTable.MaxLevel)
+        {
+            Debug.Log("최대 레벨입니다.");
+            return;
+        }
 
         int cost = Item_UpgradeTable.CalculateUpgradeCost(item.upgradeCost, item.upgradeLevel + 1);
         if (playerData.curGold < cost)
+        {
+            Debug.Log($"Gold 부족, 업그레이드 불가. 필요 골드: {cost}, 현재 골드: {playerData.curGold}");
             return;
+        }
 
         playerData.curGold -= cost;
         item.upgradeLevel++;
+
+        Debug.Log($"{item.itemName} 업그레이드 성공. 현재 레벨: {item.upgradeLevel}, 남은 골드: {playerData.curGold}");
    
     }
     
     // 아이템의 구매, 착용 여부의 상태를 체크
     public bool IsUnlocked(ItemData item)
     {
-        return item.isUnlocked;
+        return item.isPurchased;
     }
 
     public bool IsEquipped(ItemData item)

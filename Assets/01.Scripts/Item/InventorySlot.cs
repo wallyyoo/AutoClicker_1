@@ -26,8 +26,18 @@ public class InventorySlot : MonoBehaviour
     {
         itemData = data;
 
+        if (!itemData.isPurchased)
+        {
+            itemNameText.text = "???";
+            itemInfoText.text = "???";
+        }
+        
+        else 
+        {
         itemNameText.text = itemData.itemName;
         itemInfoText.text = $"공격력:{itemData.attackPower} \n크리:{itemData.criticalChance * 100}%";
+        }
+
         
         buyButton.onClick.RemoveAllListeners();
         equipButton.onClick.RemoveAllListeners();
@@ -59,18 +69,21 @@ public class InventorySlot : MonoBehaviour
 
     private void OnBuy()
     {
+        Debug.Log($"{itemData.itemName} 구매 버튼 클릭");
         ItemManager.ItemManagerInstance.BuyItem(itemData);
         Refresh();
     }
 
     private void OnEquip()
     {
+        Debug.Log($"{itemData.itemName} 장착 버튼 클릭");
         ItemManager.ItemManagerInstance.EquipItem(itemData);
         Refresh();
     }
 
     private void OnUpgrade()
     {
+        Debug.Log($"{itemData.itemName} 업그레이드 버튼 클릭");
         ItemManager.ItemManagerInstance.UpgradeItem(itemData);
         Refresh();
     }

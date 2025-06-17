@@ -10,9 +10,9 @@ public class ItemData : ScriptableObject
    public int attackPower;
    public float criticalChance;
 
-   [HideInInspector] public bool isUnlocked;
-   [HideInInspector] public bool isEquipped;
-   [HideInInspector] public int upgradeLevel = 1;
+   public bool isPurchased;
+   public bool isEquipped;
+   public int upgradeLevel = 1;
    
 
 }

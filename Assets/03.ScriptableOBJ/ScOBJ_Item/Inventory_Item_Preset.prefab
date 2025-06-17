@@ -250,7 +250,6 @@ GameObject:
   - component: {fileID: 809797310189783499}
   - component: {fileID: 2751830439291473582}
   - component: {fileID: 293217666928842034}
-  - component: {fileID: 5312816274554771830}
   m_Layer: 5
   m_Name: Upgrade_Btn
   m_TagString: Untagged
@@ -360,9 +359,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 5312816274554771830}
-        m_TargetAssemblyTypeName: ItemManager, Assembly-CSharp
-        m_MethodName: UpgradeItem
+      - m_Target: {fileID: 7305306561065289914}
+        m_TargetAssemblyTypeName: InventorySlot, Assembly-CSharp
+        m_MethodName: Setup
         m_Mode: 2
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -372,39 +371,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &5312816274554771830
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3117867182764094957}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dcdb70980e9a0de4f83e7e6adf63873c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  allItems: []
-  equippedItem: {fileID: 0}
-  playerData:
-    playerUpgradeTable: {fileID: 0}
-    baseAttackPower: 1
-    baseCriticalDamage: 2
-    baseCriticalChance: 0
-    baseGoldGain: 0
-    baseAutoSpeed: 10
-    baseHp: 100
-    baseMp: 100
-    baseUpGold: 0
-    curGold: 0
-    attackPowerUpLevel: 0
-    critiDamageUpLevel: 0
-    critiChanceUpLevel: 0
-    goldGainUpLevel: 1
-    autoSpeedUpLevel: 0
-    hpUpLevel: 0
-    mpUpLevel: 0
-    goldUpLevel: 0
 --- !u!1 &3606490437247421375
 GameObject:
   m_ObjectHideFlags: 0
@@ -839,7 +805,6 @@ GameObject:
   - component: {fileID: 2197285708961973416}
   - component: {fileID: 5465764083238398732}
   - component: {fileID: 7137188029604374463}
-  - component: {fileID: 6288980173511017594}
   m_Layer: 5
   m_Name: Buy_Btn
   m_TagString: Untagged
@@ -949,9 +914,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 6288980173511017594}
-        m_TargetAssemblyTypeName: ItemManager, Assembly-CSharp
-        m_MethodName: BuyItem
+      - m_Target: {fileID: 7305306561065289914}
+        m_TargetAssemblyTypeName: InventorySlot, Assembly-CSharp
+        m_MethodName: Setup
         m_Mode: 2
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -961,39 +926,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &6288980173511017594
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5746250767792424102}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dcdb70980e9a0de4f83e7e6adf63873c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  allItems: []
-  equippedItem: {fileID: 0}
-  playerData:
-    playerUpgradeTable: {fileID: 0}
-    baseAttackPower: 1
-    baseCriticalDamage: 2
-    baseCriticalChance: 0
-    baseGoldGain: 0
-    baseAutoSpeed: 10
-    baseHp: 100
-    baseMp: 100
-    baseUpGold: 0
-    curGold: 0
-    attackPowerUpLevel: 0
-    critiDamageUpLevel: 0
-    critiChanceUpLevel: 0
-    goldGainUpLevel: 1
-    autoSpeedUpLevel: 0
-    hpUpLevel: 0
-    mpUpLevel: 0
-    goldUpLevel: 0
 --- !u!1 &5772287046608680941
 GameObject:
   m_ObjectHideFlags: 0
@@ -1006,7 +938,6 @@ GameObject:
   - component: {fileID: 7104391278416580634}
   - component: {fileID: 2573478630142085294}
   - component: {fileID: 4510351520429345927}
-  - component: {fileID: 2428611120732072577}
   m_Layer: 5
   m_Name: Equip_Btn
   m_TagString: Untagged
@@ -1116,9 +1047,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2428611120732072577}
-        m_TargetAssemblyTypeName: ItemManager, Assembly-CSharp
-        m_MethodName: EquipItem
+      - m_Target: {fileID: 7305306561065289914}
+        m_TargetAssemblyTypeName: InventorySlot, Assembly-CSharp
+        m_MethodName: Setup
         m_Mode: 2
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1128,39 +1059,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &2428611120732072577
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5772287046608680941}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dcdb70980e9a0de4f83e7e6adf63873c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  allItems: []
-  equippedItem: {fileID: 0}
-  playerData:
-    playerUpgradeTable: {fileID: 0}
-    baseAttackPower: 1
-    baseCriticalDamage: 2
-    baseCriticalChance: 0
-    baseGoldGain: 0
-    baseAutoSpeed: 10
-    baseHp: 100
-    baseMp: 100
-    baseUpGold: 0
-    curGold: 0
-    attackPowerUpLevel: 0
-    critiDamageUpLevel: 0
-    critiChanceUpLevel: 0
-    goldGainUpLevel: 1
-    autoSpeedUpLevel: 0
-    hpUpLevel: 0
-    mpUpLevel: 0
-    goldUpLevel: 0
 --- !u!1 &6207434397716248177
 GameObject:
   m_ObjectHideFlags: 0
