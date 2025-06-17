@@ -3,7 +3,11 @@ using UnityEngine.UI;
 using UnityEngine;
 using TMPro;
 
-public class Enemy : MonoBehaviour
+public interface IRewardable
+{
+    public void AddGold(int amount);
+}
+public class Enemy : MonoBehaviour, IRewardable
 {
     public EnemyData data;
     public StageData stageData;
@@ -138,7 +142,7 @@ public class Enemy : MonoBehaviour
         {
             SetState(EnemyState.Die);
             int totalReward = Mathf.RoundToInt(data.reward * (1f + stageIndex * 0.1f)); // 골드 획득량 증가 스탯은 아직 고려 안함
-            GoldDelta.AddGold(totalReward); // 골드 획득
+            AddGold(totalReward); // 골드 획득
             Die();
             return;
         }
@@ -229,5 +233,11 @@ public class Enemy : MonoBehaviour
             }
             enemyNameText.text = $"{koreanName} LV.{stageData.stages[stageIndex].stageKey}";
         }
+    }
+
+    public void AddGold(int amount)
+    {
+        GameManager.Instance.playerData.curGold += amount;
+        Json.JsonSave(); // 골드 변경 사항 저장
     }
 }

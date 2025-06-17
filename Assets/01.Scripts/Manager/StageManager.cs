@@ -1,7 +1,7 @@
 ﻿using System;
 using UnityEngine;
 
-public class StageManager : MonoBehaviour
+public class StageManager : MonoBehaviour, IRewardable
 {
     public int currentStageIndex;
     public int currentWaveIndex;
@@ -61,7 +61,8 @@ public class StageManager : MonoBehaviour
         }
         else
         {
-            GiveReward();
+            int totalReward = 100 + 10 * (currentStageIndex + 1); // 스테이지 클리어 보상 계산 (예: 100 + 10 * 스테이지 번호)
+            AddGold(totalReward);
             OnStageCleared?.Invoke();
 
             // 다음 스테이지 자동 진행
@@ -71,8 +72,10 @@ public class StageManager : MonoBehaviour
         }
     }
 
-    private void GiveReward()
+    public void AddGold(int amount)
     {
-        // 리워드 지급 로직
+        GameManager.Instance.playerData.curGold += amount;
+
+        Json.JsonSave();
     }
 }
