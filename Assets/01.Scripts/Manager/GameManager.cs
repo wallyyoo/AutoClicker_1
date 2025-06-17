@@ -19,7 +19,6 @@ public class GameManager : MonoBehaviour
         if (Instance == null)
         {
             Instance = this;
-            Json.JsonLoad(); // Json 파일 로드
             DontDestroyOnLoad(gameObject);
 
             //if (playerData.playerUpgradeTable == null)
@@ -41,6 +40,7 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
+        Json.JsonLoad(); 
 
         if (Instance != this)
         {
@@ -60,7 +60,7 @@ public class GameManager : MonoBehaviour
         else
         {
             Debug.Log("초기화 완료");
-            Json.JsonLoad(); // 안전하게 실행
+            //Json.JsonLoad(); // 안전하게 실행
         }
     }
 }

@@ -40,7 +40,7 @@ public class UIStatText : MonoBehaviour
     }
     void _upAttackSpeedText()
     {
-        upAttackSpeedText.text = $"공격속도 : -{(playerUpgradeTable.autoSpeedPerLevel)}초 ";
+        upAttackSpeedText.text = $"공격속도 : -{(playerData.UpstatusAutoSpeed)}초 ";
     }
     void _upGoldGainText()
     {
