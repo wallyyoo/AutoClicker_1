@@ -6,6 +6,7 @@ public class AutoAttack : MonoBehaviour
     public float attackInterval;//공격 간격
     public bool isAutoAttackEnabled = true;//자동 공격 활성화 여부
     public AttackEffect attackEffect; // <- 연결 필요!
+    
 
     Coroutine attackRoutine;
 

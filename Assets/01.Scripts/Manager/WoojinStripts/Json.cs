@@ -12,12 +12,16 @@ public class SaveData
 
 public static class Json
 {
+    [HideInInspector] public static SaveData saveData;
+
     // 안전한 경로 + 파일 이름 (확장자까지 포함) 지정
     private static string path = Path.Combine(Application.persistentDataPath, "PlayerData.Json");
 
     public static void JsonSave()
-    {            
+    {
+
         // saveData 초기화
+
         SaveData saveData = new SaveData()
         {
             
@@ -26,6 +30,7 @@ public static class Json
             curStage = StageManager.Instance.currentStageIndex,
             curWave = StageManager.Instance.currentWaveIndex,
         };
+
 
         // 클래스 데이터를 JSON 문자열로 변환
         string dataSave = JsonUtility.ToJson(saveData, true);
@@ -67,4 +72,5 @@ public static class Json
         }
     }
 }
+
 

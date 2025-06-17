@@ -6,6 +6,7 @@ public class EnemyManager : MonoBehaviour
     public static EnemyManager Instance;
 
     private List<Enemy> aliveEnemies = new List<Enemy>();
+    private int totalEnemyCount;
 
     private void Awake()
     {
@@ -20,6 +21,7 @@ public class EnemyManager : MonoBehaviour
 
     public void SpawnWave(List<MonsterSpawnData> enemys)
     {
+        totalEnemyCount = enemys.Count;
         for (int i = 0; i < enemys.Count; i++)
         {
             var spawnData = enemys[i];
@@ -34,11 +36,13 @@ public class EnemyManager : MonoBehaviour
                 aliveEnemies.Add(enemy);
             }
         }
+        UIMainManager.Instance.UpdateAliveEnemys(aliveEnemies.Count, totalEnemyCount);
     }
 
     public void OnEnemyDied(Enemy enemy)
     {
         aliveEnemies.Remove(enemy);// 에너미 제거
+        UIMainManager.Instance.UpdateAliveEnemys(aliveEnemies.Count, totalEnemyCount);
         if (aliveEnemies.Count == 0)
         {
             // 모든 에너미가 제거됨

@@ -3,7 +3,7 @@ using UnityEngine.UI;
 using UnityEngine;
 using TMPro;
 
-public class Enemy : MonoBehaviour
+public class Enemy : MonoBehaviour, IRewardable
 {
     public EnemyData data;
     public StageData stageData;
@@ -125,6 +125,7 @@ public class Enemy : MonoBehaviour
     public void SteelGold()
     {
         GameManager.Instance.playerData.curGold -= data.damage + stageIndex / 2; // 데이지와 스테이지 인덱스에 따라 골드 감소
+        Debug.Log($"{gameObject.name}이(가) {data.damage + stageIndex / 2} 골드를 훔쳤습니다. 현재 골드: {GameManager.Instance.playerData.curGold}");
 
         Json.JsonSave(); // 골드 변경 사항 저장
     }
@@ -137,8 +138,7 @@ public class Enemy : MonoBehaviour
         if (currentHealth <= 0)
         {
             SetState(EnemyState.Die);
-            int totalReward = Mathf.RoundToInt(data.reward * (1f + stageIndex * 0.1f)); // 골드 획득량 증가 스탯은 아직 고려 안함
-            GoldDelta.AddGold(totalReward); // 골드 획득
+            AddGold(data.reward); // 골드 획득
             Die();
             return;
         }
@@ -229,5 +229,13 @@ public class Enemy : MonoBehaviour
             }
             enemyNameText.text = $"{koreanName} LV.{stageData.stages[stageIndex].stageKey}";
         }
+    }
+
+    public void AddGold(int amount)
+    {
+        int totalReward = Mathf.RoundToInt(amount + stageIndex + GameManager.Instance.playerData.UpStatusGold); // 스테이지 인덱스와 업그레이드에 따라 보상 조정
+
+        GameManager.Instance.playerData.curGold += totalReward;
+        Json.JsonSave(); // 골드 변경 사항 저장
     }
 }

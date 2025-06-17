@@ -1,19 +1,31 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class AttackEffect : MonoBehaviour
 {
     public ParticleSystem normalHitEffect;
     public ParticleSystem criticalHitEffect;
+    }
+
+    private void OnDisable()
+    {
+        ClickManager.OnClick -= OnClick;
 
     private void OnEnable()
     {
         ClickManager.OnClick += OnClick;
     }
 
-    private void OnDisable()
+   private void OnDrawGizmos()
     {
-        ClickManager.OnClick -= OnClick;
+        
+        Gizmos.color = Color.red;
+        Gizmos.DrawCube(new Vector3(_boxCenter.x, _boxCenter.y), new Vector3(_boxSize.x, _boxSize.y, 10f));
     }
+
+    private Vector2 _boxSize;
+    private Vector2 _boxCenter;
 
     private void OnClick(Vector3 clickPosition)
     {
@@ -30,6 +42,7 @@ public class AttackEffect : MonoBehaviour
             Debug.LogWarning("EnemyDetector 없음!");
             return;
         }
+
 
         // 플레이어 데이터 가져오기
         var playerData = GameManager.Instance.playerData;

@@ -1,7 +1,7 @@
 ﻿using System;
 using UnityEngine;
 
-public class StageManager : MonoBehaviour
+public class StageManager : MonoBehaviour, IRewardable
 {
     public int currentStageIndex;
     public int currentWaveIndex;
@@ -27,9 +27,15 @@ public class StageManager : MonoBehaviour
 
     private void Start()
     {
-        // 게임 시작 시 0스테이지 자동 시작
+        Json.JsonLoad();
         GameManager.Instance.soundManager.Bgm(currentStageIndex);
-        StartStage(0);
+        if (currentStageIndex < 0)
+        {
+            currentStageIndex = 0;
+            StartStage(0);
+            return;
+        }
+        StartStage(currentStageIndex);
     }
 
     public void StartStage(int stageIndex)
@@ -41,13 +47,14 @@ public class StageManager : MonoBehaviour
         }
 
         currentStageIndex = stageIndex;
-        currentWaveIndex = 0;
+        UIMainManager.Instance.UpdateStageTitle(currentStageIndex);
         StartWave(currentWaveIndex);
     }
 
     public void StartWave(int waveIndex)
     {
         var wave = stageData.stages[currentStageIndex].waves[waveIndex];
+        UIMainManager.Instance.UpdateWaveTitle(waveIndex);
         EnemyManager.Instance.SpawnWave(wave.enemys);
         OnWaveStarted?.Invoke(waveIndex);
     }
@@ -61,7 +68,7 @@ public class StageManager : MonoBehaviour
         }
         else
         {
-            GiveReward();
+            AddGold(currentStageIndex);
             OnStageCleared?.Invoke();
 
             // 다음 스테이지 자동 진행
@@ -69,10 +76,16 @@ public class StageManager : MonoBehaviour
             GameManager.Instance.soundManager.Bgm(currentStageIndex + 1);
 
         }
+        Json.JsonSave();
     }
 
-    private void GiveReward()
+    public void AddGold(int amount)
     {
-        // 리워드 지급 로직
+
+        int totalReward = 100 + 10 * (amount + 1); // 스테이지 클리어 보상 계산
+        GameManager.Instance.playerData.curGold += totalReward;
+        Debug.Log($"골드 획득: {amount}. 현재 골드: {GameManager.Instance.playerData.curGold}");
+
+        Json.JsonSave();
     }
 }
