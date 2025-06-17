@@ -8,8 +8,6 @@ public class SaveData
 
     [HideInInspector] public int curStage;    //(현재 스테이지)
     [HideInInspector] public int curWave;     //(현재 웨이브)
-
-
 }
 
 public static class Json
@@ -21,6 +19,9 @@ public static class Json
 
     public static void JsonSave()
     {
+
+        // saveData 초기화
+
         saveData.PlayerData = GameManager.Instance.playerData;
         saveData.curStage = StageManager.Instance.currentStageIndex;
         saveData.curWave = StageManager.Instance.currentWaveIndex;
@@ -61,15 +62,12 @@ public static class Json
         else
         {
             Debug.Log("저장된 파일이 없습니다. 새로 생성합니다.");
-            saveData = new SaveData()
-            {
-                // 값을 덮어 쓰기
-                PlayerData = GameManager.Instance.playerData,
-                curStage = StageManager.Instance.currentStageIndex,
-                curWave = StageManager.Instance.currentWaveIndex
-            };
+
+            GameManager.Instance.playerData = new PlayerData();
+
             JsonSave(); // 초기화 저장
         }
     }
 }
+
 
