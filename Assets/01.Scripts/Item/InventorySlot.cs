@@ -6,12 +6,13 @@ using TMPro;
 // 아이템 슬롯에서 구매/장착/업그레이드 기능을 담당하는 슬롯 전용 스크립트
 public class InventorySlot : MonoBehaviour
 {
-    [Header("이미지 상태")]
+    [Header("아이템 상태 이미지")]
     public GameObject imageDisable;
     public GameObject imageEnable;
     public GameObject imageEquipped;
 
     [Header("아이템 정보")]
+    public Image itemIconImage;
     public TMP_Text itemNameText;
     public TMP_Text itemInfoText;
     public TMP_Text upgradeCostText;
@@ -42,6 +43,9 @@ public class InventorySlot : MonoBehaviour
         bool isUnlocked = ItemManager.ItemManagerInstance.IsUnlocked(itemData);
         bool isEquipped = ItemManager.ItemManagerInstance.IsEquipped(itemData);
         bool canUpgrade = ItemManager.ItemManagerInstance.CanUpgrade(itemData);
+        
+        itemIconImage.sprite = itemData.itemIcon;
+        itemIconImage.enabled = true;
 
         imageDisable.SetActive(!isUnlocked);
         imageEnable.SetActive(isUnlocked && !isEquipped);
@@ -51,6 +55,7 @@ public class InventorySlot : MonoBehaviour
         equipButton.gameObject.SetActive(isUnlocked && !isEquipped);
         upgradeButton.gameObject.SetActive(isEquipped && canUpgrade);
 
+        
         if (!isUnlocked)
         {
             itemNameText.text = "???";

@@ -18,6 +18,7 @@ MonoBehaviour:
   upgradeCost: 300
   attackPower: 50
   criticalChance: 0.08
+  itemIcon: {fileID: 21300000, guid: 4deb1580f9aafe0489f20937dd4fa09e, type: 3}
   isPurchased: 0
   isEquipped: 0
   upgradeLevel: 1

@@ -10,9 +10,10 @@ public class ItemManager : MonoBehaviour
     public ItemData[] allItems;
     public ItemData equippedItem;
     public PlayerData playerData;
-
+    
     private void Awake()
     {
+        Debug.Log($"ItemManager playerData instance: {playerData.GetHashCode()}");
         if (ItemManagerInstance == null)
         {
             ItemManagerInstance = this;
@@ -22,9 +23,21 @@ public class ItemManager : MonoBehaviour
             Destroy(gameObject);
         }
     }
+    private void Start()
+    {
+        foreach (var item in allItems)
+        {
+            if (item.isEquipped)
+            {
+                equippedItem = item;
+                break;
+            }
+        }
+    }
 
     public void BuyItem(ItemData item)
     {
+    
         if (item.isPurchased)
         {
             Debug.Log($"{item.itemName} 이미 구매된 아이템입니다.");

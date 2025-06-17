@@ -11,6 +11,8 @@ public class ItemData : ScriptableObject
    public int attackPower;
    public float criticalChance;
 
+   public Sprite itemIcon;
+
    public bool isPurchased;
    public bool isEquipped;
    public int upgradeLevel = 1;
