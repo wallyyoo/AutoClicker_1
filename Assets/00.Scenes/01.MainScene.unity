@@ -5556,9 +5556,13 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2391561233291613140, guid: 7b8bd72c7f8872643b5080e85439b22e, type: 3}
+      propertyPath: backGroundLooper.Array.size
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 2391561233291613140, guid: 7b8bd72c7f8872643b5080e85439b22e, type: 3}
       propertyPath: backGroundLooper.Array.data[0]
       value: 
-      objectReference: {fileID: 9059308287761983543}
+      objectReference: {fileID: 4535534164952801770}
     - target: {fileID: 2391561233291613140, guid: 7b8bd72c7f8872643b5080e85439b22e, type: 3}
       propertyPath: backGroundLooper.Array.data[1]
       value: 
@@ -5583,6 +5587,10 @@ PrefabInstance:
       propertyPath: backGroundLooper.Array.data[6]
       value: 
       objectReference: {fileID: 680710530}
+    - target: {fileID: 2391561233291613140, guid: 7b8bd72c7f8872643b5080e85439b22e, type: 3}
+      propertyPath: backGroundLooper.Array.data[7]
+      value: 
+      objectReference: {fileID: 4043977116628475982}
     - target: {fileID: 4021737757911299968, guid: 7b8bd72c7f8872643b5080e85439b22e, type: 3}
       propertyPath: m_Name
       value: BackGroundManager
