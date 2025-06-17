@@ -129,6 +129,7 @@ public class Enemy : MonoBehaviour, IRewardable
     public void SteelGold()
     {
         GameManager.Instance.playerData.curGold -= data.damage + stageIndex / 2; // 데이지와 스테이지 인덱스에 따라 골드 감소
+        Debug.Log($"{gameObject.name}이(가) {data.damage + stageIndex / 2} 골드를 훔쳤습니다. 현재 골드: {GameManager.Instance.playerData.curGold}");
 
         Json.JsonSave(); // 골드 변경 사항 저장
     }
