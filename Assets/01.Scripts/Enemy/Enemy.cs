@@ -239,6 +239,7 @@ public class Enemy : MonoBehaviour, IRewardable
     public void AddGold(int amount)
     {
         GameManager.Instance.playerData.curGold += amount;
+        Debug.Log($"{gameObject.name}이(가) {amount} 골드를 획득했습니다. 현재 골드: {GameManager.Instance.playerData.curGold}");
         Json.JsonSave(); // 골드 변경 사항 저장
     }
 }

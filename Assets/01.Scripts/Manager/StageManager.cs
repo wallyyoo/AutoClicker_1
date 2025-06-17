@@ -75,6 +75,7 @@ public class StageManager : MonoBehaviour, IRewardable
     public void AddGold(int amount)
     {
         GameManager.Instance.playerData.curGold += amount;
+        Debug.Log($"골드 획득: {amount}. 현재 골드: {GameManager.Instance.playerData.curGold}");
 
         Json.JsonSave();
     }
