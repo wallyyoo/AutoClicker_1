@@ -8,7 +8,7 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance;
 
      public PlayerData playerData;
-    public PlayerUpgradeTable playerUpgradeTable;
+    //public PlayerUpgradeTable playerUpgradeTable;
 
     public SoundManager soundManager;
 
@@ -21,10 +21,10 @@ public class GameManager : MonoBehaviour
             Instance = this;
             DontDestroyOnLoad(gameObject);
 
-            if (playerData.playerUpgradeTable == null)
-            {
-                playerData.playerUpgradeTable = playerUpgradeTable;  
-            }
+            //if (playerData.playerUpgradeTable == null)
+            //{
+            //    playerData.playerUpgradeTable = playerUpgradeTable;  
+            //}
 
             if (soundManager == null)
             {
@@ -40,6 +40,7 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
+        Json.JsonLoad(); 
 
         if (Instance != this)
         {
@@ -59,7 +60,7 @@ public class GameManager : MonoBehaviour
         else
         {
             Debug.Log("초기화 완료");
-            Json.JsonLoad(); // 안전하게 실행
+            //Json.JsonLoad(); // 안전하게 실행
         }
     }
 }
