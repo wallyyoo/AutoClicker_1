@@ -57,7 +57,6 @@ public class StageManager : MonoBehaviour, IRewardable
         UIMainManager.Instance.UpdateWaveTitle(waveIndex);
         EnemyManager.Instance.SpawnWave(wave.enemys);
         OnWaveStarted?.Invoke(waveIndex);
-        Json.JsonSave();
     }
 
     public void OnWaveCleared()
