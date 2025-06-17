@@ -16,7 +16,7 @@ public class AutoAttack : MonoBehaviour
         // 업그레이드 수치 기반으로 공격 간격 계산
         float interval = GameManager.Instance.playerData.UpstatusAutoSpeed;
         attackInterval = interval;
-
+        //Debug.Log($"[AutoAttack] 설정된 공격 간격: {attackInterval}");
         StartAutoAttack();
 
     }

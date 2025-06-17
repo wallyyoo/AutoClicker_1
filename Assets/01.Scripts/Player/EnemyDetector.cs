@@ -18,7 +18,7 @@ public class EnemyDetector : MonoBehaviour
             monsterCheking = true;
             if (monsterCheking == true)
             {
-                //BackGroundManager.BackInstace.BackGroundAllMoveStop();
+                BackGroundManager.BackInstace.BackGroundAllMoveStop();
             }
         }
     }
@@ -33,7 +33,7 @@ public class EnemyDetector : MonoBehaviour
             monsterCheking = false;
             if (monsterCheking == false)
             {
-                //BackGroundManager.BackInstace.ResetAllSpeeds();
+                BackGroundManager.BackInstace.ResetAllSpeeds();
             }
         }
     }

@@ -6,12 +6,12 @@ public class AttackEffect : MonoBehaviour
 {
     public ParticleSystem normalHitEffect;
     public ParticleSystem criticalHitEffect;
-    }
+
 
     private void OnDisable()
     {
         ClickManager.OnClick -= OnClick;
-
+    }
     private void OnEnable()
     {
         ClickManager.OnClick += OnClick;

@@ -3865,8 +3865,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: 170, y: -25.7689}
-  m_SizeDelta: {x: 285.467, y: 71.5377}
+  m_AnchoredPosition: {x: 170, y: -10}
+  m_SizeDelta: {x: 285, y: 35}
   m_Pivot: {x: 0, y: 0.5}
 --- !u!114 &837943505
 MonoBehaviour:
@@ -4303,8 +4303,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: 170, y: -59}
-  m_SizeDelta: {x: 285.467, y: 71.5377}
+  m_AnchoredPosition: {x: 170, y: -40}
+  m_SizeDelta: {x: 285, y: 35}
   m_Pivot: {x: 0, y: 0.5}
 --- !u!222 &867669020
 CanvasRenderer:
@@ -4369,7 +4369,7 @@ MonoBehaviour:
   m_fontSizeMax: 72
   m_fontStyle: 0
   m_HorizontalAlignment: 1
-  m_VerticalAlignment: 256
+  m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
@@ -11089,20 +11089,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f86f6f3ba1ceabb41b60033e7e7bb72c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Inventory_OpenButton: {fileID: 2128382410}
-  Inventory_CloseButton: {fileID: 1914398107}
   Inventory_Window: {fileID: 2071251413}
-  Item_BuyButton: {fileID: 1925220906}
-  Item_EquipButton: {fileID: 1844619765}
-  Item_UpgradeButton: {fileID: 286650226}
-  Item_Image_Enable: {fileID: 214313344}
-  Item_Image_Disable: {fileID: 165692038}
-  Item_Image_Equiped: {fileID: 2049015092}
-  Item_Name: {fileID: 854344936}
-  Item_Info: {fileID: 1252647241}
-  Item_BuyCost: {fileID: 1284543159}
-  Item_UpgradeCost: {fileID: 1479486861}
-  currentItem: {fileID: 0}
+  Inventory_content: {fileID: 0}
+  Inventory_Item_preset: {fileID: 0}
 --- !u!1 &2080791945
 GameObject:
   m_ObjectHideFlags: 0
