@@ -236,7 +236,6 @@ public class Enemy : MonoBehaviour, IRewardable
         int totalReward = Mathf.RoundToInt(amount + stageIndex + GameManager.Instance.playerData.UpStatusGold); // 스테이지 인덱스와 업그레이드에 따라 보상 조정
 
         GameManager.Instance.playerData.curGold += totalReward;
-        Debug.Log($"{gameObject.name}이(가) {totalReward} 골드를 획득했습니다. 현재 골드: {GameManager.Instance.playerData.curGold}");
         Json.JsonSave(); // 골드 변경 사항 저장
     }
 }

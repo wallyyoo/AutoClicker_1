@@ -27,9 +27,15 @@ public class StageManager : MonoBehaviour, IRewardable
 
     private void Start()
     {
-        // 게임 시작 시 0스테이지 자동 시작
+        Json.JsonLoad();
         GameManager.Instance.soundManager.Bgm(currentStageIndex);
-        StartStage(0);
+        if (currentStageIndex < 0)
+        {
+            currentStageIndex = 0;
+            StartStage(0);
+            return;
+        }
+        StartStage(currentStageIndex);
     }
 
     public void StartStage(int stageIndex)
@@ -41,15 +47,17 @@ public class StageManager : MonoBehaviour, IRewardable
         }
 
         currentStageIndex = stageIndex;
-        currentWaveIndex = 0;
+        UIMainManager.Instance.UpdateStageTitle(currentStageIndex);
         StartWave(currentWaveIndex);
     }
 
     public void StartWave(int waveIndex)
     {
         var wave = stageData.stages[currentStageIndex].waves[waveIndex];
+        UIMainManager.Instance.UpdateWaveTitle(waveIndex);
         EnemyManager.Instance.SpawnWave(wave.enemys);
         OnWaveStarted?.Invoke(waveIndex);
+        Json.JsonSave();
     }
 
     public void OnWaveCleared()
@@ -69,6 +77,7 @@ public class StageManager : MonoBehaviour, IRewardable
             GameManager.Instance.soundManager.Bgm(currentStageIndex + 1);
 
         }
+        Json.JsonSave();
     }
 
     public void AddGold(int amount)
