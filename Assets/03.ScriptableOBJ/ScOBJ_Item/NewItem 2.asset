@@ -12,17 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6845d6875eb55164fa62e7cc9b09c041, type: 3}
   m_Name: NewItem 2
   m_EditorClassIdentifier: 
-  itemName: 1
-  itemDescription: 
-  itemCost: 0
-  upgradeCost: 0
-  attackPower: 0
-  criticalDamage: 0
-  criticalChance: 0
-  resourceGain: 0
-  FinalAttackPower: 0
-  FinalCriticalDamage: 0
-  FinalCriticalChance: 0
-  FinalResourceGain: 0
-  isUnlocked: 0
+  itemId: 2
+  itemName: "\uB3CC \uAC80"
+  itemCost: 1000
+  upgradeCost: 150
+  attackPower: 30
+  criticalChance: 0.05
+  itemIcon: {fileID: 21300000, guid: 2debb2c2ece99b242a4945f5a8534b49, type: 3}
+  isPurchased: 0
   isEquipped: 0
+  upgradeLevel: 1
