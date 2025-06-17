@@ -19,7 +19,9 @@ public static class Json
 
     public static void JsonSave()
     {
+
         // saveData 초기화
+
         saveData.PlayerData = GameManager.Instance.playerData;
         saveData.curStage = StageManager.Instance.currentStageIndex;
         saveData.curWave = StageManager.Instance.currentWaveIndex;
