@@ -93,14 +93,6 @@ public class ItemManager : MonoBehaviour
         return Item_UpgradeTable.CalculateAttackPower(equippedItem.attackPower, level);
     }
 
-    public int GetItemCriticalDamage()
-    {
-        if (equippedItem == null)
-            return 0;
-
-        int level = equippedItem.upgradeLevel;
-        return Item_UpgradeTable.CalculateCriticalDamage(equippedItem.criticalDamage, level);
-    }
 
     public float GetItemCriticalChance()
     {
@@ -111,13 +103,4 @@ public class ItemManager : MonoBehaviour
         return Item_UpgradeTable.CalculateCriticalChance(equippedItem.criticalChance, level);
     }
 
-    public int GetItemGoldGain()
-    {
-        if (equippedItem == null)
-            return 0;
-
-        int level = equippedItem.upgradeLevel;
-        return Item_UpgradeTable.CalculateGoldGain(equippedItem.goldGain, level);
-    }
-    
 }

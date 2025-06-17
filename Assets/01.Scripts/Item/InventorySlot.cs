@@ -27,7 +27,11 @@ public class InventorySlot : MonoBehaviour
         itemData = data;
 
         itemNameText.text = itemData.itemName;
-        itemInfoText.text = $"공격력:{itemData.attackPower} \n 크리:{itemData.criticalChance * 100}%";
+        itemInfoText.text = $"공격력:{itemData.attackPower} \n크리:{itemData.criticalChance * 100}%";
+        
+        buyButton.onClick.RemoveAllListeners();
+        equipButton.onClick.RemoveAllListeners();
+        upgradeButton.onClick.RemoveAllListeners();
         
         buyButton.onClick.AddListener(OnBuy);
         equipButton.onClick.AddListener(OnEquip);

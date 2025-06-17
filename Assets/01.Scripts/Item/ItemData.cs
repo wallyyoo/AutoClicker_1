@@ -8,9 +8,7 @@ public class ItemData : ScriptableObject
    public int itemCost;
    public int upgradeCost;
    public int attackPower;
-   public int criticalDamage;
    public float criticalChance;
-   public int goldGain;
 
    [HideInInspector] public bool isUnlocked;
    [HideInInspector] public bool isEquipped;
