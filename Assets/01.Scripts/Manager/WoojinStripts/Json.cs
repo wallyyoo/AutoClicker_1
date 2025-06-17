@@ -4,7 +4,7 @@ using System.IO;
 [System.Serializable]
 public class SaveData
 {
-    public PlayerData PlayerData;
+    public PlayerData playerData;
 
     [HideInInspector] public int curStage;    //(현재 스테이지)
     [HideInInspector] public int curWave;     //(현재 웨이브)
@@ -20,15 +20,15 @@ public static class Json
         // saveData 초기화
         SaveData saveData = new SaveData()
         {
+            
             // 값을 덮어 쓰기
-            PlayerData = GameManager.Instance.playerData,
+            playerData = GameManager.Instance.playerData,
             curStage = StageManager.Instance.currentStageIndex,
-            curWave = StageManager.Instance.currentWaveIndex
+            curWave = StageManager.Instance.currentWaveIndex,
         };
 
         // 클래스 데이터를 JSON 문자열로 변환
         string dataSave = JsonUtility.ToJson(saveData, true);
-
         // 해당 경로에 파일 생성 또는 덮어쓰기
         File.WriteAllText(path, dataSave);
 
@@ -53,7 +53,7 @@ public static class Json
             SaveData saveData = JsonUtility.FromJson<SaveData>(json);
 
             // savedata에 있는 값을 덮어 씌우기
-            GameManager.Instance.playerData = saveData.PlayerData;
+            GameManager.Instance.playerData = saveData.playerData;
             StageManager.Instance.currentStageIndex = saveData.curStage;
             StageManager.Instance.currentWaveIndex = saveData.curWave;
 
@@ -62,7 +62,7 @@ public static class Json
         else
         {
             Debug.Log("저장된 파일이 없습니다. 새로 생성합니다.");
-            GameManager.Instance.playerData = new PlayerData();
+
             JsonSave(); // 초기화 저장
         }
     }

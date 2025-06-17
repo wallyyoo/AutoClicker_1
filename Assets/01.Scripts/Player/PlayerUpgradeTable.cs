@@ -11,4 +11,7 @@ public class PlayerUpgradeTable : ScriptableObject
     public float autoSpeedPerLevel = 0.1f;
     public int hpPerLevel = 100;
     public int mpPerLevel = 100;
+    public int criticalGoldPerLevel = 100;
+    public int autospeedGoldPerLevel = 100;
+    public int goldGainGoldPerLevel = 100;
 }

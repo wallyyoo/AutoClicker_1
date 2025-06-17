@@ -15,9 +15,11 @@ public class PlayerData
     public int baseHp = 100;             //(기본 체력량)
     public int baseMp = 100;             //(기본 마나량)
 
-    public int baseUpGold = 0;
-    
-    
+    public int baseCriticalUpGold = 0;
+    public int baseAutoSpeedUpGold = 0;
+    public int baseGoldGainUpGold = 0;
+
+
     [Header("재화 및 상태")]
     [HideInInspector] public int curGold = 0;     //(현재 가지고 있는 재화)
     
@@ -29,11 +31,13 @@ public class PlayerData
     [HideInInspector] public float autoSpeedUpLevel = 0f;   //(공격속도 업그레이드 수치)
     [HideInInspector] public int hpUpLevel = 0;             //(체력량 업그레이드 수치)
     [HideInInspector] public int mpUpLevel = 0;             //(마나량 업그레이드 수치)
-    
-    [HideInInspector] public int goldUpLevel = 0; 
-    
-    
-    
+
+    [HideInInspector] public int criticalGoldUpLevel = 0; 
+    [HideInInspector] public int autoSpeedGoldUpLevel = 0;
+    [HideInInspector] public int goldGainGoldUpLevel = 0;
+
+
+
     public int UpStatusAttackPower { get { return baseAttackPower + (attackPowerUpLevel * playerUpgradeTable.attackPowerPerLevel); } }
     public float UpStatusCriticalDamage { get { return baseCriticalDamage + (critiDamageUpLevel * playerUpgradeTable.critDamagePerLevel); } }
     public float UpStatuscriticalChance { get { return baseCriticalChance + (critiChanceUpLevel * playerUpgradeTable.critChancePerLevel); } }
@@ -41,4 +45,7 @@ public class PlayerData
     public float UpstatusAutoSpeed { get { return Mathf.Max(0.1f, baseAutoSpeed - (autoSpeedUpLevel * playerUpgradeTable.autoSpeedPerLevel)); } }
     public float UpstatusHp { get { return baseHp + (hpUpLevel * playerUpgradeTable.hpPerLevel); } }
     public float UpstatusMp { get { return baseMp + (mpUpLevel * playerUpgradeTable.mpPerLevel); } }
+    public float UpCriticalGold { get { return baseCriticalUpGold + (criticalGoldUpLevel * playerUpgradeTable.criticalGoldPerLevel); } }
+    public float UpAutoSpeedGold { get { return baseAutoSpeedUpGold + (autoSpeedGoldUpLevel * playerUpgradeTable.autospeedGoldPerLevel); } }
+    public float UpGoldGainGold { get { return baseGoldGainUpGold + (goldGainGoldUpLevel * playerUpgradeTable.goldGainGoldPerLevel); } }
 }

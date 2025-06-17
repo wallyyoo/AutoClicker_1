@@ -8,7 +8,7 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance;
 
      public PlayerData playerData;
-    public PlayerUpgradeTable playerUpgradeTable;
+    //public PlayerUpgradeTable playerUpgradeTable;
 
     public SoundManager soundManager;
 
@@ -19,12 +19,13 @@ public class GameManager : MonoBehaviour
         if (Instance == null)
         {
             Instance = this;
+            Json.JsonLoad(); // Json 파일 로드
             DontDestroyOnLoad(gameObject);
 
-            if (playerData.playerUpgradeTable == null)
-            {
-                playerData.playerUpgradeTable = playerUpgradeTable;  
-            }
+            //if (playerData.playerUpgradeTable == null)
+            //{
+            //    playerData.playerUpgradeTable = playerUpgradeTable;  
+            //}
 
             if (soundManager == null)
             {
