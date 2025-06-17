@@ -14,6 +14,8 @@ public class InventorySlot : MonoBehaviour
     [Header("아이템 정보")]
     public TMP_Text itemNameText;
     public TMP_Text itemInfoText;
+    public TMP_Text upgradeCostText;
+    public TMP_Text buyCostText;
 
     [Header("버튼")]
     public Button buyButton;
@@ -25,66 +27,66 @@ public class InventorySlot : MonoBehaviour
     public void Setup(ItemData data)
     {
         itemData = data;
-
-        if (!itemData.isPurchased)
-        {
-            itemNameText.text = "???";
-            itemInfoText.text = "???";
-        }
-        
-        else 
-        {
-        itemNameText.text = itemData.itemName;
-        itemInfoText.text = $"공격력:{itemData.attackPower} \n크리:{itemData.criticalChance * 100}%";
-        }
-
-        
         buyButton.onClick.RemoveAllListeners();
         equipButton.onClick.RemoveAllListeners();
         upgradeButton.onClick.RemoveAllListeners();
-        
+
         buyButton.onClick.AddListener(OnBuy);
         equipButton.onClick.AddListener(OnEquip);
         upgradeButton.onClick.AddListener(OnUpgrade);
-        
+
         Refresh();
     }
-
     public void Refresh()
     {
-        
         bool isUnlocked = ItemManager.ItemManagerInstance.IsUnlocked(itemData);
         bool isEquipped = ItemManager.ItemManagerInstance.IsEquipped(itemData);
         bool canUpgrade = ItemManager.ItemManagerInstance.CanUpgrade(itemData);
-        
+
         imageDisable.SetActive(!isUnlocked);
         imageEnable.SetActive(isUnlocked && !isEquipped);
         imageEquipped.SetActive(isEquipped);
-        
+
         buyButton.gameObject.SetActive(!isUnlocked);
         equipButton.gameObject.SetActive(isUnlocked && !isEquipped);
         upgradeButton.gameObject.SetActive(isEquipped && canUpgrade);
+
+        if (!isUnlocked)
+        {
+            itemNameText.text = "???";
+            itemInfoText.text = "???";
+            buyCostText.text = $"G{itemData.itemCost}";
+        }
+        else
+        {
+            itemNameText.text = itemData.itemName;
+            itemInfoText.text = $"공격력:{itemData.attackPower} \n크리:{itemData.criticalChance * 100}%";
+            buyCostText.text = "";
+        }
+
+        if (upgradeButton.gameObject.activeSelf)
+        {
+            int nextCost = ItemManager.ItemManagerInstance.GetNextUpgradeCost(itemData);
+            upgradeCostText.text = $"G{nextCost}";
+        }
         
     }
 
     private void OnBuy()
     {
-        Debug.Log($"{itemData.itemName} 구매 버튼 클릭");
         ItemManager.ItemManagerInstance.BuyItem(itemData);
-        Refresh();
+        InventoryController.ItemControlInstance.RefreshAllSlots();
     }
 
     private void OnEquip()
     {
-        Debug.Log($"{itemData.itemName} 장착 버튼 클릭");
         ItemManager.ItemManagerInstance.EquipItem(itemData);
-        Refresh();
+        InventoryController.ItemControlInstance.RefreshAllSlots();
     }
 
     private void OnUpgrade()
     {
-        Debug.Log($"{itemData.itemName} 업그레이드 버튼 클릭");
         ItemManager.ItemManagerInstance.UpgradeItem(itemData);
-        Refresh();
+        InventoryController.ItemControlInstance.RefreshAllSlots();
     }
 }

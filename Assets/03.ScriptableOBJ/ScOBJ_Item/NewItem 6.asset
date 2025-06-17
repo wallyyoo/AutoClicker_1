@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6845d6875eb55164fa62e7cc9b09c041, type: 3}
   m_Name: NewItem 6
   m_EditorClassIdentifier: 
+  itemId: 6
   itemName: "\uD669\uAE08 \uAC80"
   itemCost: 50000
   upgradeCost: 1000

@@ -4,6 +4,7 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "NewItem", menuName = "Inventory/ItemData")]
 public class ItemData : ScriptableObject
 {
+   public string itemId;
    public string itemName;
    public int itemCost;
    public int upgradeCost;
