@@ -8,6 +8,7 @@ public class UIMainManager : MonoBehaviour
 {
     public static UIMainManager Instance { get; private set; }
 
+    public OptionButton optionButton;
 
     [Header("UI Elements")]
 
