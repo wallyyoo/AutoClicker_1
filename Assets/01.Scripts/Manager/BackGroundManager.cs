@@ -51,6 +51,14 @@ public class BackGroundManager : MonoBehaviour
         }
     }
     
+    public void BackGroundAllMoveStop()
+    {
+        foreach (var bg in backGroundLooper)
+        {
+            bg.MoveStop();
+        }
+    }
+
 }
 
 

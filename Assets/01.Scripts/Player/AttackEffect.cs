@@ -1,4 +1,6 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class AttackEffect : MonoBehaviour
 {
@@ -14,6 +16,16 @@ public class AttackEffect : MonoBehaviour
     {
         ClickManager.OnClick -= OnClick;
     }
+
+   private void OnDrawGizmos()
+    {
+        
+        Gizmos.color = Color.red;
+        Gizmos.DrawCube(new Vector3(_boxCenter.x, _boxCenter.y), new Vector3(_boxSize.x, _boxSize.y, 10f));
+    }
+
+    private Vector2 _boxSize;
+    private Vector2 _boxCenter;
 
     private void OnClick(Vector3 clickPosition)
     {
@@ -39,7 +51,11 @@ public class AttackEffect : MonoBehaviour
             boxCollider.size.x * boxCollider.transform.lossyScale.x,
             boxCollider.size.y * boxCollider.transform.lossyScale.y
         );
+
+        _boxCenter = boxCenter;
+        _boxSize = boxSize;
         Collider2D[] hits = Physics2D.OverlapBoxAll(boxCenter, boxSize, 0f, LayerMask.GetMask("Enemy"));
+       
 
         int damage = GameManager.Instance.playerData.UpStatusAttackPower;
         if (isCritical)

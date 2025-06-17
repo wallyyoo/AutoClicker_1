@@ -62,7 +62,7 @@ public static class Json
         else
         {
             Debug.Log("저장된 파일이 없습니다. 새로 생성합니다.");
-            GameManager.Instance.playerData = new PlayerData();
+            // GameManager.Instance.playerData = new PlayerData();
             JsonSave(); // 초기화 저장
         }
     }
