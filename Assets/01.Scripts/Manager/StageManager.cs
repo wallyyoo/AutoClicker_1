@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class StageManager : MonoBehaviour
 {
-    public int currentStageIndex;
+    public int currentStageIndex = 0;
     public int currentWaveIndex;
     [SerializeField] public StageData stageData;
 
@@ -27,9 +27,15 @@ public class StageManager : MonoBehaviour
 
     private void Start()
     {
+        if (Json.saveData == null)
+        {
+            Json.JsonSave();
+        }
         // 게임 시작 시 0스테이지 자동 시작
-        GameManager.Instance.soundManager.Bgm(currentStageIndex);
+        GameManager.Instance.soundManager.Bgm(Json.saveData.curStage);
+        
         StartStage(0);
+
     }
 
     public void StartStage(int stageIndex)

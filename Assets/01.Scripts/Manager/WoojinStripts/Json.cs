@@ -15,10 +15,11 @@ public static class Json
     // 안전한 경로 + 파일 이름 (확장자까지 포함) 지정
     private static string path = Path.Combine(Application.persistentDataPath, "PlayerData.Json");
 
+    [HideInInspector] public static SaveData saveData;
     public static void JsonSave()
     {            
         // saveData 초기화
-        SaveData saveData = new SaveData()
+        saveData = new SaveData()
         {
             // 값을 덮어 쓰기
             PlayerData = GameManager.Instance.playerData,

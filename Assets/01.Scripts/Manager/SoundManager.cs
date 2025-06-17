@@ -27,7 +27,7 @@ public class SoundManager : MonoBehaviour
             return;
         }
 
-        audioSource.loop = true;
+        audioSource.loop = false;
         audioSource.playOnAwake = false;
         audioSource.panStereo = 0;
 
@@ -43,6 +43,13 @@ public class SoundManager : MonoBehaviour
         }
         audioSource.clip = clips;
         audioSource.Play();
+    }
+
+    public void SetBgm()
+    {
+        audioSource.clip = GameManager.Instance.soundManager.audioClips[Json.saveData.curStage];
+
+        audioSource.mute = !audioSource.mute;
     }
 }
 

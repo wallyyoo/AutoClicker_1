@@ -1,18 +1,34 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class UIManager : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public AudioSource bgmSource;
+
+    public void OptionButton(GameObject gameObject)
     {
-        
+        gameObject.SetActive(true);
     }
 
-    // Update is called once per frame
-    void Update()
+    public void Close(GameObject gameObject)
     {
-        
+        gameObject.SetActive(false);
+    }
+
+    public void SetBgmButton()
+    {
+        GameManager.Instance.soundManager.SetBgm();
+    }
+
+    private IEnumerator JsonSaveCoroutine()
+    {
+        yield return null; // 모든 Awake() 완료 대기
+
+        if (Json.saveData == null)
+        {
+            Debug.Log("null");
+            Json.JsonSave();
+        }
     }
 }
