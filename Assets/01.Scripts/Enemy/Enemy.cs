@@ -3,10 +3,6 @@ using UnityEngine.UI;
 using UnityEngine;
 using TMPro;
 
-public interface IRewardable
-{
-    public void AddGold(int amount);
-}
 public class Enemy : MonoBehaviour, IRewardable
 {
     public EnemyData data;
@@ -142,8 +138,7 @@ public class Enemy : MonoBehaviour, IRewardable
         if (currentHealth <= 0)
         {
             SetState(EnemyState.Die);
-            int totalReward = Mathf.RoundToInt(data.reward * (1f + stageIndex * 0.1f)); // 골드 획득량 증가 스탯은 아직 고려 안함
-            AddGold(totalReward); // 골드 획득
+            AddGold(data.reward); // 골드 획득
             Die();
             return;
         }
@@ -238,8 +233,10 @@ public class Enemy : MonoBehaviour, IRewardable
 
     public void AddGold(int amount)
     {
-        GameManager.Instance.playerData.curGold += amount;
-        Debug.Log($"{gameObject.name}이(가) {amount} 골드를 획득했습니다. 현재 골드: {GameManager.Instance.playerData.curGold}");
+        int totalReward = Mathf.RoundToInt(amount + stageIndex + GameManager.Instance.playerData.UpStatusGold); // 스테이지 인덱스와 업그레이드에 따라 보상 조정
+
+        GameManager.Instance.playerData.curGold += totalReward;
+        Debug.Log($"{gameObject.name}이(가) {totalReward} 골드를 획득했습니다. 현재 골드: {GameManager.Instance.playerData.curGold}");
         Json.JsonSave(); // 골드 변경 사항 저장
     }
 }

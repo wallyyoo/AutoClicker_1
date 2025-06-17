@@ -61,8 +61,7 @@ public class StageManager : MonoBehaviour, IRewardable
         }
         else
         {
-            int totalReward = 100 + 10 * (currentStageIndex + 1); // 스테이지 클리어 보상 계산 (예: 100 + 10 * 스테이지 번호)
-            AddGold(totalReward);
+            AddGold(currentStageIndex);
             OnStageCleared?.Invoke();
 
             // 다음 스테이지 자동 진행
@@ -74,7 +73,9 @@ public class StageManager : MonoBehaviour, IRewardable
 
     public void AddGold(int amount)
     {
-        GameManager.Instance.playerData.curGold += amount;
+
+        int totalReward = 100 + 10 * (amount + 1); // 스테이지 클리어 보상 계산
+        GameManager.Instance.playerData.curGold += totalReward;
         Debug.Log($"골드 획득: {amount}. 현재 골드: {GameManager.Instance.playerData.curGold}");
 
         Json.JsonSave();
