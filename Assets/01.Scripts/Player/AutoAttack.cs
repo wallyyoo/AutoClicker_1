@@ -31,7 +31,7 @@ public class AutoAttack : MonoBehaviour
         while (isAutoAttackEnabled)
         {
             //Debug.Log($"[AutoAttack] 공격 간격: {attackInterval}");
-            Attack();
+            autoAttack();
             yield return new WaitForSeconds(attackInterval);//attackInterval(초)만큼 잠시 기다림
         }
     }
@@ -40,7 +40,7 @@ public class AutoAttack : MonoBehaviour
         StartAutoAttack();
     }
   
-    void Attack()
+    void autoAttack()
     {
         GameObject player = GameObject.FindWithTag("Player");
         if (player == null)

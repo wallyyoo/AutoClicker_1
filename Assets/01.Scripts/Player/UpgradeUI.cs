@@ -43,11 +43,22 @@ public class UpgradeUI : MonoBehaviour
             () => goldHoldRoutine = StartCoroutine(HoldUpgradeRoutine(OnClickGoldGainUpgrade)),
             () => StopRoutine(ref goldHoldRoutine));
 
-        UIStatText.UpdateCriticalRateText(); // 초기값 표시
-        UIStatText.UpdateAttackSpeedText(); // 초기 쿨타임 텍스트 출력
+          StartCoroutine(InitUITexts());
+    }
+    private IEnumerator InitUITexts()
+    {
+        yield return null; // 1프레임 대기 (GameManager.Awake() 보장)
+
+        if (GameManager.Instance?.playerData == null || GameManager.Instance.playerData.playerUpgradeTable == null)
+        {
+            Debug.LogError("[UpgradeUI] playerData 또는 playerUpgradeTable이 초기화되지 않았습니다.");
+            yield break;
+        }
+
+        UIStatText.UpdateCriticalRateText();
+        UIStatText.UpdateAttackSpeedText();
         UIStatText.UpdateGoldGainText();
     }
-
     void AddHoldEvent(Button button, System.Action onDown, System.Action onUp)
     {
         EventTrigger trigger = button.gameObject.GetComponent<EventTrigger>();
@@ -94,8 +105,8 @@ public class UpgradeUI : MonoBehaviour
             return;
         }
 
-
         data.critiChanceUpLevel++;
+        Debug.Log(data.critiChanceUpLevel);
         Json.JsonSave();
         UIStatText.UpdateCriticalRateText();
 
