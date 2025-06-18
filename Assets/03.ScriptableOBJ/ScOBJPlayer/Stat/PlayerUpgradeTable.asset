@@ -19,3 +19,6 @@ MonoBehaviour:
   autoSpeedPerLevel: 0.5
   hpPerLevel: 100
   mpPerLevel: 100
+  criticalGoldPerLevel: 1000
+  autospeedGoldPerLevel: 100
+  goldGainGoldPerLevel: 100

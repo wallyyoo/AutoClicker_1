@@ -35,7 +35,7 @@ public class EnemyDetector : MonoBehaviour
             detectedEnemies.Remove(enemy);
             Debug.Log($"[EnemyDetector] 범위 벗어남: {enemy.name}");
 
-            uiStatText.UpdateCurrentGoldText();
+            //uiStatText.UpdateCurrentGoldText();
             if (detectedEnemies.Count == 0)
             {
                 BackGroundManager.BackInstace.ResetAllSpeeds();

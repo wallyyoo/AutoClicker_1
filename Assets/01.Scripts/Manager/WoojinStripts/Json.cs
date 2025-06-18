@@ -70,6 +70,9 @@ public static class Json
             }
             // json파일의 데이터를 savedata에 할당w
             saveData = JsonUtility.FromJson<SaveData>(json);
+            GameManager.Instance.playerData = saveData.PlayerData; // ✅ 여기가 중요!
+            StageManager.Instance.currentStageIndex = saveData.curStage;
+            StageManager.Instance.currentWaveIndex = saveData.curWave;
             Debug.Log(JsonUtility.ToJson(saveData, true));
         }
         else
