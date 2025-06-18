@@ -70,9 +70,11 @@ public class StageManager : MonoBehaviour, IRewardable
             AddGold(currentStageIndex);
             OnStageCleared?.Invoke();
 
-            // 다음 스테이지 자동 진행
-            StartStage(currentStageIndex + 1);
-            GameManager.Instance.soundManager.Bgm(currentStageIndex + 1);
+            // 다음 스테이지
+            currentStageIndex++;
+            currentWaveIndex = 0;
+            StartStage(currentStageIndex);
+            GameManager.Instance.soundManager.Bgm(currentStageIndex);
 
         }
         Json.JsonSave();
