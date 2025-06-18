@@ -546,97 +546,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 86124140}
   m_CullTransparentMesh: 1
---- !u!1 &86412497
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 86412498}
-  - component: {fileID: 86412499}
-  - component: {fileID: 86412500}
-  m_Layer: 0
-  m_Name: GameObject
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &86412498
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 86412497}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.6, y: 0.274, z: 0}
-  m_LocalScale: {x: 0.7, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1317918656}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!61 &86412499
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 86412497}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1}
-  m_EdgeRadius: 0
---- !u!114 &86412500
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 86412497}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 19ee0b843c6383a47ae9c217957d81a6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  detectedEnemies: []
 --- !u!1 &92417686
 GameObject:
   m_ObjectHideFlags: 0
@@ -2307,6 +2216,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3245095562256182198, guid: 8791d9410c7bd9d438e4c62666746a6d, type: 3}
+      propertyPath: UIStatText
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 3516501074562181176, guid: 8791d9410c7bd9d438e4c62666746a6d, type: 3}
       propertyPath: m_LocalPosition.x
       value: -5
@@ -2355,12 +2268,13 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Player
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 8711394380792227833, guid: 8791d9410c7bd9d438e4c62666746a6d, type: 3}
+    - {fileID: 3245095562256182198, guid: 8791d9410c7bd9d438e4c62666746a6d, type: 3}
+    - {fileID: 687112617463556311, guid: 8791d9410c7bd9d438e4c62666746a6d, type: 3}
+    - {fileID: 4277252978578952512, guid: 8791d9410c7bd9d438e4c62666746a6d, type: 3}
     m_RemovedGameObjects: []
-    m_AddedGameObjects:
-    - targetCorrespondingSourceObject: {fileID: 3516501074562181176, guid: 8791d9410c7bd9d438e4c62666746a6d, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 86412498}
+    m_AddedGameObjects: []
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 5935743670200281119, guid: 8791d9410c7bd9d438e4c62666746a6d, type: 3}
       insertIndex: -1
@@ -2370,13 +2284,7 @@ PrefabInstance:
       addedObject: {fileID: 1317918652}
     - targetCorrespondingSourceObject: {fileID: 5935743670200281119, guid: 8791d9410c7bd9d438e4c62666746a6d, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1317918651}
-    - targetCorrespondingSourceObject: {fileID: 5935743670200281119, guid: 8791d9410c7bd9d438e4c62666746a6d, type: 3}
-      insertIndex: -1
       addedObject: {fileID: 1317918650}
-    - targetCorrespondingSourceObject: {fileID: 5935743670200281119, guid: 8791d9410c7bd9d438e4c62666746a6d, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1317918657}
     - targetCorrespondingSourceObject: {fileID: 5935743670200281119, guid: 8791d9410c7bd9d438e4c62666746a6d, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1317918660}
@@ -4796,21 +4704,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attackInterval: 1.5
   isAutoAttackEnabled: 1
-  attackEffect: {fileID: 1317918651}
---- !u!114 &1317918651
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1317918646}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a4dd3ae9bb089d3438b9d5d56272c60f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  normalHitEffect: {fileID: 5324065079763490897, guid: fc4011ada4f90eb468bfe5cbdbfbd78a, type: 3}
-  criticalHitEffect: {fileID: 2467081199657402224, guid: 6325974dd9f41b548854ef30d9b59376, type: 3}
+  attackEffect: {fileID: 1317918662}
 --- !u!114 &1317918652
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4824,13 +4718,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   criticalRateUpgradeButton: {fileID: 1406911596}
-  criticalRateText: {fileID: 130535196}
   autoAttack: {fileID: 1317918650}
   attackSpeedUpgradeButton: {fileID: 1786042373}
-  attackIntervalText: {fileID: 1486642272}
   goldGainUpgradeButton: {fileID: 1957343806}
-  goldGainText: {fileID: 1750437873}
   holdInterval: 0.2
+  UIStatText: {fileID: 1317918660}
 --- !u!114 &1317918653
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4841,23 +4733,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4a71c3428c11c8547adf1750c72cec65, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!4 &1317918656 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 3516501074562181176, guid: 8791d9410c7bd9d438e4c62666746a6d, type: 3}
-  m_PrefabInstance: {fileID: 585908320}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1317918657
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1317918646}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c86093c318ac24acea900787fafb1304, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &1317918660
@@ -4896,13 +4771,28 @@ MonoBehaviour:
     autoSpeedGoldUpLevel: 0
     goldGainGoldUpLevel: 0
   playerUpgradeTable: {fileID: 0}
-  upCriticalRateText: {fileID: 837943505}
-  playerCriticalDamageText: {fileID: 1765204686}
-  upAttackSpeedText: {fileID: 707467527}
-  upGoldGainText: {fileID: 1686925238}
-  criticalUpGoldText: {fileID: 1721108268}
-  autoSpeedUpGoldText: {fileID: 1556323213}
-  goldGainUpGoldText: {fileID: 2031957354}
+  currentGoldText: {fileID: 2111365156}
+  currentCriticalRateText: {fileID: 130535196}
+  currentAttackSpeedText: {fileID: 1486642272}
+  currentGoldGainText: {fileID: 1750437873}
+  upgradeInfoCriticalRateText: {fileID: 837943505}
+  upgradeInfoCriticalDamageText: {fileID: 1765204686}
+  upgradeInfoAttackSpeedText: {fileID: 707467527}
+  upgradeInfoGoldGainText: {fileID: 1686925238}
+  upgradeCostCriticalRateText: {fileID: 1721108268}
+  upgradeCostAttackSpeedText: {fileID: 1556323213}
+  upgradeCostGoldGainText: {fileID: 2031957354}
+--- !u!114 &1317918662 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2890545706221402195, guid: 8791d9410c7bd9d438e4c62666746a6d, type: 3}
+  m_PrefabInstance: {fileID: 585908320}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1317918646}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1b83850b0322f844fb7bd962eb60b1e6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1324018087
 GameObject:
   m_ObjectHideFlags: 0
