@@ -36,13 +36,26 @@ public class ItemManager : MonoBehaviour
                 break;
             }
         }
-        Debug.Log("ItemManager Start_2");
 
+        Debug.Log("ItemManager Start_2");
+    }
+    
+    public void ResetAllItemData()
+    {
+        foreach (var item in allItems)
+        {
+            item.isPurchased = false;
+            item.isEquipped = false;
+            item.upgradeLevel = 1;
+        }
+
+        equippedItem = null;
+        Debug.Log("모든 ItemData가 초기화되었습니다.");
     }
 
     public void BuyItem(ItemData item)
     {
-    
+        var playerData = GameManager.Instance.playerData;
         if (item.isPurchased)
         {
             Debug.Log($"{item.itemName} 이미 구매된 아이템입니다.");
@@ -63,6 +76,7 @@ public class ItemManager : MonoBehaviour
 
     public void EquipItem(ItemData item)
     {
+        var playerData = GameManager.Instance.playerData;
         if (!item.isPurchased)
         {
             Debug.Log("장착 실패: 잠금 해제되지 않은 아이템입니다.");
@@ -84,6 +98,7 @@ public class ItemManager : MonoBehaviour
 
     public void UpgradeItem(ItemData item)
     {
+        var playerData = GameManager.Instance.playerData;
         if (!item.isEquipped)
         {
             Debug.Log("업그레이드 실패: 장착된 아이템이 아닙니다.");

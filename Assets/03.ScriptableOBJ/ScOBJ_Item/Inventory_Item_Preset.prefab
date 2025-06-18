@@ -175,7 +175,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: equip
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 4632cacce9bb1134d855f77d74920064, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: ef4da6d3a62684e3abe498b381b28022, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -255,6 +255,7 @@ GameObject:
   - component: {fileID: 2751830439291473582}
   - component: {fileID: 293217666928842034}
   - component: {fileID: 1292166470902329986}
+  - component: {fileID: 775545711334773853}
   m_Layer: 5
   m_Name: Upgrade_Btn
   m_TagString: Untagged
@@ -403,6 +404,20 @@ MonoBehaviour:
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
   m_ReverseArrangement: 0
+--- !u!114 &775545711334773853
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3117867182764094957}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4bc191b2d7a0ede47b4aa1fffa0f876b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemButton: {fileID: 293217666928842034}
+  soundData: {fileID: 11400000, guid: 1b26d3d95e09b4249b787ded9ab6af72, type: 2}
 --- !u!1 &3606490437247421375
 GameObject:
   m_ObjectHideFlags: 0
@@ -545,8 +560,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: cost
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 4632cacce9bb1134d855f77d74920064, type: 2}
-  m_sharedMaterial: {fileID: -2892053937758035300, guid: 4632cacce9bb1134d855f77d74920064, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: ef4da6d3a62684e3abe498b381b28022, type: 2}
+  m_sharedMaterial: {fileID: -6319398088723727886, guid: ef4da6d3a62684e3abe498b381b28022, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -679,7 +694,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: upgrade
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 4632cacce9bb1134d855f77d74920064, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: ef4da6d3a62684e3abe498b381b28022, type: 2}
   m_sharedMaterial: {fileID: -2892053937758035300, guid: 4632cacce9bb1134d855f77d74920064, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -743,7 +758,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
+  m_hasFontAssetChanged: 1
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!1 &4308310320909098932
@@ -967,8 +982,8 @@ MonoBehaviour:
 
 '
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 4632cacce9bb1134d855f77d74920064, type: 2}
-  m_sharedMaterial: {fileID: -2892053937758035300, guid: 4632cacce9bb1134d855f77d74920064, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: ef4da6d3a62684e3abe498b381b28022, type: 2}
+  m_sharedMaterial: {fileID: -6319398088723727886, guid: ef4da6d3a62684e3abe498b381b28022, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1047,6 +1062,7 @@ GameObject:
   - component: {fileID: 5465764083238398732}
   - component: {fileID: 7137188029604374463}
   - component: {fileID: 1588498044141531822}
+  - component: {fileID: 8573923884664975766}
   m_Layer: 5
   m_Name: Buy_Btn
   m_TagString: Untagged
@@ -1195,6 +1211,20 @@ MonoBehaviour:
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
   m_ReverseArrangement: 0
+--- !u!114 &8573923884664975766
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5746250767792424102}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4bc191b2d7a0ede47b4aa1fffa0f876b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemButton: {fileID: 7137188029604374463}
+  soundData: {fileID: 11400000, guid: 1b26d3d95e09b4249b787ded9ab6af72, type: 2}
 --- !u!1 &5772287046608680941
 GameObject:
   m_ObjectHideFlags: 0
@@ -1470,8 +1500,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: buy
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 4632cacce9bb1134d855f77d74920064, type: 2}
-  m_sharedMaterial: {fileID: -2892053937758035300, guid: 4632cacce9bb1134d855f77d74920064, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: ef4da6d3a62684e3abe498b381b28022, type: 2}
+  m_sharedMaterial: {fileID: -6319398088723727886, guid: ef4da6d3a62684e3abe498b381b28022, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1604,7 +1634,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: cost
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 4632cacce9bb1134d855f77d74920064, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: ef4da6d3a62684e3abe498b381b28022, type: 2}
   m_sharedMaterial: {fileID: -2892053937758035300, guid: 4632cacce9bb1134d855f77d74920064, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -1668,7 +1698,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
+  m_hasFontAssetChanged: 1
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!1 &8261184355757069088
@@ -1738,8 +1768,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: New Text
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 4632cacce9bb1134d855f77d74920064, type: 2}
-  m_sharedMaterial: {fileID: -2892053937758035300, guid: 4632cacce9bb1134d855f77d74920064, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: ef4da6d3a62684e3abe498b381b28022, type: 2}
+  m_sharedMaterial: {fileID: -6319398088723727886, guid: ef4da6d3a62684e3abe498b381b28022, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []

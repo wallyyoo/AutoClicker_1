@@ -65,7 +65,7 @@ public class InventorySlot : MonoBehaviour
         else
         {
             itemNameText.text = itemData.itemName;
-            itemInfoText.text = $"공격력:{itemData.attackPower} \n크리:{itemData.criticalChance * 100}%";
+            itemInfoText.text = $"공격력:{itemData.attackPower} \n크리:{itemData.criticalChance * 100}%\nLv.{itemData.upgradeLevel}";
             buyCostText.text = "";
         }
 

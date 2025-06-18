@@ -291,6 +291,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: ab4a5ea89aa5f1b4c9f425ac141f987f, type: 2}
     - target: {fileID: 4384991510262414180, guid: 9dd0a9f8268f3204a887dbc9cb1c4ee2, type: 3}
+      propertyPath: playerData.curGold
+      value: 450450
+      objectReference: {fileID: 0}
+    - target: {fileID: 4384991510262414180, guid: 9dd0a9f8268f3204a887dbc9cb1c4ee2, type: 3}
       propertyPath: playerUpgradeTable
       value: 
       objectReference: {fileID: 11400000, guid: 6c9f991a9e0019840bae2bb1cf20aca4, type: 2}
@@ -2721,8 +2725,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "\uD14C\uC2A4\uD2B8 \uB098\uBB34\uAC80"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 4632cacce9bb1134d855f77d74920064, type: 2}
-  m_sharedMaterial: {fileID: -2892053937758035300, guid: 4632cacce9bb1134d855f77d74920064, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: ef4da6d3a62684e3abe498b381b28022, type: 2}
+  m_sharedMaterial: {fileID: -6319398088723727886, guid: ef4da6d3a62684e3abe498b381b28022, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -4665,8 +4669,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "\uACF5\uACA9\uB825\n\uCE58\uBA85\uD0C0\uD655\uB960"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 4632cacce9bb1134d855f77d74920064, type: 2}
-  m_sharedMaterial: {fileID: -2892053937758035300, guid: 4632cacce9bb1134d855f77d74920064, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: ef4da6d3a62684e3abe498b381b28022, type: 2}
+  m_sharedMaterial: {fileID: -6319398088723727886, guid: ef4da6d3a62684e3abe498b381b28022, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -7664,6 +7668,18 @@ MonoBehaviour:
       - m_Target: {fileID: 1467172901}
         m_TargetAssemblyTypeName: InventoryController, Assembly-CSharp
         m_MethodName: OpenInventory
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 810269479}
+        m_TargetAssemblyTypeName: UIMainManager, Assembly-CSharp
+        m_MethodName: OnClickSound
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
