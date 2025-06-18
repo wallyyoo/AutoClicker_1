@@ -29,11 +29,10 @@ public class StageManager : MonoBehaviour, IRewardable
     {
         Json.JsonLoad();
         GameManager.Instance.soundManager.Bgm(currentStageIndex);
-        if (currentStageIndex < 0)
+        if (currentStageIndex < 0) // 예외 처리: 현재 스테이지 인덱스가 음수인 경우
         {
+            Debug.LogWarning("현재 스테이지 인덱스가 음수입니다. 초기화합니다.");
             currentStageIndex = 0;
-            StartStage(0);
-            return;
         }
         StartStage(currentStageIndex);
     }
@@ -42,8 +41,8 @@ public class StageManager : MonoBehaviour, IRewardable
     {
         if (stageIndex >= stageData.stages.Count)
         {
-            Debug.Log("모든 스테이지를 클리어했습니다!");
-            return;
+            Debug.Log("모든 스테이지를 클리어했습니다! 마지막 스테이지 반복 실행");
+            stageIndex = stageData.stages.Count - 1; // 마지막 스테이지로 설정
         }
 
         currentStageIndex = stageIndex;
@@ -71,9 +70,11 @@ public class StageManager : MonoBehaviour, IRewardable
             AddGold(currentStageIndex);
             OnStageCleared?.Invoke();
 
-            // 다음 스테이지 자동 진행
-            StartStage(currentStageIndex + 1);
-            GameManager.Instance.soundManager.Bgm(currentStageIndex + 1);
+            // 다음 스테이지
+            currentStageIndex++;
+            currentWaveIndex = 0;
+            StartStage(currentStageIndex);
+            GameManager.Instance.soundManager.Bgm(currentStageIndex);
 
         }
         Json.JsonSave();
