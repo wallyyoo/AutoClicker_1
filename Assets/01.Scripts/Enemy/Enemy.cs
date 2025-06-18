@@ -21,6 +21,7 @@ public class Enemy : MonoBehaviour, IRewardable
     public float moveSpeed = 2f; // 필요에 따라 조정
     private Image healthBarImage;
     public int stageIndex;
+    private bool isDead = false;
 
     private float attackTimer = 0f;
 
@@ -32,6 +33,7 @@ public class Enemy : MonoBehaviour, IRewardable
     private void Awake()
     {
         animator = GetComponent<Animator>();
+        isDead = false;
     }
 
     public enum EnemyState
@@ -156,16 +158,15 @@ public class Enemy : MonoBehaviour, IRewardable
 
     public void TakeDamage(int amount)
     {
-        if (!isArrived) return; // 도착 상태일 때만 데미지 적용
+        if (!isArrived) return;
+        if (isDead) return;
         currentHealth -= amount;
         
         UpdateHealthBar(); // 체력바 갱신
         if (currentHealth <= 0)
         {
-            isArrived = false;
-            Debug.Log($"지금 현재 어라이브 상태: {isArrived}");
+            
             SetState(EnemyState.Die);
-            AddGold(data.reward); // 골드 획득
             Die();
             return;
         }
@@ -197,7 +198,10 @@ public class Enemy : MonoBehaviour, IRewardable
 
     private void Die()
     {
+        
+        isDead = true;
         Destroy(gameObject, 1.0f);
+        AddGold(data.reward);
         EnemyManager.Instance.OnEnemyDied(this);
     }
     private void SetState(EnemyState state)
