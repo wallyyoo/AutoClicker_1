@@ -8,16 +8,13 @@ public class UpgradeUI : MonoBehaviour
 {
     [Header("크리티컬 업그레이드")]
     public Button criticalRateUpgradeButton;
-    public TextMeshProUGUI criticalRateText; //  UI 텍스트 연결
 
     [Header("자동공격 업그레이드")]
     public AutoAttack autoAttack;
     public Button attackSpeedUpgradeButton;
-    public TextMeshProUGUI attackIntervalText; //  UI 텍스트 연결
 
     [Header("골드 획득량 업그레이드")]
     public Button goldGainUpgradeButton;
-    public TextMeshProUGUI goldGainText;
 
     public float holdInterval = 0.2f;//버튼 꾹 누르고있으면 0.2초마다 업그레이드
 
@@ -25,6 +22,7 @@ public class UpgradeUI : MonoBehaviour
     private Coroutine speedHoldRoutine;
     private Coroutine goldHoldRoutine;
 
+    public UIStatText UIStatText; // UI 스탯 텍스트 연결
     // Start is called before the first frame update
     void Start()
     {
@@ -45,11 +43,22 @@ public class UpgradeUI : MonoBehaviour
             () => goldHoldRoutine = StartCoroutine(HoldUpgradeRoutine(OnClickGoldGainUpgrade)),
             () => StopRoutine(ref goldHoldRoutine));
 
-        UpdateCriticalRateText(); // 초기값 표시
-        UpdateAttackIntervalText(); // 초기 쿨타임 텍스트 출력
-        UpdateGoldGainText();
+          StartCoroutine(InitUITexts());
     }
+    private IEnumerator InitUITexts()
+    {
+        yield return null; // 1프레임 대기 (GameManager.Awake() 보장)
 
+        if (GameManager.Instance?.playerData == null || GameManager.Instance.playerData.playerUpgradeTable == null)
+        {
+            Debug.LogError("[UpgradeUI] playerData 또는 playerUpgradeTable이 초기화되지 않았습니다.");
+            yield break;
+        }
+
+        UIStatText.UpdateCriticalRateText();
+        UIStatText.UpdateAttackSpeedText();
+        UIStatText.UpdateGoldGainText();
+    }
     void AddHoldEvent(Button button, System.Action onDown, System.Action onUp)
     {
         EventTrigger trigger = button.gameObject.GetComponent<EventTrigger>();
@@ -96,19 +105,14 @@ public class UpgradeUI : MonoBehaviour
             return;
         }
 
-
         data.critiChanceUpLevel++;
+        Debug.Log(data.critiChanceUpLevel);
         Json.JsonSave();
-        UpdateCriticalRateText();
+        UIStatText.UpdateCriticalRateText();
+
     }
-
-    void UpdateCriticalRateText()
-    {
-
-        float final = Mathf.Min(GameManager.Instance.playerData.UpStatuscriticalChance, 1f);
-
-        criticalRateText.text = $"치명타 {Mathf.RoundToInt(final * 100)}%";
-    }
+   
+ 
 
 
     void OnClickAttackSpeedUpgrade()
@@ -121,15 +125,12 @@ public class UpgradeUI : MonoBehaviour
         }
         data.autoSpeedUpLevel++;
         Json.JsonSave();
-        UpdateAttackIntervalText();
+        UIStatText.UpdateAttackSpeedText();
+        //  자동공격 재시작 (갱신된 공격 간격 반영)
+        autoAttack.RecalculateAttackInterval();
+        autoAttack.RestartAutoAttack();
     }
 
-    void UpdateAttackIntervalText()
-    {
-        float interval = GameManager.Instance.playerData.UpstatusAutoSpeed;
-        autoAttack.attackInterval = interval;
-        attackIntervalText.text = $"자동공격 {interval:0.0}초";
-    }
 
     void OnClickGoldGainUpgrade()
     {
@@ -143,12 +144,7 @@ public class UpgradeUI : MonoBehaviour
 
         data.goldGainUpLevel++;
         Json.JsonSave();
-        UpdateGoldGainText();
+        UIStatText.UpdateGoldGainText();
     }
 
-    void UpdateGoldGainText()
-    {
-        float total = GameManager.Instance.playerData.UpStatusGold;
-        goldGainText.text = $"골드획득 + {total:0.0}원";
-    }
 }
