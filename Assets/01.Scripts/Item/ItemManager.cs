@@ -1,4 +1,4 @@
-﻿
+
 using UnityEngine;
 
 // 아이템 구매/장착/업그레이드 상태를 관리하며, 장착 중인 무기의 능력치를 외부에 제공하는 매니저 스크립트
@@ -13,7 +13,6 @@ public class ItemManager : MonoBehaviour
     
     private void Awake()
     {
-        Debug.Log("ItemManager Awake_1");
         Debug.Log($"ItemManager playerData instance: {playerData.GetHashCode()}");
         if (ItemManagerInstance == null)
         {
@@ -26,8 +25,6 @@ public class ItemManager : MonoBehaviour
     }
     private void Start()
     {
-        Debug.Log("ItemManager Start_1");
-
         foreach (var item in allItems)
         {
             if (item.isEquipped)
@@ -36,8 +33,6 @@ public class ItemManager : MonoBehaviour
                 break;
             }
         }
-        Debug.Log("ItemManager Start_2");
-
     }
 
     public void BuyItem(ItemData item)
