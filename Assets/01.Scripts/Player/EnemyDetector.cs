@@ -4,8 +4,13 @@ using UnityEngine;
 
 public class EnemyDetector : MonoBehaviour
 {
-    private bool monsterCheking = false;
+    Animator animator;
 
+
+    private void Start()
+    {
+        animator = transform.parent.GetComponentInChildren<Animator>();
+    }
     public List<Enemy> detectedEnemies = new List<Enemy>();
     private void OnTriggerEnter2D(Collider2D other)
     {
@@ -15,10 +20,10 @@ public class EnemyDetector : MonoBehaviour
             detectedEnemies.Add(enemy);
             Debug.Log($"[EnemyDetector] 감지됨: {enemy.name}");
 
-            monsterCheking = true;
-            if (monsterCheking == true)
+            if (detectedEnemies.Count == 1)
             {
-                //BackGroundManager.BackInstace.BackGroundAllMoveStop();
+                BackGroundManager.BackInstace.BackGroundAllMoveStop();
+                animator?.SetBool("Stop",true);
             }
         }
     }
@@ -30,10 +35,11 @@ public class EnemyDetector : MonoBehaviour
             detectedEnemies.Remove(enemy);
             Debug.Log($"[EnemyDetector] 범위 벗어남: {enemy.name}");
 
-            monsterCheking = false;
-            if (monsterCheking == false)
+            if (detectedEnemies.Count == 0)
             {
-                //BackGroundManager.BackInstace.ResetAllSpeeds();
+                BackGroundManager.BackInstace.ResetAllSpeeds();
+                animator?.SetBool("Stop", false);
+
             }
         }
     }
