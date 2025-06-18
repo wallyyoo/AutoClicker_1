@@ -18,10 +18,16 @@ public class EquippedItemUI : MonoBehaviour
     {
         var equipped = itemManager.equippedItem;
 
+        int finalAttack = Item_UpgradeTable.CalculateAttackPower(equipped.attackPower, equipped.upgradeLevel);
+        float finalCrit = Item_UpgradeTable.CalculateCriticalChance(equipped.criticalChance, equipped.upgradeLevel) * 100f;
+        
         if (equipped != null)
         {
             itemNameText.text = equipped.itemName;
-            itemDescriptionText.text = $"공격력: {equipped.attackPower} \n크리: {(equipped.criticalChance * 100f):F1}%";
+            itemDescriptionText.text =
+                $"Lv.{equipped.upgradeLevel}\n" +
+                $"ATK: {finalAttack}\n" +
+                $"CRI: {finalCrit:F1}%";
             
             if (equipped.itemIcon != null)
             {

@@ -24,6 +24,7 @@ public class InventorySlot : MonoBehaviour
     public Button upgradeButton;
 
     private ItemData itemData;
+    
 
     public void Setup(ItemData data)
     {
@@ -40,6 +41,10 @@ public class InventorySlot : MonoBehaviour
     }
     public void Refresh()
     {
+        
+        int finalAttack = Item_UpgradeTable.CalculateAttackPower(itemData.attackPower, itemData.upgradeLevel);
+        float finalCrit = Item_UpgradeTable.CalculateCriticalChance(itemData.criticalChance, itemData.upgradeLevel) * 100f;
+        
         bool isUnlocked = ItemManager.ItemManagerInstance.IsUnlocked(itemData);
         bool isEquipped = ItemManager.ItemManagerInstance.IsEquipped(itemData);
         bool canUpgrade = ItemManager.ItemManagerInstance.CanUpgrade(itemData);
@@ -65,7 +70,10 @@ public class InventorySlot : MonoBehaviour
         else
         {
             itemNameText.text = itemData.itemName;
-            itemInfoText.text = $"공격력:{itemData.attackPower} \n크리:{itemData.criticalChance * 100}%\nLv.{itemData.upgradeLevel}";
+            itemInfoText.text =
+                $"Lv.{itemData.upgradeLevel}\n" +
+                $"ATT: {finalAttack}\n" +
+                $"CRI: {finalCrit:F1}%";
             buyCostText.text = "";
         }
 
