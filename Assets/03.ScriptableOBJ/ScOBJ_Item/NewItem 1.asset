@@ -20,5 +20,5 @@ MonoBehaviour:
   criticalChance: 0.03
   itemIcon: {fileID: 21300000, guid: f08fce192d7f92841bd899a552ed9cf5, type: 3}
   isPurchased: 1
-  isEquipped: 0
+  isEquipped: 1
   upgradeLevel: 1

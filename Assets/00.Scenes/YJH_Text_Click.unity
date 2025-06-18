@@ -336,6 +336,10 @@ PrefabInstance:
       value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 4384991510262414180, guid: 9dd0a9f8268f3204a887dbc9cb1c4ee2, type: 3}
+      propertyPath: playerData.baseAutoSpeed
+      value: 10000
+      objectReference: {fileID: 0}
+    - target: {fileID: 4384991510262414180, guid: 9dd0a9f8268f3204a887dbc9cb1c4ee2, type: 3}
       propertyPath: playerData.baseAttackPower
       value: 1000
       objectReference: {fileID: 0}
@@ -2217,9 +2221,17 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 3245095562256182198, guid: 8791d9410c7bd9d438e4c62666746a6d, type: 3}
-      propertyPath: UIStatText
+      propertyPath: goldGainUpgradeButton
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1957343806}
+    - target: {fileID: 3245095562256182198, guid: 8791d9410c7bd9d438e4c62666746a6d, type: 3}
+      propertyPath: attackSpeedUpgradeButton
+      value: 
+      objectReference: {fileID: 1786042373}
+    - target: {fileID: 3245095562256182198, guid: 8791d9410c7bd9d438e4c62666746a6d, type: 3}
+      propertyPath: criticalRateUpgradeButton
+      value: 
+      objectReference: {fileID: 1406911596}
     - target: {fileID: 3516501074562181176, guid: 8791d9410c7bd9d438e4c62666746a6d, type: 3}
       propertyPath: m_LocalPosition.x
       value: -5
@@ -2260,38 +2272,58 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3676957401898035748, guid: 8791d9410c7bd9d438e4c62666746a6d, type: 3}
-      propertyPath: uiStatText
-      value: 
-      objectReference: {fileID: 1317918660}
     - target: {fileID: 5935743670200281119, guid: 8791d9410c7bd9d438e4c62666746a6d, type: 3}
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    - target: {fileID: 5935743670200281119, guid: 8791d9410c7bd9d438e4c62666746a6d, type: 3}
-      propertyPath: m_TagString
-      value: Player
-      objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 8711394380792227833, guid: 8791d9410c7bd9d438e4c62666746a6d, type: 3}
-    - {fileID: 3245095562256182198, guid: 8791d9410c7bd9d438e4c62666746a6d, type: 3}
-    - {fileID: 687112617463556311, guid: 8791d9410c7bd9d438e4c62666746a6d, type: 3}
-    - {fileID: 4277252978578952512, guid: 8791d9410c7bd9d438e4c62666746a6d, type: 3}
+    - target: {fileID: 8711394380792227833, guid: 8791d9410c7bd9d438e4c62666746a6d, type: 3}
+      propertyPath: currentGoldText
+      value: 
+      objectReference: {fileID: 2111365156}
+    - target: {fileID: 8711394380792227833, guid: 8791d9410c7bd9d438e4c62666746a6d, type: 3}
+      propertyPath: currentGoldGainText
+      value: 
+      objectReference: {fileID: 1750437873}
+    - target: {fileID: 8711394380792227833, guid: 8791d9410c7bd9d438e4c62666746a6d, type: 3}
+      propertyPath: currentAttackSpeedText
+      value: 
+      objectReference: {fileID: 1486642272}
+    - target: {fileID: 8711394380792227833, guid: 8791d9410c7bd9d438e4c62666746a6d, type: 3}
+      propertyPath: currentCriticalRateText
+      value: 
+      objectReference: {fileID: 130535196}
+    - target: {fileID: 8711394380792227833, guid: 8791d9410c7bd9d438e4c62666746a6d, type: 3}
+      propertyPath: upgradeCostGoldGainText
+      value: 
+      objectReference: {fileID: 2031957354}
+    - target: {fileID: 8711394380792227833, guid: 8791d9410c7bd9d438e4c62666746a6d, type: 3}
+      propertyPath: upgradeInfoGoldGainText
+      value: 
+      objectReference: {fileID: 1686925238}
+    - target: {fileID: 8711394380792227833, guid: 8791d9410c7bd9d438e4c62666746a6d, type: 3}
+      propertyPath: upgradeCostAttackSpeedText
+      value: 
+      objectReference: {fileID: 1556323213}
+    - target: {fileID: 8711394380792227833, guid: 8791d9410c7bd9d438e4c62666746a6d, type: 3}
+      propertyPath: upgradeInfoAttackSpeedText
+      value: 
+      objectReference: {fileID: 707467527}
+    - target: {fileID: 8711394380792227833, guid: 8791d9410c7bd9d438e4c62666746a6d, type: 3}
+      propertyPath: upgradeCostCriticalRateText
+      value: 
+      objectReference: {fileID: 1721108268}
+    - target: {fileID: 8711394380792227833, guid: 8791d9410c7bd9d438e4c62666746a6d, type: 3}
+      propertyPath: upgradeInfoCriticalRateText
+      value: 
+      objectReference: {fileID: 837943505}
+    - target: {fileID: 8711394380792227833, guid: 8791d9410c7bd9d438e4c62666746a6d, type: 3}
+      propertyPath: upgradeInfoCriticalDamageText
+      value: 
+      objectReference: {fileID: 1765204686}
+    m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 5935743670200281119, guid: 8791d9410c7bd9d438e4c62666746a6d, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1317918653}
-    - targetCorrespondingSourceObject: {fileID: 5935743670200281119, guid: 8791d9410c7bd9d438e4c62666746a6d, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1317918652}
-    - targetCorrespondingSourceObject: {fileID: 5935743670200281119, guid: 8791d9410c7bd9d438e4c62666746a6d, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1317918650}
-    - targetCorrespondingSourceObject: {fileID: 5935743670200281119, guid: 8791d9410c7bd9d438e4c62666746a6d, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1317918660}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8791d9410c7bd9d438e4c62666746a6d, type: 3}
 --- !u!1 &588340484
 GameObject:
@@ -4689,114 +4721,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1312288289}
   m_CullTransparentMesh: 1
---- !u!1 &1317918646 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5935743670200281119, guid: 8791d9410c7bd9d438e4c62666746a6d, type: 3}
-  m_PrefabInstance: {fileID: 585908320}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1317918650
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1317918646}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 463a6ed7b6ee32440b1b2a9e2403c06d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  attackInterval: 1.5
-  isAutoAttackEnabled: 1
-  attackEffect: {fileID: 1317918662}
---- !u!114 &1317918652
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1317918646}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b9e7ebe28573552479d44ae16083ad90, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  criticalRateUpgradeButton: {fileID: 1406911596}
-  autoAttack: {fileID: 1317918650}
-  attackSpeedUpgradeButton: {fileID: 1786042373}
-  goldGainUpgradeButton: {fileID: 1957343806}
-  holdInterval: 0.2
-  UIStatText: {fileID: 1317918660}
---- !u!114 &1317918653
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1317918646}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4a71c3428c11c8547adf1750c72cec65, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1317918660
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1317918646}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6894b35212eabde4381c9b0725fe94f1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerData:
-    playerUpgradeTable: {fileID: 0}
-    baseAttackPower: 1
-    baseCriticalDamage: 2
-    baseCriticalChance: 0
-    baseGoldGain: 0
-    baseAutoSpeed: 10
-    baseHp: 100
-    baseMp: 100
-    baseCriticalUpGold: 0
-    baseAutoSpeedUpGold: 0
-    baseGoldGainUpGold: 0
-    curGold: 0
-    attackPowerUpLevel: 0
-    critiDamageUpLevel: 0
-    critiChanceUpLevel: 0
-    goldGainUpLevel: 1
-    autoSpeedUpLevel: 0
-    hpUpLevel: 0
-    mpUpLevel: 0
-    criticalGoldUpLevel: 0
-    autoSpeedGoldUpLevel: 0
-    goldGainGoldUpLevel: 0
-  playerUpgradeTable: {fileID: 0}
-  currentGoldText: {fileID: 2111365156}
-  currentCriticalRateText: {fileID: 130535196}
-  currentAttackSpeedText: {fileID: 1486642272}
-  currentGoldGainText: {fileID: 1750437873}
-  upgradeInfoCriticalRateText: {fileID: 837943505}
-  upgradeInfoCriticalDamageText: {fileID: 1765204686}
-  upgradeInfoAttackSpeedText: {fileID: 707467527}
-  upgradeInfoGoldGainText: {fileID: 1686925238}
-  upgradeCostCriticalRateText: {fileID: 1721108268}
-  upgradeCostAttackSpeedText: {fileID: 1556323213}
-  upgradeCostGoldGainText: {fileID: 2031957354}
---- !u!114 &1317918662 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2890545706221402195, guid: 8791d9410c7bd9d438e4c62666746a6d, type: 3}
-  m_PrefabInstance: {fileID: 585908320}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1317918646}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1b83850b0322f844fb7bd962eb60b1e6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1324018087
 GameObject:
   m_ObjectHideFlags: 0

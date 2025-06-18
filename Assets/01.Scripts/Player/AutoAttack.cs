@@ -12,7 +12,6 @@ public class AutoAttack : MonoBehaviour
 
     void Start()
     {
-        Debug.Log("[AutoAttack] Start 호출됨");
         // 업그레이드 수치 기반으로 공격 간격 계산
         float interval = GameManager.Instance.playerData.UpstatusAutoSpeed;
         attackInterval = interval;
@@ -31,8 +30,8 @@ public class AutoAttack : MonoBehaviour
     {
         while (isAutoAttackEnabled)
         {
-            Debug.Log($"[AutoAttack] 공격 간격: {attackInterval}");
-            Attack();
+            //Debug.Log($"[AutoAttack] 공격 간격: {attackInterval}");
+            autoAttack();
             yield return new WaitForSeconds(attackInterval);//attackInterval(초)만큼 잠시 기다림
         }
     }
@@ -41,7 +40,7 @@ public class AutoAttack : MonoBehaviour
         StartAutoAttack();
     }
   
-    void Attack()
+    void autoAttack()
     {
         GameObject player = GameObject.FindWithTag("Player");
         if (player == null)
@@ -60,8 +59,8 @@ public class AutoAttack : MonoBehaviour
         Vector3 attackPos = transform.position + Vector3.right * 3f;
         var playerData = GameManager.Instance.playerData;
 
-        bool isCritical = AttackTest.IsCritical(playerData.UpStatuscriticalChance);
-        int damage = AttackTest.CalculateDamage(playerData.UpStatusAttackPower, playerData.UpStatusCriticalDamage, isCritical);
+        bool isCritical = AttackUtility.IsCritical(playerData.UpStatuscriticalChance);
+        int damage = AttackUtility.CalculateDamage(playerData.UpStatusAttackPower, playerData.UpStatusCriticalDamage, isCritical);
 
         Enemy target = detector.GetNearestEnemy(attackPos);
         Vector3 effectPos = target != null ? target.transform.position : attackPos;
@@ -73,18 +72,11 @@ public class AutoAttack : MonoBehaviour
         }
         else
         {
-            Debug.Log("공격했지만 대상 없음");
+            //Debug.Log("공격했지만 대상 없음");
         }
-
         attackEffect?.PlayHitEffect(effectPos, isCritical);
 
     }
 
 
-    //Debug.Log($"[AutoAttack] 공격 간격: {attackInterval:0.00}초");
-    //Debug.Log(isCritical ? $"치명타! 데미지 {damage}" : $"일반 공격 데미지 {damage}");
-    float GetCurrentCriticalRate()
-    {
-        return Mathf.Min(GameManager.Instance.playerData.UpStatuscriticalChance, 1f); // 최대 100%
-    }
 }

@@ -1,4 +1,4 @@
-
+﻿
 using UnityEngine;
 
 public static class Item_UpgradeTable
@@ -22,5 +22,4 @@ public static class Item_UpgradeTable
         {
             return baseCriticalChance + (0.01f * (level - 1));
         }
-        
 }
