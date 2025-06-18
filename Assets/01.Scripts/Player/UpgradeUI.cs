@@ -19,8 +19,6 @@ public class UpgradeUI : MonoBehaviour
     public Button goldGainUpgradeButton;
     public TextMeshProUGUI goldGainText;
 
-    public static float criticalRate = 0.3f;
-    public static int goldGain = 0;
     public float holdInterval = 0.2f;//버튼 꾹 누르고있으면 0.2초마다 업그레이드
 
     private Coroutine critHoldRoutine;
@@ -30,9 +28,9 @@ public class UpgradeUI : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        criticalRateUpgradeButton.onClick.AddListener(OnClickCriticalRateUpgrade);
-        attackSpeedUpgradeButton.onClick.AddListener(OnClickAttackSpeedUpgrade);
-        goldGainUpgradeButton.onClick.AddListener(OnClickGoldGainUpgrade);
+        //criticalRateUpgradeButton.onClick.AddListener(OnClickCriticalRateUpgrade);
+        //attackSpeedUpgradeButton.onClick.AddListener(OnClickAttackSpeedUpgrade);
+        //goldGainUpgradeButton.onClick.AddListener(OnClickGoldGainUpgrade);
 
         // 꾹 누름 감지용 EventTrigger 추가
         AddHoldEvent(criticalRateUpgradeButton,
@@ -87,74 +85,70 @@ public class UpgradeUI : MonoBehaviour
         }
     }
 
+
     void OnClickCriticalRateUpgrade()
     {
-        if (criticalRate >= 1f)
+        var data = GameManager.Instance.playerData;
+
+        if (data.UpStatuscriticalChance >= 1)
         {
-            Debug.Log("이미 최대 치명타 확률입니다!");
+            Debug.Log("최대 치명타확률 업그레이드!");
             return;
         }
 
-        UpgradeCriticalRate(0.1f);
+
+        data.critiChanceUpLevel++;
+        Json.JsonSave();
         UpdateCriticalRateText();
     }
 
-    void UpgradeCriticalRate(float amount)
-    {
-        criticalRate += amount;
-        criticalRate = Mathf.Min(criticalRate, 1f); // 100% 제한
-        Debug.Log("치명타 확률 증가!");
-    }
     void UpdateCriticalRateText()
     {
-        int percent = Mathf.RoundToInt(criticalRate * 100f);
-        criticalRateText.text = $"치명타 {percent}%";
+
+        float final = Mathf.Min(GameManager.Instance.playerData.UpStatuscriticalChance, 1f);
+
+        criticalRateText.text = $"치명타 {Mathf.RoundToInt(final * 100)}%";
     }
-
-
 
 
     void OnClickAttackSpeedUpgrade()
     {
-        if (autoAttack.attackInterval <= 0.1f)
+        var data = GameManager.Instance.playerData;
+
+        if (data.UpstatusAutoSpeed <= 0.1f)
         {
-            Debug.Log("최소 쿨타임 도달!");
-            attackSpeedUpgradeButton.interactable = false;
             return;
         }
-
-        UpgradeAttackInterval(0.1f);
+        data.autoSpeedUpLevel++;
+        Json.JsonSave();
         UpdateAttackIntervalText();
     }
-    void UpgradeAttackInterval(float amount)
-    {
-        autoAttack.attackInterval = Mathf.Max(0.1f, autoAttack.attackInterval - amount);
-        Debug.Log("자동 공격 속도 상승!");
-    }
+
     void UpdateAttackIntervalText()
     {
-        float interval = autoAttack.attackInterval;
+        float interval = GameManager.Instance.playerData.UpstatusAutoSpeed;
+        autoAttack.attackInterval = interval;
         attackIntervalText.text = $"자동공격 {interval:0.0}초";
     }
+
     void OnClickGoldGainUpgrade()
     {
+        var data = GameManager.Instance.playerData;
 
-        if (goldGain >= 100)
+        if (data.goldGainUpLevel >= 100)
         {
-            Debug.Log("이미 최대 골드 획득량입니다!");
+            Debug.Log("골드 획득량 최대!");
             return;
         }
-        UpgradeGoldGain(1);// 골드 획득량 증가수치
+
+        data.goldGainUpLevel++;
+        Json.JsonSave();
         UpdateGoldGainText();
     }
-    void UpgradeGoldGain(int amount)
-    {
-        goldGain += amount;
-        goldGain = Mathf.Min(goldGain, 100); // 100원까지 제한 (원하면 제거 가능)
-        Debug.Log("골드 획득량 증가!");
-    }
+
     void UpdateGoldGainText()
     {
-        goldGainText.text = $"골드획득 {goldGain}원";
+        float total = GameManager.Instance.playerData.UpStatusGold;
+        goldGainText.text = $"골드획득 + {total:0.0}원";
     }
 }

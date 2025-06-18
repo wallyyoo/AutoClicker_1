@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Rogue_Blue
   m_EditorClassIdentifier: 
   enemyType: 2
-  reward: 0
+  reward: 10
   health: 100
   damage: 2
   attackfrequency: 0

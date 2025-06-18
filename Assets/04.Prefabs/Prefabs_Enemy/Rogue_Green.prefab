@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1851975094666774081}
   - component: {fileID: 4172988529662614702}
   - component: {fileID: 1892564540510699550}
-  m_Layer: 0
+  m_Layer: 21
   m_Name: Rogue_Green
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -29,10 +29,11 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 4.3599997, z: 0}
-  m_LocalScale: {x: -0.1, y: 0.1, z: 0.1}
+  m_LocalScale: {x: -0.25, y: 0.25, z: 0.25}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 6972988962893763347}
+  - {fileID: 5861986949461978709}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &1851975094666774081
@@ -85,7 +86,7 @@ CapsuleCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 4}
@@ -104,6 +105,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   data: {fileID: 11400000, guid: b81d9cf996d185147b8d0cdf900e605b, type: 2}
+  stageData: {fileID: 0}
+  enemyNameText: {fileID: 3413338247838875848}
+  currentHealth: 0
+  currentHealthBarRect: {fileID: 213312808354611494}
+  maxHealthBarWidth: 100
+  stageIndex: 0
 --- !u!1 &147024949473335345
 GameObject:
   m_ObjectHideFlags: 0
@@ -113,7 +120,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6211557153942240140}
-  m_Layer: 0
+  m_Layer: 21
   m_Name: Rogue_torso_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -148,7 +155,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6937203875401040254}
-  m_Layer: 0
+  m_Layer: 21
   m_Name: Rogue_wrist_L_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -182,7 +189,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6203925881254633325}
   - component: {fileID: 8540723702320627971}
-  m_Layer: 0
+  m_Layer: 21
   m_Name: Rogue_torso_02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -250,7 +257,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 10.24, y: 10.24}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -265,7 +272,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1715880024899770202}
-  m_Layer: 0
+  m_Layer: 21
   m_Name: Rogue_elbow_L_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -299,7 +306,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4365311042870886043}
   - component: {fileID: 5855974910987123197}
-  m_Layer: 0
+  m_Layer: 21
   m_Name: Rogue_leg_l_02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -367,7 +374,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 10.24, y: 10.24}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -382,7 +389,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1317901966236800758}
-  m_Layer: 0
+  m_Layer: 21
   m_Name: Rogue_elbow_R_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -406,6 +413,140 @@ Transform:
   - {fileID: 3235888061105288556}
   m_Father: {fileID: 8969391079489475343}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1514191475686024329
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8084455234057433447}
+  - component: {fileID: 3670161482648712788}
+  - component: {fileID: 3413338247838875848}
+  m_Layer: 21
+  m_Name: Text (TMP)_name
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &8084455234057433447
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1514191475686024329}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: -1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5861986949461978709}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 13}
+  m_SizeDelta: {x: 10, y: 1}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!222 &3670161482648712788
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1514191475686024329}
+  m_CullTransparentMesh: 1
+--- !u!114 &3413338247838875848
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1514191475686024329}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_text: "\uB3C4\uC801 LV.0"
+  m_isRightToLeft: 0
+  m_fontAsset: {fileID: 11400000, guid: 116992b69240cde48957f0d16e711592, type: 2}
+  m_sharedMaterial: {fileID: -1462760499269002105, guid: 116992b69240cde48957f0d16e711592, type: 2}
+  m_fontSharedMaterials: []
+  m_fontMaterial: {fileID: 0}
+  m_fontMaterials: []
+  m_fontColor32:
+    serializedVersion: 2
+    rgba: 4283564287
+  m_fontColor: {r: 1, g: 0, b: 0.3217411, a: 1}
+  m_enableVertexGradient: 0
+  m_colorMode: 3
+  m_fontColorGradient:
+    topLeft: {r: 1, g: 1, b: 1, a: 1}
+    topRight: {r: 1, g: 1, b: 1, a: 1}
+    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
+    bottomRight: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColorGradientPreset: {fileID: 0}
+  m_spriteAsset: {fileID: 0}
+  m_tintAllSprites: 0
+  m_StyleSheet: {fileID: 0}
+  m_TextStyleHashCode: -1183493901
+  m_overrideHtmlColors: 0
+  m_faceColor:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontSize: 2.5
+  m_fontSizeBase: 2.5
+  m_fontWeight: 400
+  m_enableAutoSizing: 0
+  m_fontSizeMin: 18
+  m_fontSizeMax: 72
+  m_fontStyle: 0
+  m_HorizontalAlignment: 2
+  m_VerticalAlignment: 512
+  m_textAlignment: 65535
+  m_characterSpacing: 0
+  m_wordSpacing: 0
+  m_lineSpacing: 0
+  m_lineSpacingMax: 0
+  m_paragraphSpacing: 0
+  m_charWidthMaxAdj: 0
+  m_enableWordWrapping: 1
+  m_wordWrappingRatios: 0.4
+  m_overflowMode: 0
+  m_linkedTextComponent: {fileID: 0}
+  parentLinkedComponent: {fileID: 0}
+  m_enableKerning: 1
+  m_enableExtraPadding: 0
+  checkPaddingRequired: 0
+  m_isRichText: 1
+  m_parseCtrlCharacters: 1
+  m_isOrthographic: 1
+  m_isCullingEnabled: 0
+  m_horizontalMapping: 0
+  m_verticalMapping: 0
+  m_uvLineOffset: 0
+  m_geometrySortingOrder: 0
+  m_IsTextObjectScaleStatic: 0
+  m_VertexBufferAutoSizeReduction: 0
+  m_useMaxVisibleDescender: 1
+  m_pageToDisplay: 1
+  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_isUsingLegacyAnimationComponent: 0
+  m_isVolumetricText: 0
+  m_hasFontAssetChanged: 0
+  m_baseMaterial: {fileID: 0}
+  m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!1 &1581283390666838611
 GameObject:
   m_ObjectHideFlags: 0
@@ -416,7 +557,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3684003983767609018}
   - component: {fileID: 6393846092382891755}
-  m_Layer: 0
+  m_Layer: 21
   m_Name: Rogue_elbow_l_02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -484,7 +625,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 10.24, y: 10.24}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -500,7 +641,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2546133187632049210}
   - component: {fileID: 5503613054729192118}
-  m_Layer: 0
+  m_Layer: 21
   m_Name: Rogue_wrist_r_02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -568,7 +709,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 10.24, y: 10.24}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -583,7 +724,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 15075754915105607}
-  m_Layer: 0
+  m_Layer: 21
   m_Name: Rogue_wrist_R_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -616,7 +757,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5444523825010486863}
-  m_Layer: 0
+  m_Layer: 21
   m_Name: Rogue_leg_R_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -650,7 +791,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3235888061105288556}
   - component: {fileID: 8046354239473358335}
-  m_Layer: 0
+  m_Layer: 21
   m_Name: Rogue_elbow_r_02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -718,7 +859,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 10.24, y: 10.24}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -733,7 +874,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5488758504978424456}
-  m_Layer: 0
+  m_Layer: 21
   m_Name: Rogue_shoulder_L_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -767,7 +908,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6091438646284548192}
   - component: {fileID: 8475841742273446689}
-  m_Layer: 0
+  m_Layer: 21
   m_Name: Rogue_shoulder_l_02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -835,7 +976,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 10.24, y: 10.24}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -851,7 +992,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8465952437110696521}
   - component: {fileID: 4829596582363586981}
-  m_Layer: 0
+  m_Layer: 21
   m_Name: Rogue_boot_r_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -919,7 +1060,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 10.24, y: 10.24}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -935,7 +1076,7 @@ GameObject:
   m_Component:
   - component: {fileID: 628031894289898949}
   - component: {fileID: 5046875049182269885}
-  m_Layer: 0
+  m_Layer: 21
   m_Name: Rogue_wrist_l_02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1003,7 +1144,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 10.24, y: 10.24}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -1019,7 +1160,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1091188406694335387}
   - component: {fileID: 3434138285717224664}
-  m_Layer: 0
+  m_Layer: 21
   m_Name: Rogue_leg_r_02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1087,7 +1228,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 10.24, y: 10.24}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -1102,7 +1243,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8969391079489475343}
-  m_Layer: 0
+  m_Layer: 21
   m_Name: Rogue_shoulder_R_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1136,7 +1277,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6212132163397468147}
   - component: {fileID: 4253238951795268036}
-  m_Layer: 0
+  m_Layer: 21
   m_Name: Rogue_weapon_02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1204,7 +1345,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 10.24, y: 10.24}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -1220,7 +1361,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2839989439437125926}
   - component: {fileID: 2614774495940293581}
-  m_Layer: 0
+  m_Layer: 21
   m_Name: Rogue_shoulder_r_02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1288,7 +1429,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 10.24, y: 10.24}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -1304,7 +1445,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3637994014611110825}
   - component: {fileID: 5601800975187096685}
-  m_Layer: 0
+  m_Layer: 21
   m_Name: Rogue_face_02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1372,12 +1513,115 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 10.24, y: 10.24}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &5651812010463722549
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5861986949461978709}
+  - component: {fileID: 4385272046904985163}
+  - component: {fileID: 6435434788778935842}
+  - component: {fileID: 8073308772610719065}
+  m_Layer: 21
+  m_Name: Canvas
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &5861986949461978709
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5651812010463722549}
+  m_LocalRotation: {x: -0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 281897006631121284}
+  - {fileID: 8084455234057433447}
+  m_Father: {fileID: 8258274991921511286}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0, y: 0}
+--- !u!223 &4385272046904985163
+Canvas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5651812010463722549}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_RenderMode: 2
+  m_Camera: {fileID: 0}
+  m_PlaneDistance: 100
+  m_PixelPerfect: 0
+  m_ReceivesEvents: 1
+  m_OverrideSorting: 0
+  m_OverridePixelPerfect: 0
+  m_SortingBucketNormalizedSize: 0
+  m_VertexColorAlwaysGammaSpace: 0
+  m_AdditionalShaderChannelsFlag: 25
+  m_UpdateRectTransformForStandalone: 0
+  m_SortingLayerID: 0
+  m_SortingOrder: 100
+  m_TargetDisplay: 0
+--- !u!114 &6435434788778935842
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5651812010463722549}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_UiScaleMode: 1
+  m_ReferencePixelsPerUnit: 100
+  m_ScaleFactor: 1
+  m_ReferenceResolution: {x: 1080, y: 1920}
+  m_ScreenMatchMode: 0
+  m_MatchWidthOrHeight: 0
+  m_PhysicalUnit: 3
+  m_FallbackScreenDPI: 96
+  m_DefaultSpriteDPI: 96
+  m_DynamicPixelsPerUnit: 1
+  m_PresetInfoIsWorld: 1
+--- !u!114 &8073308772610719065
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5651812010463722549}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc42784cf147c0c48a680349fa168899, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_IgnoreReversedGraphics: 1
+  m_BlockingObjects: 0
+  m_BlockingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
 --- !u!1 &5824157799534612260
 GameObject:
   m_ObjectHideFlags: 0
@@ -1387,7 +1631,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 64397892320044357}
-  m_Layer: 0
+  m_Layer: 21
   m_Name: Rogue_boot_L_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1410,6 +1654,82 @@ Transform:
   - {fileID: 4751048650444056550}
   m_Father: {fileID: 7614335490173601126}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &5936697794348585544
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 281897006631121284}
+  - component: {fileID: 3913038430400143211}
+  - component: {fileID: 3218969717072111015}
+  m_Layer: 21
+  m_Name: HealthBar
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &281897006631121284
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5936697794348585544}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.099999994, y: 0.015, z: 0.099999994}
+  m_ConstrainProportionsScale: 1
+  m_Children:
+  - {fileID: 213312808354611494}
+  m_Father: {fileID: 5861986949461978709}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 10}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!222 &3913038430400143211
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5936697794348585544}
+  m_CullTransparentMesh: 1
+--- !u!114 &3218969717072111015
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5936697794348585544}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.21960786, g: 0.21960786, b: 0.21960786, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 0}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
 --- !u!1 &6031249829224556589
 GameObject:
   m_ObjectHideFlags: 0
@@ -1419,7 +1739,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 696785163288915920}
-  m_Layer: 0
+  m_Layer: 21
   m_Name: Rogue_weapon_L_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1452,7 +1772,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8270758503834536245}
   - component: {fileID: 3099696710330905448}
-  m_Layer: 0
+  m_Layer: 21
   m_Name: Rogue_pelvis_02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1520,7 +1840,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 10.24, y: 10.24}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -1535,7 +1855,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7761367352457814941}
-  m_Layer: 0
+  m_Layer: 21
   m_Name: Rogue_head_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1569,7 +1889,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1997990040932391093}
-  m_Layer: 0
+  m_Layer: 21
   m_Name: Rogue_boot_R_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1601,7 +1921,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7614335490173601126}
-  m_Layer: 0
+  m_Layer: 21
   m_Name: Rogue_leg_L_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1635,7 +1955,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4751048650444056550}
   - component: {fileID: 6459938419675686604}
-  m_Layer: 0
+  m_Layer: 21
   m_Name: Rogue_boot_l_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1703,7 +2023,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 10.24, y: 10.24}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -1719,7 +2039,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9015255613948430338}
   - component: {fileID: 1800219409460817966}
-  m_Layer: 0
+  m_Layer: 21
   m_Name: Rogue_head_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1787,12 +2107,87 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 10.24, y: 10.24}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &8629742946142247499
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 213312808354611494}
+  - component: {fileID: 1667360712115443862}
+  - component: {fileID: 7132053282099008612}
+  m_Layer: 21
+  m_Name: Health
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &213312808354611494
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8629742946142247499}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.9500001, y: 0.6, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 281897006631121284}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0.5}
+  m_AnchorMax: {x: 0, y: 0.5}
+  m_AnchoredPosition: {x: 1.999999, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0, y: 0.5}
+--- !u!222 &1667360712115443862
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8629742946142247499}
+  m_CullTransparentMesh: 1
+--- !u!114 &7132053282099008612
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8629742946142247499}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 0, b: 0, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 0}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
 --- !u!1 &8672911624392231610
 GameObject:
   m_ObjectHideFlags: 0
@@ -1803,7 +2198,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9016143321815568518}
   - component: {fileID: 9109777299383713757}
-  m_Layer: 0
+  m_Layer: 21
   m_Name: Rogue_hood_02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1871,7 +2266,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 10.24, y: 10.24}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -1886,7 +2281,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6972988962893763347}
-  m_Layer: 0
+  m_Layer: 21
   m_Name: Rogue_pelvis_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1922,7 +2317,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8522620785888694719}
   - component: {fileID: 979249124378005282}
-  m_Layer: 0
+  m_Layer: 21
   m_Name: Rogue_weapon_02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1990,7 +2385,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 10.24, y: 10.24}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1

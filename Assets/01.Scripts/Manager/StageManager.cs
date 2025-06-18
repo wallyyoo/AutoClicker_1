@@ -1,7 +1,7 @@
 ﻿using System;
 using UnityEngine;
 
-public class StageManager : MonoBehaviour
+public class StageManager : MonoBehaviour, IRewardable
 {
     public int currentStageIndex;
     public int currentWaveIndex;
@@ -25,17 +25,36 @@ public class StageManager : MonoBehaviour
         }
     }
 
+    private void Start()
+    {
+        Json.JsonLoad();
+        GameManager.Instance.soundManager.Bgm(currentStageIndex);
+        if (currentStageIndex < 0)
+        {
+            currentStageIndex = 0;
+            StartStage(0);
+            return;
+        }
+        StartStage(currentStageIndex);
+    }
 
     public void StartStage(int stageIndex)
     {
+        if (stageIndex >= stageData.stages.Count)
+        {
+            Debug.Log("모든 스테이지를 클리어했습니다!");
+            return;
+        }
+
         currentStageIndex = stageIndex;
-        currentWaveIndex = 0;
+        UIMainManager.Instance.UpdateStageTitle(currentStageIndex);
         StartWave(currentWaveIndex);
     }
 
     public void StartWave(int waveIndex)
     {
-        var wave = stageData.stages[currentStageIndex].waves[waveIndex];// 현재 스테이지의 해당 웨이브 정보 가져오기
+        var wave = stageData.stages[currentStageIndex].waves[waveIndex];
+        UIMainManager.Instance.UpdateWaveTitle(waveIndex);
         EnemyManager.Instance.SpawnWave(wave.enemys);
         OnWaveStarted?.Invoke(waveIndex);
     }
@@ -49,14 +68,24 @@ public class StageManager : MonoBehaviour
         }
         else
         {
-            GiveReward();
-            OnStageCleared?.Invoke();// 스테이지 클리어 이벤트 발생
-            // 다음 스테이지로 이동 등
+            AddGold(currentStageIndex);
+            OnStageCleared?.Invoke();
+
+            // 다음 스테이지 자동 진행
+            StartStage(currentStageIndex + 1);
+            GameManager.Instance.soundManager.Bgm(currentStageIndex + 1);
+
         }
+        Json.JsonSave();
     }
 
-    private void GiveReward()
+    public void AddGold(int amount)
     {
-        // 리워드 지급 로직
+
+        int totalReward = 100 + 10 * (amount + 1); // 스테이지 클리어 보상 계산
+        GameManager.Instance.playerData.curGold += totalReward;
+        Debug.Log($"골드 획득: {amount}. 현재 골드: {GameManager.Instance.playerData.curGold}");
+
+        Json.JsonSave();
     }
 }
