@@ -40,8 +40,6 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
-        Json.JsonLoad(); 
-
         if (Instance != this)
         {
             Debug.Log("중복된 씬을 삭제");
@@ -51,8 +49,9 @@ public class GameManager : MonoBehaviour
     }
     private IEnumerator JsonLoadCoroutine()
     {
+        Debug.Log("JsonLoadCoroutine_1");
         yield return null; // 모든 Awake() 완료 대기
-
+        Debug.Log("JsonLoadCoroutine_2");
         if (StageManager.Instance == null)
         {
             Debug.Log("StageManager가 초기화되지 않았습니다.");
@@ -60,7 +59,7 @@ public class GameManager : MonoBehaviour
         else
         {
             Debug.Log("초기화 완료");
-            //Json.JsonLoad(); // 안전하게 실행
+            Json.JsonLoad(); // 안전하게 실행
         }
     }
 }

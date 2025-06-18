@@ -1,4 +1,4 @@
-
+﻿
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "NewItem", menuName = "Inventory/ItemData")]
@@ -16,6 +16,4 @@ public class ItemData : ScriptableObject
    public bool isPurchased;
    public bool isEquipped;
    public int upgradeLevel = 1;
-   
-
 }
