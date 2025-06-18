@@ -5,7 +5,7 @@ using UnityEngine;
 public class EnemyDetector : MonoBehaviour
 {
     Animator animator;
-
+    public UIStatText uiStatText;
 
     private void Start()
     {
@@ -35,6 +35,7 @@ public class EnemyDetector : MonoBehaviour
             detectedEnemies.Remove(enemy);
             Debug.Log($"[EnemyDetector] 범위 벗어남: {enemy.name}");
 
+            uiStatText.UpdateCurrentGoldText();
             if (detectedEnemies.Count == 0)
             {
                 BackGroundManager.BackInstace.ResetAllSpeeds();
