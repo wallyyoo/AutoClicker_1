@@ -95,6 +95,14 @@ public class Enemy : MonoBehaviour, IRewardable
 
     private void MoveToArrivalPosition()
     {
+        //if(불리언 메서드 들어갈 예정)// 참일 경우 moveSpeed를 5로 변경하고, 거짓일 경우 2로 변경할 예정
+        //{
+        //    moveSpeed = 5f; // 예시로 5로 설정, 실제 조건에 따라 변경
+        //}
+        //else
+        //{
+        //    moveSpeed = 2f; // 예시로 2로 설정, 실제 조건에 따라 변경
+        //}
         transform.position = Vector2.MoveTowards(transform.position, arrivalPosition, moveSpeed * Time.deltaTime);// 이동 속도에 따라 위치 업데이트
         if (Vector2.Distance(transform.position, arrivalPosition) < 0.05f)
         {
