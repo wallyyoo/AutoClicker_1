@@ -55,3 +55,327 @@ MonoBehaviour:
       - enemyPrefab: {fileID: 83815278432901025, guid: 586297abf8595e94d867d19e55e4cba5, type: 3}
         spawnPosition: {x: 14, y: -3}
         arrivalPosition: {x: -3, y: -3}
+  - stageKey: 2
+    waves:
+    - enemys:
+      - enemyPrefab: {fileID: 248640432488069553, guid: 409b284866893274796d17ddf043ad5c, type: 3}
+        spawnPosition: {x: 10, y: -3}
+        arrivalPosition: {x: -3, y: -3}
+      - enemyPrefab: {fileID: 1606777960591330602, guid: 0b2b4f5269df9704d81a4821860c0747, type: 3}
+        spawnPosition: {x: 12, y: -3}
+        arrivalPosition: {x: -3, y: -3}
+      - enemyPrefab: {fileID: 455114782886424482, guid: b9ea9a627e5eb7748abab6f66622022c, type: 3}
+        spawnPosition: {x: 14, y: -3}
+        arrivalPosition: {x: -3, y: -3}
+    - enemys:
+      - enemyPrefab: {fileID: 455114782886424482, guid: b9ea9a627e5eb7748abab6f66622022c, type: 3}
+        spawnPosition: {x: 10, y: -3}
+        arrivalPosition: {x: -3, y: -3}
+      - enemyPrefab: {fileID: 83815278432901025, guid: 586297abf8595e94d867d19e55e4cba5, type: 3}
+        spawnPosition: {x: 12, y: -3}
+        arrivalPosition: {x: -3, y: -3}
+      - enemyPrefab: {fileID: 6953776967975776786, guid: e79308193c3fe9a4cad14242119e82b5, type: 3}
+        spawnPosition: {x: 14, y: -3}
+        arrivalPosition: {x: -3, y: -3}
+    - enemys:
+      - enemyPrefab: {fileID: 455114782886424482, guid: b9ea9a627e5eb7748abab6f66622022c, type: 3}
+        spawnPosition: {x: 10, y: -3}
+        arrivalPosition: {x: -3, y: -3}
+      - enemyPrefab: {fileID: 7177333620138865921, guid: d9431794f1be6664386d96353f655ff7, type: 3}
+        spawnPosition: {x: 12, y: -3}
+        arrivalPosition: {x: -3, y: -3}
+      - enemyPrefab: {fileID: 83815278432901025, guid: 586297abf8595e94d867d19e55e4cba5, type: 3}
+        spawnPosition: {x: 14, y: -3}
+        arrivalPosition: {x: -3, y: -3}
+  - stageKey: 3
+    waves:
+    - enemys:
+      - enemyPrefab: {fileID: 248640432488069553, guid: 409b284866893274796d17ddf043ad5c, type: 3}
+        spawnPosition: {x: 10, y: -3}
+        arrivalPosition: {x: -3, y: -3}
+      - enemyPrefab: {fileID: 1606777960591330602, guid: 0b2b4f5269df9704d81a4821860c0747, type: 3}
+        spawnPosition: {x: 12, y: -3}
+        arrivalPosition: {x: -3, y: -3}
+      - enemyPrefab: {fileID: 455114782886424482, guid: b9ea9a627e5eb7748abab6f66622022c, type: 3}
+        spawnPosition: {x: 14, y: -3}
+        arrivalPosition: {x: -3, y: -3}
+    - enemys:
+      - enemyPrefab: {fileID: 455114782886424482, guid: b9ea9a627e5eb7748abab6f66622022c, type: 3}
+        spawnPosition: {x: 10, y: -3}
+        arrivalPosition: {x: -3, y: -3}
+      - enemyPrefab: {fileID: 83815278432901025, guid: 586297abf8595e94d867d19e55e4cba5, type: 3}
+        spawnPosition: {x: 12, y: -3}
+        arrivalPosition: {x: -3, y: -3}
+      - enemyPrefab: {fileID: 6953776967975776786, guid: e79308193c3fe9a4cad14242119e82b5, type: 3}
+        spawnPosition: {x: 14, y: -3}
+        arrivalPosition: {x: -3, y: -3}
+    - enemys:
+      - enemyPrefab: {fileID: 455114782886424482, guid: b9ea9a627e5eb7748abab6f66622022c, type: 3}
+        spawnPosition: {x: 10, y: -3}
+        arrivalPosition: {x: -3, y: -3}
+      - enemyPrefab: {fileID: 7177333620138865921, guid: d9431794f1be6664386d96353f655ff7, type: 3}
+        spawnPosition: {x: 12, y: -3}
+        arrivalPosition: {x: -3, y: -3}
+      - enemyPrefab: {fileID: 83815278432901025, guid: 586297abf8595e94d867d19e55e4cba5, type: 3}
+        spawnPosition: {x: 14, y: -3}
+        arrivalPosition: {x: -3, y: -3}
+  - stageKey: 4
+    waves:
+    - enemys:
+      - enemyPrefab: {fileID: 248640432488069553, guid: 409b284866893274796d17ddf043ad5c, type: 3}
+        spawnPosition: {x: 10, y: -3}
+        arrivalPosition: {x: -3, y: -3}
+      - enemyPrefab: {fileID: 1606777960591330602, guid: 0b2b4f5269df9704d81a4821860c0747, type: 3}
+        spawnPosition: {x: 12, y: -3}
+        arrivalPosition: {x: -3, y: -3}
+      - enemyPrefab: {fileID: 455114782886424482, guid: b9ea9a627e5eb7748abab6f66622022c, type: 3}
+        spawnPosition: {x: 14, y: -3}
+        arrivalPosition: {x: -3, y: -3}
+    - enemys:
+      - enemyPrefab: {fileID: 455114782886424482, guid: b9ea9a627e5eb7748abab6f66622022c, type: 3}
+        spawnPosition: {x: 10, y: -3}
+        arrivalPosition: {x: -3, y: -3}
+      - enemyPrefab: {fileID: 83815278432901025, guid: 586297abf8595e94d867d19e55e4cba5, type: 3}
+        spawnPosition: {x: 12, y: -3}
+        arrivalPosition: {x: -3, y: -3}
+      - enemyPrefab: {fileID: 6953776967975776786, guid: e79308193c3fe9a4cad14242119e82b5, type: 3}
+        spawnPosition: {x: 14, y: -3}
+        arrivalPosition: {x: -3, y: -3}
+    - enemys:
+      - enemyPrefab: {fileID: 455114782886424482, guid: b9ea9a627e5eb7748abab6f66622022c, type: 3}
+        spawnPosition: {x: 10, y: -3}
+        arrivalPosition: {x: -3, y: -3}
+      - enemyPrefab: {fileID: 7177333620138865921, guid: d9431794f1be6664386d96353f655ff7, type: 3}
+        spawnPosition: {x: 12, y: -3}
+        arrivalPosition: {x: -3, y: -3}
+      - enemyPrefab: {fileID: 83815278432901025, guid: 586297abf8595e94d867d19e55e4cba5, type: 3}
+        spawnPosition: {x: 14, y: -3}
+        arrivalPosition: {x: -3, y: -3}
+  - stageKey: 5
+    waves:
+    - enemys:
+      - enemyPrefab: {fileID: 248640432488069553, guid: 409b284866893274796d17ddf043ad5c, type: 3}
+        spawnPosition: {x: 10, y: -3}
+        arrivalPosition: {x: -3, y: -3}
+      - enemyPrefab: {fileID: 1606777960591330602, guid: 0b2b4f5269df9704d81a4821860c0747, type: 3}
+        spawnPosition: {x: 12, y: -3}
+        arrivalPosition: {x: -3, y: -3}
+      - enemyPrefab: {fileID: 455114782886424482, guid: b9ea9a627e5eb7748abab6f66622022c, type: 3}
+        spawnPosition: {x: 14, y: -3}
+        arrivalPosition: {x: -3, y: -3}
+    - enemys:
+      - enemyPrefab: {fileID: 455114782886424482, guid: b9ea9a627e5eb7748abab6f66622022c, type: 3}
+        spawnPosition: {x: 10, y: -3}
+        arrivalPosition: {x: -3, y: -3}
+      - enemyPrefab: {fileID: 83815278432901025, guid: 586297abf8595e94d867d19e55e4cba5, type: 3}
+        spawnPosition: {x: 12, y: -3}
+        arrivalPosition: {x: -3, y: -3}
+      - enemyPrefab: {fileID: 6953776967975776786, guid: e79308193c3fe9a4cad14242119e82b5, type: 3}
+        spawnPosition: {x: 14, y: -3}
+        arrivalPosition: {x: -3, y: -3}
+    - enemys:
+      - enemyPrefab: {fileID: 455114782886424482, guid: b9ea9a627e5eb7748abab6f66622022c, type: 3}
+        spawnPosition: {x: 10, y: -3}
+        arrivalPosition: {x: -3, y: -3}
+      - enemyPrefab: {fileID: 7177333620138865921, guid: d9431794f1be6664386d96353f655ff7, type: 3}
+        spawnPosition: {x: 12, y: -3}
+        arrivalPosition: {x: -3, y: -3}
+      - enemyPrefab: {fileID: 83815278432901025, guid: 586297abf8595e94d867d19e55e4cba5, type: 3}
+        spawnPosition: {x: 14, y: -3}
+        arrivalPosition: {x: -3, y: -3}
+  - stageKey: 6
+    waves:
+    - enemys:
+      - enemyPrefab: {fileID: 248640432488069553, guid: 409b284866893274796d17ddf043ad5c, type: 3}
+        spawnPosition: {x: 10, y: -3}
+        arrivalPosition: {x: -3, y: -3}
+      - enemyPrefab: {fileID: 1606777960591330602, guid: 0b2b4f5269df9704d81a4821860c0747, type: 3}
+        spawnPosition: {x: 12, y: -3}
+        arrivalPosition: {x: -3, y: -3}
+      - enemyPrefab: {fileID: 455114782886424482, guid: b9ea9a627e5eb7748abab6f66622022c, type: 3}
+        spawnPosition: {x: 12, y: -3}
+        arrivalPosition: {x: -3, y: -3}
+    - enemys:
+      - enemyPrefab: {fileID: 455114782886424482, guid: b9ea9a627e5eb7748abab6f66622022c, type: 3}
+        spawnPosition: {x: 10, y: -3}
+        arrivalPosition: {x: -3, y: -3}
+      - enemyPrefab: {fileID: 83815278432901025, guid: 586297abf8595e94d867d19e55e4cba5, type: 3}
+        spawnPosition: {x: 12, y: -3}
+        arrivalPosition: {x: -3, y: -3}
+      - enemyPrefab: {fileID: 6953776967975776786, guid: e79308193c3fe9a4cad14242119e82b5, type: 3}
+        spawnPosition: {x: 14, y: -3}
+        arrivalPosition: {x: -3, y: -3}
+    - enemys:
+      - enemyPrefab: {fileID: 455114782886424482, guid: b9ea9a627e5eb7748abab6f66622022c, type: 3}
+        spawnPosition: {x: 10, y: -3}
+        arrivalPosition: {x: -3, y: -3}
+      - enemyPrefab: {fileID: 7177333620138865921, guid: d9431794f1be6664386d96353f655ff7, type: 3}
+        spawnPosition: {x: 12, y: -3}
+        arrivalPosition: {x: -3, y: -3}
+      - enemyPrefab: {fileID: 83815278432901025, guid: 586297abf8595e94d867d19e55e4cba5, type: 3}
+        spawnPosition: {x: 14, y: -3}
+        arrivalPosition: {x: -3, y: -3}
+      - enemyPrefab: {fileID: 248640432488069553, guid: 409b284866893274796d17ddf043ad5c, type: 3}
+        spawnPosition: {x: 16, y: -3}
+        arrivalPosition: {x: -3, y: -3}
+  - stageKey: 7
+    waves:
+    - enemys:
+      - enemyPrefab: {fileID: 248640432488069553, guid: 409b284866893274796d17ddf043ad5c, type: 3}
+        spawnPosition: {x: 10, y: -3}
+        arrivalPosition: {x: -3, y: -3}
+      - enemyPrefab: {fileID: 1606777960591330602, guid: 0b2b4f5269df9704d81a4821860c0747, type: 3}
+        spawnPosition: {x: 12, y: -3}
+        arrivalPosition: {x: -3, y: -3}
+      - enemyPrefab: {fileID: 455114782886424482, guid: b9ea9a627e5eb7748abab6f66622022c, type: 3}
+        spawnPosition: {x: 12, y: -3}
+        arrivalPosition: {x: -3, y: -3}
+    - enemys:
+      - enemyPrefab: {fileID: 455114782886424482, guid: b9ea9a627e5eb7748abab6f66622022c, type: 3}
+        spawnPosition: {x: 10, y: -3}
+        arrivalPosition: {x: -3, y: -3}
+      - enemyPrefab: {fileID: 83815278432901025, guid: 586297abf8595e94d867d19e55e4cba5, type: 3}
+        spawnPosition: {x: 12, y: -3}
+        arrivalPosition: {x: -3, y: -3}
+      - enemyPrefab: {fileID: 6953776967975776786, guid: e79308193c3fe9a4cad14242119e82b5, type: 3}
+        spawnPosition: {x: 14, y: -3}
+        arrivalPosition: {x: -3, y: -3}
+      - enemyPrefab: {fileID: 455114782886424482, guid: b9ea9a627e5eb7748abab6f66622022c, type: 3}
+        spawnPosition: {x: 16, y: -3}
+        arrivalPosition: {x: -3, y: -3}
+    - enemys:
+      - enemyPrefab: {fileID: 455114782886424482, guid: b9ea9a627e5eb7748abab6f66622022c, type: 3}
+        spawnPosition: {x: 10, y: -3}
+        arrivalPosition: {x: -3, y: -3}
+      - enemyPrefab: {fileID: 7177333620138865921, guid: d9431794f1be6664386d96353f655ff7, type: 3}
+        spawnPosition: {x: 12, y: -3}
+        arrivalPosition: {x: -3, y: -3}
+      - enemyPrefab: {fileID: 83815278432901025, guid: 586297abf8595e94d867d19e55e4cba5, type: 3}
+        spawnPosition: {x: 14, y: -3}
+        arrivalPosition: {x: -3, y: -3}
+      - enemyPrefab: {fileID: 248640432488069553, guid: 409b284866893274796d17ddf043ad5c, type: 3}
+        spawnPosition: {x: 16, y: -3}
+        arrivalPosition: {x: -3, y: -3}
+  - stageKey: 8
+    waves:
+    - enemys:
+      - enemyPrefab: {fileID: 248640432488069553, guid: 409b284866893274796d17ddf043ad5c, type: 3}
+        spawnPosition: {x: 10, y: -3}
+        arrivalPosition: {x: -3, y: -3}
+      - enemyPrefab: {fileID: 1606777960591330602, guid: 0b2b4f5269df9704d81a4821860c0747, type: 3}
+        spawnPosition: {x: 12, y: -3}
+        arrivalPosition: {x: -3, y: -3}
+      - enemyPrefab: {fileID: 455114782886424482, guid: b9ea9a627e5eb7748abab6f66622022c, type: 3}
+        spawnPosition: {x: 14, y: -3}
+        arrivalPosition: {x: -3, y: -3}
+      - enemyPrefab: {fileID: 6953776967975776786, guid: e79308193c3fe9a4cad14242119e82b5, type: 3}
+        spawnPosition: {x: 16, y: -3}
+        arrivalPosition: {x: -3, y: -3}
+    - enemys:
+      - enemyPrefab: {fileID: 455114782886424482, guid: b9ea9a627e5eb7748abab6f66622022c, type: 3}
+        spawnPosition: {x: 10, y: -3}
+        arrivalPosition: {x: -3, y: -3}
+      - enemyPrefab: {fileID: 83815278432901025, guid: 586297abf8595e94d867d19e55e4cba5, type: 3}
+        spawnPosition: {x: 12, y: -3}
+        arrivalPosition: {x: -3, y: -3}
+      - enemyPrefab: {fileID: 6953776967975776786, guid: e79308193c3fe9a4cad14242119e82b5, type: 3}
+        spawnPosition: {x: 14, y: -3}
+        arrivalPosition: {x: -3, y: -3}
+      - enemyPrefab: {fileID: 248640432488069553, guid: 409b284866893274796d17ddf043ad5c, type: 3}
+        spawnPosition: {x: 16, y: -3}
+        arrivalPosition: {x: -3, y: -3}
+    - enemys:
+      - enemyPrefab: {fileID: 455114782886424482, guid: b9ea9a627e5eb7748abab6f66622022c, type: 3}
+        spawnPosition: {x: 10, y: -3}
+        arrivalPosition: {x: -3, y: -3}
+      - enemyPrefab: {fileID: 7177333620138865921, guid: d9431794f1be6664386d96353f655ff7, type: 3}
+        spawnPosition: {x: 12, y: -3}
+        arrivalPosition: {x: -3, y: -3}
+      - enemyPrefab: {fileID: 83815278432901025, guid: 586297abf8595e94d867d19e55e4cba5, type: 3}
+        spawnPosition: {x: 14, y: -3}
+        arrivalPosition: {x: -3, y: -3}
+      - enemyPrefab: {fileID: 248640432488069553, guid: 409b284866893274796d17ddf043ad5c, type: 3}
+        spawnPosition: {x: 16, y: -3}
+        arrivalPosition: {x: -3, y: -3}
+  - stageKey: 9
+    waves:
+    - enemys:
+      - enemyPrefab: {fileID: 248640432488069553, guid: 409b284866893274796d17ddf043ad5c, type: 3}
+        spawnPosition: {x: 10, y: -3}
+        arrivalPosition: {x: -3, y: -3}
+      - enemyPrefab: {fileID: 1606777960591330602, guid: 0b2b4f5269df9704d81a4821860c0747, type: 3}
+        spawnPosition: {x: 12, y: -3}
+        arrivalPosition: {x: -3, y: -3}
+      - enemyPrefab: {fileID: 455114782886424482, guid: b9ea9a627e5eb7748abab6f66622022c, type: 3}
+        spawnPosition: {x: 14, y: -3}
+        arrivalPosition: {x: -3, y: -3}
+      - enemyPrefab: {fileID: 6953776967975776786, guid: e79308193c3fe9a4cad14242119e82b5, type: 3}
+        spawnPosition: {x: 16, y: -3}
+        arrivalPosition: {x: -3, y: -3}
+    - enemys:
+      - enemyPrefab: {fileID: 455114782886424482, guid: b9ea9a627e5eb7748abab6f66622022c, type: 3}
+        spawnPosition: {x: 10, y: -3}
+        arrivalPosition: {x: -3, y: -3}
+      - enemyPrefab: {fileID: 83815278432901025, guid: 586297abf8595e94d867d19e55e4cba5, type: 3}
+        spawnPosition: {x: 12, y: -3}
+        arrivalPosition: {x: -3, y: -3}
+      - enemyPrefab: {fileID: 6953776967975776786, guid: e79308193c3fe9a4cad14242119e82b5, type: 3}
+        spawnPosition: {x: 14, y: -3}
+        arrivalPosition: {x: -3, y: -3}
+      - enemyPrefab: {fileID: 248640432488069553, guid: 409b284866893274796d17ddf043ad5c, type: 3}
+        spawnPosition: {x: 16, y: -3}
+        arrivalPosition: {x: -3, y: -3}
+    - enemys:
+      - enemyPrefab: {fileID: 455114782886424482, guid: b9ea9a627e5eb7748abab6f66622022c, type: 3}
+        spawnPosition: {x: 10, y: -3}
+        arrivalPosition: {x: -3, y: -3}
+      - enemyPrefab: {fileID: 7177333620138865921, guid: d9431794f1be6664386d96353f655ff7, type: 3}
+        spawnPosition: {x: 12, y: -3}
+        arrivalPosition: {x: -3, y: -3}
+      - enemyPrefab: {fileID: 83815278432901025, guid: 586297abf8595e94d867d19e55e4cba5, type: 3}
+        spawnPosition: {x: 14, y: -3}
+        arrivalPosition: {x: -3, y: -3}
+      - enemyPrefab: {fileID: 248640432488069553, guid: 409b284866893274796d17ddf043ad5c, type: 3}
+        spawnPosition: {x: 16, y: -3}
+        arrivalPosition: {x: -3, y: -3}
+  - stageKey: 10
+    waves:
+    - enemys:
+      - enemyPrefab: {fileID: 248640432488069553, guid: 409b284866893274796d17ddf043ad5c, type: 3}
+        spawnPosition: {x: 10, y: -3}
+        arrivalPosition: {x: -3, y: -3}
+      - enemyPrefab: {fileID: 1606777960591330602, guid: 0b2b4f5269df9704d81a4821860c0747, type: 3}
+        spawnPosition: {x: 12, y: -3}
+        arrivalPosition: {x: -3, y: -3}
+      - enemyPrefab: {fileID: 455114782886424482, guid: b9ea9a627e5eb7748abab6f66622022c, type: 3}
+        spawnPosition: {x: 14, y: -3}
+        arrivalPosition: {x: -3, y: -3}
+      - enemyPrefab: {fileID: 6953776967975776786, guid: e79308193c3fe9a4cad14242119e82b5, type: 3}
+        spawnPosition: {x: 16, y: -3}
+        arrivalPosition: {x: -3, y: -3}
+    - enemys:
+      - enemyPrefab: {fileID: 455114782886424482, guid: b9ea9a627e5eb7748abab6f66622022c, type: 3}
+        spawnPosition: {x: 10, y: -3}
+        arrivalPosition: {x: -3, y: -3}
+      - enemyPrefab: {fileID: 83815278432901025, guid: 586297abf8595e94d867d19e55e4cba5, type: 3}
+        spawnPosition: {x: 12, y: -3}
+        arrivalPosition: {x: -3, y: -3}
+      - enemyPrefab: {fileID: 6953776967975776786, guid: e79308193c3fe9a4cad14242119e82b5, type: 3}
+        spawnPosition: {x: 14, y: -3}
+        arrivalPosition: {x: -3, y: -3}
+      - enemyPrefab: {fileID: 248640432488069553, guid: 409b284866893274796d17ddf043ad5c, type: 3}
+        spawnPosition: {x: 16, y: -3}
+        arrivalPosition: {x: -3, y: -3}
+    - enemys:
+      - enemyPrefab: {fileID: 455114782886424482, guid: b9ea9a627e5eb7748abab6f66622022c, type: 3}
+        spawnPosition: {x: 10, y: -3}
+        arrivalPosition: {x: -3, y: -3}
+      - enemyPrefab: {fileID: 7177333620138865921, guid: d9431794f1be6664386d96353f655ff7, type: 3}
+        spawnPosition: {x: 12, y: -3}
+        arrivalPosition: {x: -3, y: -3}
+      - enemyPrefab: {fileID: 83815278432901025, guid: 586297abf8595e94d867d19e55e4cba5, type: 3}
+        spawnPosition: {x: 14, y: -3}
+        arrivalPosition: {x: -3, y: -3}
+      - enemyPrefab: {fileID: 248640432488069553, guid: 409b284866893274796d17ddf043ad5c, type: 3}
+        spawnPosition: {x: 16, y: -3}
+        arrivalPosition: {x: -3, y: -3}
