@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class OptionButton : MonoBehaviour
 {
-    Slider sliderBgm;
+    public Slider sliderBgm;
     public void OptionOpenButton(GameObject gameObject)
     {
         gameObject.SetActive(true);
@@ -26,9 +26,9 @@ public class OptionButton : MonoBehaviour
         }
     }
 
-    //public void OptionSliderValue()
-    //{
-    //    float volume = sliderBgm.value; // 0~1 사이 값
-    //    GameManager.Instance.soundManager.SetBGMVolume(volume); // 볼륨 설정 메서드 호출
-    //}
+    public void OptionSliderValue()
+    {
+        float volume = sliderBgm.value; // 0~1 사이 값
+        GameManager.Instance.soundManager.SetBGMVolume(volume); // 볼륨 설정 메서드 호출
+    }
 }
