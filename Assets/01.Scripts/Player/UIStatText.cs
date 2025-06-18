@@ -54,9 +54,9 @@ public class UIStatText : MonoBehaviour
         float total = playerData.UpStatusGold;
         currentGoldGainText.text = $"골드획득 + {total:0.0}원";
     }
-    private void UpdateCurrentGoldText()
+    public void UpdateCurrentGoldText()
     {
-        currentGoldText.text = $"{playerData.UpStatusGold}";
+        currentGoldText.text = $"{playerData.curGold}";
     }
     private void UpdateUpgradeInfoTexts()
     {
