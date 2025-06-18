@@ -103,6 +103,9 @@ public class Enemy : MonoBehaviour, IRewardable
         //{
         //    moveSpeed = 2f; // 예시로 2로 설정, 실제 조건에 따라 변경
         //}
+        
+
+
         transform.position = Vector2.MoveTowards(transform.position, arrivalPosition, moveSpeed * Time.deltaTime);// 이동 속도에 따라 위치 업데이트
         if (Vector2.Distance(transform.position, arrivalPosition) < 0.05f)
         {
@@ -133,6 +136,10 @@ public class Enemy : MonoBehaviour, IRewardable
     public void SteelGold()
     {
         GameManager.Instance.playerData.curGold -= data.damage + stageIndex / 2; // 데이지와 스테이지 인덱스에 따라 골드 감소
+        if (GameManager.Instance.playerData.curGold < 0)
+        {
+            GameManager.Instance.playerData.curGold = 0; // 골드가 음수가 되지 않도록 보정
+        }
         Debug.Log($"{gameObject.name}이(가) {data.damage + stageIndex / 2} 골드를 훔쳤습니다. 현재 골드: {GameManager.Instance.playerData.curGold}");
 
         Json.JsonSave(); // 골드 변경 사항 저장

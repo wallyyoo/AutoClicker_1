@@ -9867,10 +9867,10 @@ AnimationClip:
   m_HasGenericRootTransform: 0
   m_HasMotionFloatCurves: 0
   m_Events:
-  - time: 1.5833334
+  - time: 0.5833333
     functionName: SteelGold
     data: 
-    objectReferenceParameter: {fileID: 11500000, guid: 54d1e80797819204e96baf007caa7453, type: 3}
+    objectReferenceParameter: {fileID: 0}
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
