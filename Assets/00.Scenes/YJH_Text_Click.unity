@@ -4877,6 +4877,7 @@ MonoBehaviour:
     autoSpeedGoldUpLevel: 0
     goldGainGoldUpLevel: 0
   playerUpgradeTable: {fileID: 0}
+  currentGoldText: {fileID: 2111365156}
   currentCriticalRateText: {fileID: 130535196}
   currentAttackSpeedText: {fileID: 1486642272}
   currentGoldGainText: {fileID: 1750437873}

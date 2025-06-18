@@ -8,6 +8,9 @@ public class UIStatText : MonoBehaviour
     [HideInInspector] public PlayerData playerData;
     [HideInInspector] public PlayerUpgradeTable playerUpgradeTable;
 
+    //현재골드 출력 텍스트
+    public TextMeshProUGUI currentGoldText;
+
     // 현재 스탯 출력 텍스트
     public TextMeshProUGUI currentCriticalRateText;
     public TextMeshProUGUI currentAttackSpeedText;
@@ -31,7 +34,7 @@ public class UIStatText : MonoBehaviour
 
         UpdateUpgradeInfoTexts();
         UpdateUpgradeCostTexts();
-
+        UpdateCurrentGoldText();
     }
 
     public void UpdateCriticalRateText()
@@ -51,7 +54,10 @@ public class UIStatText : MonoBehaviour
         float total = playerData.UpStatusGold;
         currentGoldGainText.text = $"골드획득 + {total:0.0}원";
     }
-
+    private void UpdateCurrentGoldText()
+    {
+        currentGoldText.text = $"{playerData.UpStatusGold}";
+    }
     private void UpdateUpgradeInfoTexts()
     {
         upgradeInfoCriticalRateText.text = $"치명타 확률 : +{Mathf.RoundToInt(playerUpgradeTable.critDamagePerLevel * 10)}%";
