@@ -299,7 +299,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c88f28fe97920640aa3aaec4ed56108, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  audioSource: {fileID: 0}
+  audioSource: {fileID: 44436236}
+  SfxSource: {fileID: 44436236}
+  SfxCilps:
+  - {fileID: 8300000, guid: 42296d8f4512e4b068af9f9dc9e3cdfb, type: 3}
   audioClips:
   - {fileID: 8300000, guid: caf473441b2472c47a8de7fa897c55fc, type: 3}
   - {fileID: 8300000, guid: ad9d3edc5aee13749a45d185fba16abb, type: 3}
@@ -5188,8 +5191,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a4dd3ae9bb089d3438b9d5d56272c60f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  normalHitEffect: {fileID: 5324065079763490897, guid: fc4011ada4f90eb468bfe5cbdbfbd78a, type: 3}
-  criticalHitEffect: {fileID: 2467081199657402224, guid: 6325974dd9f41b548854ef30d9b59376, type: 3}
 --- !u!114 &1317918652
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5203,13 +5204,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   criticalRateUpgradeButton: {fileID: 1406911596}
-  criticalRateText: {fileID: 130535196}
   autoAttack: {fileID: 1317918650}
   attackSpeedUpgradeButton: {fileID: 1786042373}
-  attackIntervalText: {fileID: 1486642272}
   goldGainUpgradeButton: {fileID: 1957343806}
-  goldGainText: {fileID: 1750437873}
   holdInterval: 0.2
+  UIStatText: {fileID: 0}
 --- !u!114 &1317918653
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9091,6 +9090,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sliderBgm: {fileID: 1598191959}
+  sliderSFX: {fileID: 0}
 --- !u!1 &1957343804
 GameObject:
   m_ObjectHideFlags: 0

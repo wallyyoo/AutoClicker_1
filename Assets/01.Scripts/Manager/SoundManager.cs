@@ -5,14 +5,12 @@ using System.Reflection;
 using UnityEngine;
 public class SoundManager : MonoBehaviour
 {
-    [HideInInspector] public AudioSource audioSource;
+    public AudioSource audioSource;
+    public AudioSource SfxSource;
 
+    public AudioClip[] SfxCilps;
     public AudioClip[] audioClips;
 
-    private void Awake()
-    {
-        audioSource = GetComponent<AudioSource>();
-    }
     public void Bgm(int _index)
     {
         if (audioClips == null || audioClips.Length <= _index)
@@ -45,7 +43,7 @@ public class SoundManager : MonoBehaviour
         audioSource.Play();
     }
 
-    public void SetBGMVolume(float volume)
+    public void SilderVolume(float volume)
     {
         if (audioSource != null)
         {
