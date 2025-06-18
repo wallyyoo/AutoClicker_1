@@ -49,9 +49,8 @@ public class GameManager : MonoBehaviour
     }
     private IEnumerator JsonLoadCoroutine()
     {
-        Debug.Log("JsonLoadCoroutine_1");
         yield return null; // 모든 Awake() 완료 대기
-        Debug.Log("JsonLoadCoroutine_2");
+
         if (StageManager.Instance == null)
         {
             Debug.Log("StageManager가 초기화되지 않았습니다.");
