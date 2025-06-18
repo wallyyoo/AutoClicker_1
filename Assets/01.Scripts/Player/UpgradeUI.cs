@@ -18,6 +18,11 @@ public class UpgradeUI : MonoBehaviour
 
     public float holdInterval = 0.2f;//버튼 꾹 누르고있으면 0.2초마다 업그레이드
 
+    [Header("업그레이드 골드 비용")] 
+    public TextMeshProUGUI criticalUpText;
+    public TextMeshProUGUI autoUpGoldText;
+    public TextMeshProUGUI goldGainUpText;
+
     private Coroutine critHoldRoutine;
     private Coroutine speedHoldRoutine;
     private Coroutine goldHoldRoutine;

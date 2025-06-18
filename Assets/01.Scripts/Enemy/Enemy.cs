@@ -18,7 +18,7 @@ public class Enemy : MonoBehaviour, IRewardable
 
     private Vector2 arrivalPosition;
     public bool isArrived = false;
-    private float moveSpeed = 2f; // 필요에 따라 조정
+    public float moveSpeed = 2f; // 필요에 따라 조정
     private Image healthBarImage;
     public int stageIndex;
 
@@ -93,8 +93,17 @@ public class Enemy : MonoBehaviour, IRewardable
       */  /// 디버그용 데미지 타이머입니다 코드 완성시 제거해주세요.
     }
 
-    private void MoveToArrivalPosition()
+    public void MoveToArrivalPosition()
     {
+
+        if (BackGroundManager.BackInstace.backGroundLooper[2].moveSpeed >= 30)
+        {
+            moveSpeed = 5f;
+        }
+        else
+        {
+            moveSpeed = 2f;
+        }
         //if(불리언 메서드 들어갈 예정)// 참일 경우 moveSpeed를 5로 변경하고, 거짓일 경우 2로 변경할 예정
         //{
         //    moveSpeed = 5f; // 예시로 5로 설정, 실제 조건에 따라 변경
@@ -141,7 +150,7 @@ public class Enemy : MonoBehaviour, IRewardable
             GameManager.Instance.playerData.curGold = 0; // 골드가 음수가 되지 않도록 보정
         }
         Debug.Log($"{gameObject.name}이(가) {data.damage + stageIndex / 2} 골드를 훔쳤습니다. 현재 골드: {GameManager.Instance.playerData.curGold}");
-
+        UIMainManager.Instance.RefreshCurGold();
         Json.JsonSave(); // 골드 변경 사항 저장
     }
 
@@ -149,9 +158,12 @@ public class Enemy : MonoBehaviour, IRewardable
     {
         if (!isArrived) return; // 도착 상태일 때만 데미지 적용
         currentHealth -= amount;
+        
         UpdateHealthBar(); // 체력바 갱신
         if (currentHealth <= 0)
         {
+            isArrived = false;
+            Debug.Log($"지금 현재 어라이브 상태: {isArrived}");
             SetState(EnemyState.Die);
             AddGold(data.reward); // 골드 획득
             Die();
@@ -251,6 +263,8 @@ public class Enemy : MonoBehaviour, IRewardable
         int totalReward = Mathf.RoundToInt(amount + stageIndex + GameManager.Instance.playerData.UpStatusGold); // 스테이지 인덱스와 업그레이드에 따라 보상 조정
 
         GameManager.Instance.playerData.curGold += totalReward;
+        UIMainManager.Instance.RefreshCurGold();
+        Debug.Log("몬스터가 사망해서 골드를 주는 중");
         Json.JsonSave(); // 골드 변경 사항 저장
     }
 }

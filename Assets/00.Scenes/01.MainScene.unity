@@ -509,97 +509,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 86124140}
   m_CullTransparentMesh: 1
---- !u!1 &86412497
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 86412498}
-  - component: {fileID: 86412499}
-  - component: {fileID: 86412500}
-  m_Layer: 0
-  m_Name: HitBox
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &86412498
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 86412497}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.6, y: 0.274, z: 0}
-  m_LocalScale: {x: 0.7, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1317918656}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!61 &86412499
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 86412497}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1}
-  m_EdgeRadius: 0
---- !u!114 &86412500
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 86412497}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 19ee0b843c6383a47ae9c217957d81a6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  detectedEnemies: []
 --- !u!1 &92417686
 GameObject:
   m_ObjectHideFlags: 0
@@ -1063,6 +972,33 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 243653700}
   m_CullTransparentMesh: 1
+--- !u!1 &249071867 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5935743670200281119, guid: 8791d9410c7bd9d438e4c62666746a6d, type: 3}
+  m_PrefabInstance: {fileID: 1674414675}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &249071870 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8711394380792227833, guid: 8791d9410c7bd9d438e4c62666746a6d, type: 3}
+  m_PrefabInstance: {fileID: 1674414675}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 249071867}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6894b35212eabde4381c9b0725fe94f1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &249071871 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4277252978578952512, guid: 8791d9410c7bd9d438e4c62666746a6d, type: 3}
+  m_PrefabInstance: {fileID: 1674414675}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 249071867}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 463a6ed7b6ee32440b1b2a9e2403c06d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &250016216
 GameObject:
   m_ObjectHideFlags: 0
@@ -1452,7 +1388,7 @@ GameObject:
   - component: {fileID: 405622030}
   - component: {fileID: 405622029}
   m_Layer: 5
-  m_Name: Status_Level_CtDamage_Button_GoldIcon
+  m_Name: Status_Level_AutoSpeed_Button_GoldIcon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1475,7 +1411,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -38.7, y: -17.5}
-  m_SizeDelta: {x: 35, y: 35}
+  m_SizeDelta: {x: 30, y: 35}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &405622029
 MonoBehaviour:
@@ -1497,7 +1433,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: -1156128337, guid: 4cb1233b4fec59343814ec0dc396c49c, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1619,7 +1555,7 @@ GameObject:
   - component: {fileID: 482575382}
   - component: {fileID: 482575381}
   m_Layer: 5
-  m_Name: Status_Level_CtDamage_Button_Text
+  m_Name: Status_Level_AutoSpeed_Button_Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1833,88 +1769,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1001 &585908320
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 3516501074562181176, guid: 8791d9410c7bd9d438e4c62666746a6d, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -5
-      objectReference: {fileID: 0}
-    - target: {fileID: 3516501074562181176, guid: 8791d9410c7bd9d438e4c62666746a6d, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -2.1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3516501074562181176, guid: 8791d9410c7bd9d438e4c62666746a6d, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3516501074562181176, guid: 8791d9410c7bd9d438e4c62666746a6d, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3516501074562181176, guid: 8791d9410c7bd9d438e4c62666746a6d, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3516501074562181176, guid: 8791d9410c7bd9d438e4c62666746a6d, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3516501074562181176, guid: 8791d9410c7bd9d438e4c62666746a6d, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3516501074562181176, guid: 8791d9410c7bd9d438e4c62666746a6d, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3516501074562181176, guid: 8791d9410c7bd9d438e4c62666746a6d, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3516501074562181176, guid: 8791d9410c7bd9d438e4c62666746a6d, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5935743670200281119, guid: 8791d9410c7bd9d438e4c62666746a6d, type: 3}
-      propertyPath: m_Name
-      value: Player
-      objectReference: {fileID: 0}
-    - target: {fileID: 5935743670200281119, guid: 8791d9410c7bd9d438e4c62666746a6d, type: 3}
-      propertyPath: m_TagString
-      value: Player
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects:
-    - targetCorrespondingSourceObject: {fileID: 3516501074562181176, guid: 8791d9410c7bd9d438e4c62666746a6d, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 86412498}
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 5935743670200281119, guid: 8791d9410c7bd9d438e4c62666746a6d, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1317918653}
-    - targetCorrespondingSourceObject: {fileID: 5935743670200281119, guid: 8791d9410c7bd9d438e4c62666746a6d, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1317918652}
-    - targetCorrespondingSourceObject: {fileID: 5935743670200281119, guid: 8791d9410c7bd9d438e4c62666746a6d, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1317918651}
-    - targetCorrespondingSourceObject: {fileID: 5935743670200281119, guid: 8791d9410c7bd9d438e4c62666746a6d, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1317918650}
-    - targetCorrespondingSourceObject: {fileID: 5935743670200281119, guid: 8791d9410c7bd9d438e4c62666746a6d, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1317918657}
-    - targetCorrespondingSourceObject: {fileID: 5935743670200281119, guid: 8791d9410c7bd9d438e4c62666746a6d, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1317918660}
-  m_SourcePrefab: {fileID: 100100000, guid: 8791d9410c7bd9d438e4c62666746a6d, type: 3}
 --- !u!1 &660265647
 GameObject:
   m_ObjectHideFlags: 0
@@ -2359,6 +2213,7 @@ GameObject:
   - component: {fileID: 810269476}
   - component: {fileID: 810269475}
   - component: {fileID: 810269479}
+  - component: {fileID: 810269480}
   m_Layer: 5
   m_Name: UIMain_Canvas
   m_TagString: Untagged
@@ -2469,6 +2324,29 @@ MonoBehaviour:
   stageText: {fileID: 1145606283}
   waveText: {fileID: 1347569838}
   aliveEnemysText: {fileID: 1767855834}
+  curGoldText: {fileID: 2111365156}
+  clickSound: {fileID: 11400000, guid: 1b26d3d95e09b4249b787ded9ab6af72, type: 2}
+--- !u!114 &810269480
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 810269474}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b9e7ebe28573552479d44ae16083ad90, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  criticalRateUpgradeButton: {fileID: 1406911596}
+  autoAttack: {fileID: 249071871}
+  attackSpeedUpgradeButton: {fileID: 1786042373}
+  goldGainUpgradeButton: {fileID: 1957343806}
+  holdInterval: 0.2
+  criticalUpText: {fileID: 1721108268}
+  autoUpGoldText: {fileID: 1556323213}
+  goldGainUpText: {fileID: 2031957354}
+  UIStatText: {fileID: 249071870}
 --- !u!1 &837943503
 GameObject:
   m_ObjectHideFlags: 0
@@ -3478,7 +3356,7 @@ GameObject:
   - component: {fileID: 1299964541}
   - component: {fileID: 1299964540}
   m_Layer: 5
-  m_Name: Status_Level_CtDamage_Button_Text
+  m_Name: Status_Level_GoldUP_Button_Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3721,6 +3599,7 @@ RectTransform:
   - {fileID: 1263033895}
   - {fileID: 130535195}
   - {fileID: 837943504}
+  - {fileID: 1406911595}
   - {fileID: 1765204684}
   m_Father: {fileID: 1435332251}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3787,132 +3666,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1312288289}
   m_CullTransparentMesh: 1
---- !u!1 &1317918646 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5935743670200281119, guid: 8791d9410c7bd9d438e4c62666746a6d, type: 3}
-  m_PrefabInstance: {fileID: 585908320}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1317918650
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1317918646}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 463a6ed7b6ee32440b1b2a9e2403c06d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  attackInterval: 1.5
-  isAutoAttackEnabled: 1
-  attackEffect: {fileID: 1317918651}
---- !u!114 &1317918651
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1317918646}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a4dd3ae9bb089d3438b9d5d56272c60f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  normalHitEffect: {fileID: 5324065079763490897, guid: fc4011ada4f90eb468bfe5cbdbfbd78a, type: 3}
-  criticalHitEffect: {fileID: 2467081199657402224, guid: 6325974dd9f41b548854ef30d9b59376, type: 3}
---- !u!114 &1317918652
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1317918646}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b9e7ebe28573552479d44ae16083ad90, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  criticalRateUpgradeButton: {fileID: 1406911596}
-  criticalRateText: {fileID: 130535196}
-  autoAttack: {fileID: 1317918650}
-  attackSpeedUpgradeButton: {fileID: 1786042373}
-  attackIntervalText: {fileID: 1486642272}
-  goldGainUpgradeButton: {fileID: 1957343806}
-  goldGainText: {fileID: 1750437873}
-  holdInterval: 0.2
---- !u!114 &1317918653
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1317918646}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4a71c3428c11c8547adf1750c72cec65, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!4 &1317918656 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 3516501074562181176, guid: 8791d9410c7bd9d438e4c62666746a6d, type: 3}
-  m_PrefabInstance: {fileID: 585908320}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1317918657
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1317918646}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c86093c318ac24acea900787fafb1304, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1317918660
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1317918646}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6894b35212eabde4381c9b0725fe94f1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerData:
-    playerUpgradeTable: {fileID: 0}
-    baseAttackPower: 1
-    baseCriticalDamage: 2
-    baseCriticalChance: 0
-    baseGoldGain: 0
-    baseAutoSpeed: 10
-    baseHp: 100
-    baseMp: 100
-    baseCriticalUpGold: 0
-    baseAutoSpeedUpGold: 0
-    baseGoldGainUpGold: 0
-    curGold: 0
-    attackPowerUpLevel: 0
-    critiDamageUpLevel: 0
-    critiChanceUpLevel: 0
-    goldGainUpLevel: 1
-    autoSpeedUpLevel: 0
-    hpUpLevel: 0
-    mpUpLevel: 0
-    criticalGoldUpLevel: 0
-    autoSpeedGoldUpLevel: 0
-    goldGainGoldUpLevel: 0
-  playerUpgradeTable: {fileID: 0}
-  upCriticalRateText: {fileID: 837943505}
-  playerCriticalDamageText: {fileID: 1765204686}
-  upAttackSpeedText: {fileID: 707467527}
-  upGoldGainText: {fileID: 1686925238}
-  criticalUpGoldText: {fileID: 1721108268}
-  autoSpeedUpGoldText: {fileID: 1556323213}
-  goldGainUpGoldText: {fileID: 2031957354}
 --- !u!1 &1324018087
 GameObject:
   m_ObjectHideFlags: 0
@@ -4261,11 +4014,11 @@ RectTransform:
   - {fileID: 2043299707}
   - {fileID: 1548929291}
   - {fileID: 1721108267}
-  m_Father: {fileID: 1765204684}
+  m_Father: {fileID: 1312288290}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: 141.4774, y: 25.76892}
+  m_AnchoredPosition: {x: -10, y: 0}
   m_SizeDelta: {x: 135, y: 135}
   m_Pivot: {x: 1, y: 0.5}
 --- !u!114 &1406911596
@@ -4311,7 +4064,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1406911597}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 810269479}
+        m_TargetAssemblyTypeName: UIMainManager, Assembly-CSharp
+        m_MethodName: OnClickSound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1406911597
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4987,7 +4752,7 @@ GameObject:
   - component: {fileID: 1507500534}
   - component: {fileID: 1507500533}
   m_Layer: 5
-  m_Name: Status_Level_CtDamage_Button_GoldIcon
+  m_Name: Status_Level_GoldUP_Button_GoldIcon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5010,7 +4775,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -38.7, y: -17.5}
-  m_SizeDelta: {x: 35, y: 35}
+  m_SizeDelta: {x: 30, y: 35}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1507500533
 MonoBehaviour:
@@ -5032,7 +4797,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: -1156128337, guid: 4cb1233b4fec59343814ec0dc396c49c, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -5185,7 +4950,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -38.7, y: -17.5}
-  m_SizeDelta: {x: 35, y: 35}
+  m_SizeDelta: {x: 30, y: 35}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1548929292
 MonoBehaviour:
@@ -5207,7 +4972,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: -1156128337, guid: 4cb1233b4fec59343814ec0dc396c49c, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -5237,7 +5002,7 @@ GameObject:
   - component: {fileID: 1556323214}
   - component: {fileID: 1556323213}
   m_Layer: 5
-  m_Name: Status_Level_CtDamage_Button_GoldText
+  m_Name: Status_Level_AutoSpeed_Button_GoldText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5529,6 +5294,144 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1602817676}
   m_CullTransparentMesh: 1
+--- !u!1001 &1674414675
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1063178276349472709, guid: 8791d9410c7bd9d438e4c62666746a6d, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1063178276349472709, guid: 8791d9410c7bd9d438e4c62666746a6d, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.35
+      objectReference: {fileID: 0}
+    - target: {fileID: 3245095562256182198, guid: 8791d9410c7bd9d438e4c62666746a6d, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3245095562256182198, guid: 8791d9410c7bd9d438e4c62666746a6d, type: 3}
+      propertyPath: goldGainUpgradeButton
+      value: 
+      objectReference: {fileID: 1957343806}
+    - target: {fileID: 3245095562256182198, guid: 8791d9410c7bd9d438e4c62666746a6d, type: 3}
+      propertyPath: attackSpeedUpgradeButton
+      value: 
+      objectReference: {fileID: 1786042373}
+    - target: {fileID: 3245095562256182198, guid: 8791d9410c7bd9d438e4c62666746a6d, type: 3}
+      propertyPath: criticalRateUpgradeButton
+      value: 
+      objectReference: {fileID: 1406911596}
+    - target: {fileID: 3516501074562181176, guid: 8791d9410c7bd9d438e4c62666746a6d, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3516501074562181176, guid: 8791d9410c7bd9d438e4c62666746a6d, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -2.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3516501074562181176, guid: 8791d9410c7bd9d438e4c62666746a6d, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3516501074562181176, guid: 8791d9410c7bd9d438e4c62666746a6d, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3516501074562181176, guid: 8791d9410c7bd9d438e4c62666746a6d, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3516501074562181176, guid: 8791d9410c7bd9d438e4c62666746a6d, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3516501074562181176, guid: 8791d9410c7bd9d438e4c62666746a6d, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3516501074562181176, guid: 8791d9410c7bd9d438e4c62666746a6d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3516501074562181176, guid: 8791d9410c7bd9d438e4c62666746a6d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3516501074562181176, guid: 8791d9410c7bd9d438e4c62666746a6d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3676957401898035748, guid: 8791d9410c7bd9d438e4c62666746a6d, type: 3}
+      propertyPath: detectedEnemies.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3957696039039066362, guid: 8791d9410c7bd9d438e4c62666746a6d, type: 3}
+      propertyPath: m_Name
+      value: HitBox
+      objectReference: {fileID: 0}
+    - target: {fileID: 5935743670200281119, guid: 8791d9410c7bd9d438e4c62666746a6d, type: 3}
+      propertyPath: m_Name
+      value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 8711394380792227833, guid: 8791d9410c7bd9d438e4c62666746a6d, type: 3}
+      propertyPath: clickSFX
+      value: 
+      objectReference: {fileID: 11400000, guid: 1b26d3d95e09b4249b787ded9ab6af72, type: 2}
+    - target: {fileID: 8711394380792227833, guid: 8791d9410c7bd9d438e4c62666746a6d, type: 3}
+      propertyPath: currentGoldText
+      value: 
+      objectReference: {fileID: 2111365156}
+    - target: {fileID: 8711394380792227833, guid: 8791d9410c7bd9d438e4c62666746a6d, type: 3}
+      propertyPath: currentGoldGainText
+      value: 
+      objectReference: {fileID: 1750437873}
+    - target: {fileID: 8711394380792227833, guid: 8791d9410c7bd9d438e4c62666746a6d, type: 3}
+      propertyPath: currentAttackSpeedText
+      value: 
+      objectReference: {fileID: 1486642272}
+    - target: {fileID: 8711394380792227833, guid: 8791d9410c7bd9d438e4c62666746a6d, type: 3}
+      propertyPath: currentCriticalRateText
+      value: 
+      objectReference: {fileID: 130535196}
+    - target: {fileID: 8711394380792227833, guid: 8791d9410c7bd9d438e4c62666746a6d, type: 3}
+      propertyPath: upgradeCostGoldGainText
+      value: 
+      objectReference: {fileID: 2031957354}
+    - target: {fileID: 8711394380792227833, guid: 8791d9410c7bd9d438e4c62666746a6d, type: 3}
+      propertyPath: upgradeInfoGoldGainText
+      value: 
+      objectReference: {fileID: 1686925238}
+    - target: {fileID: 8711394380792227833, guid: 8791d9410c7bd9d438e4c62666746a6d, type: 3}
+      propertyPath: upgradeCostAttackSpeedText
+      value: 
+      objectReference: {fileID: 1556323213}
+    - target: {fileID: 8711394380792227833, guid: 8791d9410c7bd9d438e4c62666746a6d, type: 3}
+      propertyPath: upgradeInfoAttackSpeedText
+      value: 
+      objectReference: {fileID: 707467527}
+    - target: {fileID: 8711394380792227833, guid: 8791d9410c7bd9d438e4c62666746a6d, type: 3}
+      propertyPath: upgradeCostCriticalRateText
+      value: 
+      objectReference: {fileID: 1721108268}
+    - target: {fileID: 8711394380792227833, guid: 8791d9410c7bd9d438e4c62666746a6d, type: 3}
+      propertyPath: upgradeInfoCriticalRateText
+      value: 
+      objectReference: {fileID: 837943505}
+    - target: {fileID: 8711394380792227833, guid: 8791d9410c7bd9d438e4c62666746a6d, type: 3}
+      propertyPath: upgradeInfoCriticalDamageText
+      value: 
+      objectReference: {fileID: 1765204686}
+    m_RemovedComponents:
+    - {fileID: 3245095562256182198, guid: 8791d9410c7bd9d438e4c62666746a6d, type: 3}
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 8791d9410c7bd9d438e4c62666746a6d, type: 3}
 --- !u!1 &1686925236
 GameObject:
   m_ObjectHideFlags: 0
@@ -5588,8 +5491,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "\uCE58\uBA85\uD0C0 \uB370\uBBF8\uC9C0\n+200%"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 4632cacce9bb1134d855f77d74920064, type: 2}
-  m_sharedMaterial: {fileID: -2892053937758035300, guid: 4632cacce9bb1134d855f77d74920064, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: ef4da6d3a62684e3abe498b381b28022, type: 2}
+  m_sharedMaterial: {fileID: -6319398088723727886, guid: ef4da6d3a62684e3abe498b381b28022, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -6035,8 +5938,7 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 1406911595}
+  m_Children: []
   m_Father: {fileID: 1312288290}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
@@ -6351,6 +6253,63 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1767855832}
   m_CullTransparentMesh: 1
+--- !u!1001 &1772340982
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 232445889122097944, guid: 4769adaa2e96045b1a86725cdbfcafe0, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 232445889122097944, guid: 4769adaa2e96045b1a86725cdbfcafe0, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 232445889122097944, guid: 4769adaa2e96045b1a86725cdbfcafe0, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 232445889122097944, guid: 4769adaa2e96045b1a86725cdbfcafe0, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 232445889122097944, guid: 4769adaa2e96045b1a86725cdbfcafe0, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 232445889122097944, guid: 4769adaa2e96045b1a86725cdbfcafe0, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 232445889122097944, guid: 4769adaa2e96045b1a86725cdbfcafe0, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 232445889122097944, guid: 4769adaa2e96045b1a86725cdbfcafe0, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 232445889122097944, guid: 4769adaa2e96045b1a86725cdbfcafe0, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 232445889122097944, guid: 4769adaa2e96045b1a86725cdbfcafe0, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1064042886553695802, guid: 4769adaa2e96045b1a86725cdbfcafe0, type: 3}
+      propertyPath: m_Name
+      value: SoundManager
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 4769adaa2e96045b1a86725cdbfcafe0, type: 3}
 --- !u!1 &1776021479
 GameObject:
   m_ObjectHideFlags: 0
@@ -6514,7 +6473,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1786042374}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 810269479}
+        m_TargetAssemblyTypeName: UIMainManager, Assembly-CSharp
+        m_MethodName: OnClickSound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1786042374
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6919,7 +6890,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1957343807}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 810269479}
+        m_TargetAssemblyTypeName: UIMainManager, Assembly-CSharp
+        m_MethodName: OnClickSound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1957343807
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6970,7 +6953,7 @@ GameObject:
   - component: {fileID: 2031957355}
   - component: {fileID: 2031957354}
   m_Layer: 5
-  m_Name: Status_Level_CtDamage_Button_GoldText
+  m_Name: Status_Level_GoldUP_Button_GoldText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -15396,7 +15379,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   equippedSkills:
   - {fileID: 11400000, guid: ddcaddec2a1c9384a8fd36beb4259c06, type: 2}
-  player: {fileID: 0}
+  player: {fileID: 249071867}
   skillIndex: 0
   imgIcon: {fileID: 5667304469869717106}
   imgCool: {fileID: 3387945388882556372}
@@ -15508,7 +15491,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2466841949694665606}
   m_Layer: 5
-  m_Name: Test_SkillPanel
+  m_Name: DashSkillPanel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -15741,6 +15724,7 @@ SceneRoots:
   - {fileID: 1277995345}
   - {fileID: 1913957247}
   - {fileID: 5694417}
+  - {fileID: 1772340982}
   - {fileID: 1086899422}
   - {fileID: 810269478}
   - {fileID: 144214222}
@@ -15750,4 +15734,4 @@ SceneRoots:
   - {fileID: 3269632000225389204}
   - {fileID: 2047668428}
   - {fileID: 1925886253}
-  - {fileID: 585908320}
+  - {fileID: 1674414675}

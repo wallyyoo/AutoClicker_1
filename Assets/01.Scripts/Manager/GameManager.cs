@@ -40,12 +40,14 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
+       
         if (Instance != this)
         {
             Debug.Log("중복된 씬을 삭제");
             Destroy(gameObject);
         }
         StartCoroutine(JsonLoadCoroutine());
+        
     }
     private IEnumerator JsonLoadCoroutine()
     {
@@ -60,6 +62,8 @@ public class GameManager : MonoBehaviour
         {
             Debug.Log("초기화 완료");
             Json.JsonLoad(); // 안전하게 실행
+            
         }
+        UIMainManager.Instance.RefreshCurGold();
     }
 }

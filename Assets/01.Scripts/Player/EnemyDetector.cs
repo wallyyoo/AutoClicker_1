@@ -5,7 +5,7 @@ using UnityEngine;
 public class EnemyDetector : MonoBehaviour
 {
     Animator animator;
-    public UIStatText uiStatText;
+    
 
     private void Start()
     {
@@ -20,8 +20,9 @@ public class EnemyDetector : MonoBehaviour
             detectedEnemies.Add(enemy);
             Debug.Log($"[EnemyDetector] 감지됨: {enemy.name}");
 
-            if (detectedEnemies.Count == 1)
+            if (detectedEnemies.Count >= 1)
             {
+                BackGroundManager.Isbattle = true;
                 BackGroundManager.BackInstace.BackGroundAllMoveStop();
                 animator?.SetBool("Stop",true);
             }
@@ -35,9 +36,11 @@ public class EnemyDetector : MonoBehaviour
             detectedEnemies.Remove(enemy);
             Debug.Log($"[EnemyDetector] 범위 벗어남: {enemy.name}");
 
-            uiStatText.UpdateCurrentGoldText();
+           
             if (detectedEnemies.Count == 0)
             {
+                BackGroundManager.Isbattle = false;
+                Debug.Log("배경 다시 움직임");
                 BackGroundManager.BackInstace.ResetAllSpeeds();
                 animator?.SetBool("Stop", false);
 

@@ -15,6 +15,10 @@ public class UIMainManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI stageText;
     [SerializeField] private TextMeshProUGUI waveText;
     [SerializeField] private TextMeshProUGUI aliveEnemysText;
+    [SerializeField] private TextMeshProUGUI curGoldText;
+    
+    [Header("사운드 효과")]
+    public SoundData clickSound;
 
     void Awake()
     {
@@ -45,5 +49,15 @@ public class UIMainManager : MonoBehaviour
     {
         if (aliveEnemysText != null)
             aliveEnemysText.text = $"Alive Enemys: {aliveCount}/{totalCount}";
+    }
+
+    public void RefreshCurGold()
+    {
+        curGoldText.text = GameManager.Instance.playerData.curGold.ToString();
+    }
+
+    public void OnClickSound()
+    {
+        TestSoundManager.TestSoundInstance.PlaySFX(clickSound);
     }
 }

@@ -65,7 +65,7 @@ public class AutoAttack : MonoBehaviour
         Enemy target = detector.GetNearestEnemy(attackPos);
         Vector3 effectPos = target != null ? target.transform.position : attackPos;
 
-        if (target != null)
+        if (target != null && target.isArrived)
         {
             Debug.Log($"공격! 대상: {target.name}, 데미지: {damage}, 크리티컬: {isCritical}");
             target.TakeDamage(damage);

@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class BackGroundManager : MonoBehaviour
 {
+    public static bool Isbattle = false;
     [SerializeField] public BackGroundLooper[] backGroundLooper;
     
     private static BackGroundManager _backinstance;
@@ -45,8 +46,11 @@ public class BackGroundManager : MonoBehaviour
     }
     public void ResetAllSpeeds()
     {
+        if (Isbattle) return;
+        
         foreach (var bg in backGroundLooper)
         {
+            
             bg.ResetSpeed();
         }
     }
