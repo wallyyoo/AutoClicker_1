@@ -77,6 +77,13 @@ public class AutoAttack : MonoBehaviour
         attackEffect?.PlayHitEffect(effectPos, isCritical);
 
     }
+    public void RecalculateAttackInterval()//자동공격속도 업그레이드시 호출하여 속도 갱신
+    {
+        var baseVal = GameManager.Instance.playerData.baseAutoSpeed;
+        var perLevel = GameManager.Instance.playerData.playerUpgradeTable.autoSpeedPerLevel;
+        var level = GameManager.Instance.playerData.autoSpeedUpLevel;
 
+        attackInterval = Mathf.Max(0.1f, baseVal - level * perLevel);
+    }
 
 }

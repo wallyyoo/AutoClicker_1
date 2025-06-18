@@ -127,6 +127,7 @@ public class UpgradeUI : MonoBehaviour
         Json.JsonSave();
         UIStatText.UpdateAttackSpeedText();
         //  자동공격 재시작 (갱신된 공격 간격 반영)
+        autoAttack.RecalculateAttackInterval();
         autoAttack.RestartAutoAttack();
     }
 
