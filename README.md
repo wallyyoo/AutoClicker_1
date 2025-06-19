@@ -62,7 +62,7 @@
 ## 영상
 예시 영상:
 
-[[![Watch on YouTube](https://img.youtube.com/vi/ta4qKzMzYfU/0.jpg)](https://www.youtube.com/watch?v=ta4qKzMzYfU)](https://youtube.com/shorts/kParZwYsV2M?feature=share)
+https://youtube.com/shorts/kParZwYsV2M?feature=share
 ---
 
 ## 📜 라이선스
