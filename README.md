@@ -61,7 +61,7 @@
 ## 영상
 예시 영상:
 
-[![Watch on YouTube](https://youtu.be/ta4qKzMzYfU.jpg)](https://youtu.be/ta4qKzMzYfU)
+[![Watch on YouTube](https://img.youtube.com/vi/ta4qKzMzYfU/0.jpg)](https://www.youtube.com/watch?v=ta4qKzMzYfU)
 ---
 
 ## 📜 라이선스
