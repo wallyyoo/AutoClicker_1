@@ -1,4 +1,4 @@
-# 🗡️ 용사의 모험 - Auto Clicker Mobile Game
+# 🗡️ Project ACK - Auto Clicker Mobile Game
 
 > Unity 기반 횡스크롤 오토클리커 게임  
 > 🎮 제작 기간 중 팀 프로젝트로 개발된 교육용 게임입니다.
@@ -7,7 +7,7 @@
 
 ## 📌 프로젝트 정보
 
-- **게임명**: 용사의 모험  
+- **게임명**: Project ACK
 - **장르**: 횡스크롤 오토클리커 (모바일 타겟)  
 - **플랫폼**: Android (모바일)  
 - **Unity 버전**: Unity 2022 LTS  
@@ -15,7 +15,8 @@
 - **버전 관리**: GitHub + Git LFS  
 - **사용 툴**:  
   - Unity Editor  
-  - Visual Studio  
+  - Visual Studio
+  - Rider  
   - Figma (UI 및 디자인 협업용)
 
 ---
@@ -61,7 +62,7 @@
 ## 영상
 예시 영상:
 
-[![Watch on YouTube](https://img.youtube.com/vi/ta4qKzMzYfU/0.jpg)](https://www.youtube.com/watch?v=ta4qKzMzYfU)
+[[![Watch on YouTube](https://img.youtube.com/vi/ta4qKzMzYfU/0.jpg)](https://www.youtube.com/watch?v=ta4qKzMzYfU)](https://youtube.com/shorts/kParZwYsV2M?feature=share)
 ---
 
 ## 📜 라이선스
