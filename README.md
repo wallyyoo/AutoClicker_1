@@ -55,8 +55,13 @@
 
 예시 스크린샷:
 
-![Gameplay Screenshot](./Assets/Screenshots/Screenshot.png) //나중에 내부 폴더에 스크린샷폴더 만들어서 예시 이미지 첨부할 예정입니다
+![Gameplay Screenshot](./Assets/Screenshots/Screenshot.png)
 
+---
+## 영상
+예시 영상:
+
+https://youtu.be/ta4qKzMzYfU
 ---
 
 ## 📜 라이선스
