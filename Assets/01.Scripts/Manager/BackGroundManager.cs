@@ -1,7 +1,8 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
 
+using UnityEngine;
+/// <summary>
+/// 배경 이동을 제어하는 매니저 (속도 조절 및 정지 기능 포함)
+/// </summary>
 public class BackGroundManager : MonoBehaviour
 {
     public static bool Isbattle = false;

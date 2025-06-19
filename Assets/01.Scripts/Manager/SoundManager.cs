@@ -1,8 +1,8 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Reflection;
+﻿
 using UnityEngine;
+/// <summary>
+/// BGM 및 사운드 설정을 제어하는 사운드 매니저
+/// </summary>
 public class SoundManager : MonoBehaviour
 {
     [HideInInspector] public AudioSource audioSource;

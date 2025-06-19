@@ -1,6 +1,8 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
-
+/// <summary>
+/// 에너미 스폰과 제거를 관리하는 매니저
+/// </summary>
 public class EnemyManager : MonoBehaviour
 {
     public static EnemyManager Instance;

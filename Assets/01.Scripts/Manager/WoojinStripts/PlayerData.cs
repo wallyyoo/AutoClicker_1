@@ -1,8 +1,10 @@
-﻿using System.Buffers.Text;
-using System.Collections;
-using System.Collections.Generic;
+﻿
 using UnityEngine;
 [System.Serializable]
+
+/// <summary>
+/// 플레이어의 재화 및 능력치 정보를 담는 클래스
+/// </summary>
 public class PlayerData
 {
     [HideInInspector] public PlayerUpgradeTable playerUpgradeTable;

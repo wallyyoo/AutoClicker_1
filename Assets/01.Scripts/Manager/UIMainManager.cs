@@ -1,9 +1,9 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.UI;
-using TMPro;
 
+using UnityEngine;
+using TMPro;
+/// <summary>
+/// 메인 UI의 텍스트 정보 업데이트 및 클릭 사운드 재생 담당
+/// </summary>
 public class UIMainManager : MonoBehaviour
 {
     public static UIMainManager Instance { get; private set; }

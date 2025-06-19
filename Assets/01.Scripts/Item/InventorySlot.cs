@@ -3,7 +3,9 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
-// 아이템 슬롯에서 구매/장착/업그레이드 기능을 담당하는 슬롯 전용 스크립트
+/// <summary>
+/// 인벤토리 슬롯 UI에서 아이템 정보 표시 및 구매/장착/업그레이드 처리
+/// </summary>
 public class InventorySlot : MonoBehaviour
 {
     [Header("아이템 상태 이미지")]

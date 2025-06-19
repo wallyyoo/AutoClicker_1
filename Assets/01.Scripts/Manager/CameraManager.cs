@@ -1,7 +1,10 @@
-using System.Collections;
-using System.Collections.Generic;
+
 using UnityEngine;
 
+
+/// <summary>
+/// 배경 스프라이트를 카메라 크기에 맞게 자동 조정하는 스크립트
+/// </summary>
 public class FitBackgroundToCamera : MonoBehaviour
 {
     [SerializeField] private float widthMultiplier = 1f;

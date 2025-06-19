@@ -1,15 +1,12 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
-using System.IO;
 using UnityEngine;
-
+/// <summary>
+/// 게임의 전반적인 상태와 초기화를 담당하는 매니저
+/// </summary>
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
-
-     public PlayerData playerData;
-    //public PlayerUpgradeTable playerUpgradeTable;
-
+    public PlayerData playerData;
     public SoundManager soundManager;
 
     private string path;
@@ -21,16 +18,10 @@ public class GameManager : MonoBehaviour
             Instance = this;
             DontDestroyOnLoad(gameObject);
 
-            //if (playerData.playerUpgradeTable == null)
-            //{
-            //    playerData.playerUpgradeTable = playerUpgradeTable;  
-            //}
-
             if (soundManager == null)
             {
                 soundManager = FindObjectOfType<SoundManager>();
             }
-
         }
         else
         {

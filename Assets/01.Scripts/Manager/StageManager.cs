@@ -1,6 +1,8 @@
 ﻿using System;
 using UnityEngine;
-
+/// <summary>
+/// 스테이지 및 웨이브 관리, 클리어 보상 지급을 담당하는 매니저
+/// </summary>
 public class StageManager : MonoBehaviour, IRewardable
 {
     public int currentStageIndex;

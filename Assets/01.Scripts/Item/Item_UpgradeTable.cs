@@ -1,6 +1,8 @@
 ﻿
 using UnityEngine;
-
+/// <summary>
+/// 아이템 업그레이드 계산식 테이블
+/// </summary>
 public static class Item_UpgradeTable
 { 
         //최대 템 레벨

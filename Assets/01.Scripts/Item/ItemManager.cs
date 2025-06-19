@@ -1,7 +1,9 @@
 ﻿
 using UnityEngine;
 
-// 아이템 구매/장착/업그레이드 상태를 관리하며, 장착 중인 무기의 능력치를 외부에 제공하는 매니저 스크립트
+/// <summary>
+/// 아이템의 구매, 장착, 업그레이드 상태를 관리하는 매니저
+/// </summary>
 public class ItemManager : MonoBehaviour
 {
     

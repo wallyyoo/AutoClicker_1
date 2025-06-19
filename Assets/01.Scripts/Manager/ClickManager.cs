@@ -1,6 +1,8 @@
 ﻿using UnityEngine;
 using UnityEngine.EventSystems;
-
+/// <summary>
+/// 클릭 입력을 감지하고, 클릭 위치를 이벤트로 전달하는 매니저
+/// </summary>
 public class ClickManager : MonoBehaviour
 {
     public static ClickManager Instance { get; private set; }

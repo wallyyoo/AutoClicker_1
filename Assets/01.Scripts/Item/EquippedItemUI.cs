@@ -2,9 +2,12 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
 
+/// <summary>
+/// 현재 장착한 아이템 정보를 UI에 표시하는 스크립트
+/// </summary>
 public class EquippedItemUI : MonoBehaviour
 {
-    public ItemManager itemManager;  // 인스펙터에서 연결
+    public ItemManager itemManager; 
     public TMP_Text itemNameText;
     public TMP_Text itemDescriptionText;
     public Image itemIconImage;

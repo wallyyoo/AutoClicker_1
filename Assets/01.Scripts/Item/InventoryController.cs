@@ -2,7 +2,9 @@ using System.Collections;
 using UnityEngine;
 using TMPro;
 
-// 아이템 데이터를 기반으로 동적으로 인벤토리 슬롯을 생성하는 UI 제어 스크립트
+/// <summary>
+/// 인벤토리 UI를 생성하고 관리하는 컨트롤러
+/// </summary>
 public class InventoryController : MonoBehaviour
 {
     public static InventoryController ItemControlInstance { get; private set; }

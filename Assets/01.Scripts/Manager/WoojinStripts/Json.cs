@@ -1,7 +1,9 @@
 ﻿using UnityEngine;
 using System.IO;
 using System.Collections.Generic;
-
+/// <summary>
+/// 게임 저장 및 불러오기 기능을 담당하는 Json 클래스
+/// </summary>
 [System.Serializable]
 public class SaveData
 {

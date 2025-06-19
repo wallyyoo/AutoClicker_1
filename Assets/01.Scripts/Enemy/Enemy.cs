@@ -3,6 +3,9 @@ using UnityEngine.UI;
 using UnityEngine;
 using TMPro;
 
+/// <summary>
+/// 적 캐릭터의 상태, 이동, 공격, 피격, 사망 등 로직 관리
+/// </summary>
 public class Enemy : MonoBehaviour, IRewardable
 {
     public EnemyData data;
@@ -24,12 +27,7 @@ public class Enemy : MonoBehaviour, IRewardable
     private bool isDead = false;
 
     private float attackTimer = 0f;
-
-    // 디버그용 데미지 타이머입니다 코드 완성시 제거해주세요.
-   // private float debugDamageTimer = 0f;
-   // private int prevDebugSecond = 0;
-    // 디버그용 데미지 타이머입니다 코드 완성시 제거해주세요.
-
+    
     private void Awake()
     {
         animator = GetComponent<Animator>();
@@ -77,22 +75,6 @@ public class Enemy : MonoBehaviour, IRewardable
             HandleAttackLoop();
         }
 
-     /*   /// 디버그용 데미지 타이머입니다 코드 완성시 제거해주세요.
-        debugDamageTimer += Time.deltaTime;
-        // 1초마다 로그
-        int currentSecond = Mathf.FloorToInt(debugDamageTimer);
-        if (currentSecond != prevDebugSecond)
-        {
-            Debug.Log($"{gameObject.name}이(가) 디버그 데미지 타이머를 업데이트했습니다: {debugDamageTimer:F2}초");
-            prevDebugSecond = currentSecond;
-        }
-        if (debugDamageTimer >= 3f)
-        {
-            Debug.Log($"{gameObject.name}이(가) 1 데미지를 받았습니다.");
-            TakeDamage(50);
-            debugDamageTimer = 0f;
-        }
-      */  /// 디버그용 데미지 타이머입니다 코드 완성시 제거해주세요.
     }
 
     public void MoveToArrivalPosition()
@@ -106,15 +88,6 @@ public class Enemy : MonoBehaviour, IRewardable
         {
             moveSpeed = 2f;
         }
-        //if(불리언 메서드 들어갈 예정)// 참일 경우 moveSpeed를 5로 변경하고, 거짓일 경우 2로 변경할 예정
-        //{
-        //    moveSpeed = 5f; // 예시로 5로 설정, 실제 조건에 따라 변경
-        //}
-        //else
-        //{
-        //    moveSpeed = 2f; // 예시로 2로 설정, 실제 조건에 따라 변경
-        //}
-        
 
 
         transform.position = Vector2.MoveTowards(transform.position, arrivalPosition, moveSpeed * Time.deltaTime);// 이동 속도에 따라 위치 업데이트

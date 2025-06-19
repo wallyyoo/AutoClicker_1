@@ -1,8 +1,9 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿
 using UnityEngine;
 using UnityEngine.UI;
-
+/// <summary>
+/// 옵션 메뉴 열기/닫기 토글 기능을 담당하는 클래스
+/// </summary>
 public class OptionButton : MonoBehaviour
 {
     Slider sliderBgm;
@@ -26,9 +27,4 @@ public class OptionButton : MonoBehaviour
         }
     }
 
-    //public void OptionSliderValue()
-    //{
-    //    float volume = sliderBgm.value; // 0~1 사이 값
-    //    GameManager.Instance.soundManager.SetBGMVolume(volume); // 볼륨 설정 메서드 호출
-    //}
 }
