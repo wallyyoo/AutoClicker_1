@@ -73,8 +73,10 @@ public static class Json
         }
         // 클래스 데이터를 JSON 문자열로 변환
         string dataSave = JsonUtility.ToJson(saveData, true);
+
         // 해당 경로에 파일 생성 또는 덮어쓰기
         File.WriteAllText(path, dataSave);
+
         Debug.Log($"Save File : {dataSave}");
     }
     public static void JsonLoad()
@@ -83,6 +85,7 @@ public static class Json
         {
             // 파일을 읽기
             string json = File.ReadAllText(path);
+
             if (string.IsNullOrEmpty(json) || json == "{}")
             {
                 Debug.LogWarning("Json 파일이 비어있거나 유효하지 않습니다.");
@@ -118,5 +121,12 @@ public static class Json
                 saveData.equipped.Add(new JsonItem(item));
             }
         }
+    }
+
+    public static void JsonSaveInit()
+    {
+        saveData = null;
+
+        JsonSave();
     }
 }

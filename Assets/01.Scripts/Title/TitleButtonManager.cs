@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -12,6 +12,7 @@ public class TitleButtonManager : MonoBehaviour
     public void OnClickStartButton()              // 타이틀 씬에서 "게임시작" 버튼 클릭
     {
         TestSoundManager.TestSoundInstance.PlaySFX(SelectedSound);
+        Json.JsonSaveInit(); // json 초기화
         SceneManager.LoadScene("01.MainScene");
     }
     
